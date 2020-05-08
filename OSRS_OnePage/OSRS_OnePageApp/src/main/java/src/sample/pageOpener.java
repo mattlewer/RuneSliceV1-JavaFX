@@ -23,6 +23,7 @@ public class pageOpener {
         // Make sure it is of valid length
         if(acc.length() > 0) {
             // Search and retreive the skills for that username
+            // User is set as a static value in 'getSkills'
             getSkills getMySkills = new getSkills();
             getMySkills.searchAndRetrieveSkills(acc);
             

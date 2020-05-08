@@ -63,7 +63,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\OSRS_OnePageApp.jar;%APP_HOME%\lib\charm-5.0.2.jar;%APP_HOME%\lib\charm-glisten-connect-view-5.0.2.jar;%APP_HOME%\lib\charm-glisten-5.0.2.jar;%APP_HOME%\lib\charm-down-plugin-display-3.8.6.jar;%APP_HOME%\lib\charm-down-plugin-lifecycle-3.8.6.jar;%APP_HOME%\lib\charm-down-plugin-statusbar-3.8.6.jar;%APP_HOME%\lib\charm-cloudlink-client-4.5.2.jar;%APP_HOME%\lib\charm-down-plugin-storage-3.8.6.jar;%APP_HOME%\lib\connect-1.5.0.jar;%APP_HOME%\lib\charm-down-plugin-device-3.8.0.jar;%APP_HOME%\lib\charm-down-plugin-in-app-billing-3.8.0.jar;%APP_HOME%\lib\charm-down-plugin-push-notifications-3.8.0.jar;%APP_HOME%\lib\charm-down-plugin-runtime-args-3.8.0.jar;%APP_HOME%\lib\charm-down-core-3.8.6.jar;%APP_HOME%\lib\javax.json-1.0.4.jar
+set CLASSPATH=%APP_HOME%\lib\OSRS_OnePageApp.jar;%APP_HOME%\lib\charm-5.0.2.jar;%APP_HOME%\lib\gson-2.8.6.jar;%APP_HOME%\lib\charm-glisten-connect-view-5.0.2.jar;%APP_HOME%\lib\charm-glisten-5.0.2.jar;%APP_HOME%\lib\charm-down-plugin-display-3.8.6.jar;%APP_HOME%\lib\charm-down-plugin-lifecycle-3.8.6.jar;%APP_HOME%\lib\charm-down-plugin-statusbar-3.8.6.jar;%APP_HOME%\lib\charm-cloudlink-client-4.5.2.jar;%APP_HOME%\lib\charm-down-plugin-storage-3.8.6.jar;%APP_HOME%\lib\connect-1.5.0.jar;%APP_HOME%\lib\charm-down-plugin-device-3.8.0.jar;%APP_HOME%\lib\charm-down-plugin-in-app-billing-3.8.0.jar;%APP_HOME%\lib\charm-down-plugin-push-notifications-3.8.0.jar;%APP_HOME%\lib\charm-down-plugin-runtime-args-3.8.0.jar;%APP_HOME%\lib\charm-down-core-3.8.6.jar;%APP_HOME%\lib\javax.json-1.0.4.jar
 
 @rem Execute OSRS_OnePageApp
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %OSRS_ONE_PAGE_APP_OPTS%  -classpath "%CLASSPATH%" src.sample.Main %CMD_LINE_ARGS%

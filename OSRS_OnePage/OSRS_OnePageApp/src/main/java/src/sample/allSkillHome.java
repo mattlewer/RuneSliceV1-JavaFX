@@ -1,5 +1,8 @@
     package src.sample;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.FileWriter;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -7,7 +10,10 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -321,6 +327,7 @@ public class allSkillHome extends pageOpener implements Initializable {
 // OPTIONS //
         // If the User is not currently saved, display the 'success' version of the pop-up and fade out
         // Will add to JSON when completed
+         LoadAndSave lnS = new LoadAndSave();
         if(getSkills.user.isSaved == false){
             fadeOut(pop.pane);
             window.show();
@@ -332,6 +339,11 @@ public class allSkillHome extends pageOpener implements Initializable {
                 vbox.setEffect(gaussianBlur);
                 getSkills.user.isSaved = true;
                 window.close();
+                try {
+                    lnS.saveUser();
+                } catch (IOException ex) {
+                    Logger.getLogger(allSkillHome.class.getName()).log(Level.SEVERE, null, ex);
+                }
             });
             
             pause.play();
@@ -358,6 +370,12 @@ public class allSkillHome extends pageOpener implements Initializable {
                     saved.setImage(image);
                     getSkills.user.isSaved = false;
                     window.close();
+                    try {
+                        lnS.removeUser();
+                    } catch (IOException ex) {
+                        Logger.getLogger(allSkillHome.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
                 });
                 pause.play();
             });
@@ -375,10 +393,15 @@ public class allSkillHome extends pageOpener implements Initializable {
                     saved.setImage(image);
                     getSkills.user.isSaved = true;
                     window.close();
+                    lnS.loadUsers();
                 });
                 pause.play();
             });
         }
     }
+    
 
+    
+
+   
 }
