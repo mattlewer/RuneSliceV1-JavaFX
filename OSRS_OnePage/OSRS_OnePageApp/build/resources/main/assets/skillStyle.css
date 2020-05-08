@@ -1,0 +1,11 @@
+.progress-bar > .bar {
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 0.40em;
+}
+#exit {
+    -fx-effect: none;
+}
+
+#exit:hover, #exit:focus, #exit:active {
+    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
+}

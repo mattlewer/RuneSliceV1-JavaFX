@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="window" maxHeight="600.0" minHeight="-Infinity" minWidth="335.0" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.allSkillHome">
+   <children>
+      <VBox fx:id="vbox" alignment="CENTER" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane alignment="TOP_CENTER" prefHeight="77.0" prefWidth="305.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="LEFT" maxWidth="106.66668701171875" minWidth="10.0" prefWidth="39.5" />
+                  <ColumnConstraints halignment="CENTER" maxWidth="239.0" minWidth="10.0" prefWidth="221.33331298828125" />
+                <ColumnConstraints halignment="CENTER" maxWidth="96.33331298828125" minWidth="10.0" prefWidth="39.5" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="51.666656494140625" minHeight="10.0" prefHeight="51.666656494140625" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="32.66667175292969" minHeight="10.0" prefHeight="25.333343505859375" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="usernameLabel" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="51.0" prefWidth="305.0" style="-fx-text-fill: #95C623;" text="Label" textAlignment="CENTER" GridPane.columnSpan="3">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="154.0" prefWidth="305.0" style="-fx-text-fill: #F02D3A;" text="Tap a skill icon to find out more!" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                  <ImageView fx:id="saved" fitHeight="32.0" fitWidth="41.0" onMouseClicked="#saveUser" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                     <image>
+                        <Image url="@star.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </VBox.margin>
+            </GridPane>
+            <GridPane alignment="CENTER" prefHeight="419.0" prefWidth="287.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label id="total" fx:id="overallSkill" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label id="skill" fx:id="strengthLabel" alignment="CENTER" onMouseClicked="#openStrength" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" />
+                  <Label id="skill" fx:id="magicLabel" alignment="CENTER" onMouseClicked="#openMagic" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label id="skill" fx:id="rangedLabel" alignment="CENTER" onMouseClicked="#openRanged" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label id="skill" fx:id="wcLabel" alignment="CENTER" onMouseClicked="#openWoodcutting" prefHeight="35.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label id="skill" fx:id="fishingLabel" alignment="CENTER" onMouseClicked="#openFishing" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label id="skill" fx:id="craftingLabel" alignment="CENTER" onMouseClicked="#openCrafting" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label id="skill" fx:id="miningLabel" alignment="CENTER" onMouseClicked="#openMining" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label id="skill" fx:id="agilityLabel" alignment="CENTER" onMouseClicked="#openAgility" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label id="skill" fx:id="slayerLabel" alignment="CENTER" onMouseClicked="#openSlayer" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Label id="skill" fx:id="rcLabel" alignment="CENTER" onMouseClicked="#openRC" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label id="skill" fx:id="constructionLabel" alignment="CENTER" onMouseClicked="#openCons" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <Label id="skill" fx:id="hitpointsLabel" alignment="CENTER" onMouseClicked="#openHitpoints" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" />
+                  <Label id="skill" fx:id="attackLabel" alignment="CENTER" onMouseClicked="#openAttack" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label id="skill" fx:id="defenseLabel" alignment="CENTER" onMouseClicked="#openDefence" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label id="skill" fx:id="prayerLabel" alignment="CENTER" onMouseClicked="#openPrayer" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Label id="skill" fx:id="cookingLabel" alignment="CENTER" onMouseClicked="#openCooking" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Label id="skill" fx:id="fletchingLabel" alignment="CENTER" onMouseClicked="#openFletching" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <Label id="skill" fx:id="firemakingLabel" alignment="CENTER" onMouseClicked="#openFiremaking" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label id="skill" fx:id="smithingLabel" alignment="CENTER" onMouseClicked="#openSmithing" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <Label id="skill" fx:id="herbloreLabel" alignment="CENTER" onMouseClicked="#openHerblore" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <Label id="skill" fx:id="thievingLabel" alignment="CENTER" onMouseClicked="#openThieving" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                  <Label id="skill" fx:id="farmingLabel" alignment="CENTER" onMouseClicked="#openFarming" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                  <Label id="skill" fx:id="hunterLabel" alignment="CENTER" onMouseClicked="#openHunter" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openCons" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="10">
+                     <image>
+                        <Image url="@Construction_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openAttack" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@Attack_icon.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                     <image>
+                        <Image url="@Strength_icon.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openRanged" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@Ranged_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openMagic" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@Magic_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openWoodcutting" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@Woodcutting_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openFishing" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@Fishing_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openCrafting" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+                     <image>
+                        <Image url="@Crafting_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openMining" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
+                     <image>
+                        <Image url="@Mining_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="28.0" fitWidth="28.0" onMouseClicked="#openAgility" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@Agility_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openSlayer" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="8">
+                     <image>
+                        <Image url="@Slayer_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openRC" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9">
+                     <image>
+                        <Image url="@Runecraft_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openStrength" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@Strength_icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="skill" fx:id="hpImage" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openHitpoints" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Hitpoints_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openDefence" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@Defence_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openPrayer" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@Prayer_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openCooking" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@Cooking_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openFletching" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <image>
+                        <Image url="@Fletching_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openFiremaking" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                     <image>
+                        <Image url="@Firemaking_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openSmithing" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@Smithing_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openHerblore" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                     <image>
+                        <Image url="@Herblore_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#openThieving" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                     <image>
+                        <Image url="@Thieving_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openFarming" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="10">
+                     <image>
+                        <Image url="@Farming_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openHunter" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="11">
+                     <image>
+                        <Image url="@Hunter_icon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="65.0" style="-fx-text-fill: #F02D3A;" text="Total:" GridPane.columnIndex="3" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </VBox.margin>
+            </GridPane>
+            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search new user" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

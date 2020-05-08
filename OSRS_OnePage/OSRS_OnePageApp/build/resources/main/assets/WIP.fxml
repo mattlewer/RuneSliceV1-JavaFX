@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="330.0" style="-fx-background-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.skillPageController">
+   <children>
+      <StackPane prefHeight="600.0" prefWidth="330.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="vbox" alignment="CENTER" maxWidth="335.0" prefHeight="600.0" prefWidth="330.0" style="-fx-background-color: #273043;">
+               <children>
+                  <ImageView fx:id="skillImage" fitHeight="71.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label fx:id="skillTitleLabel" style="-fx-text-fill: #F02D3A;" text="Skill Title">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="23.0" prefWidth="331.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" minWidth="150.0" prefWidth="107.0" style="-fx-text-fill: #F02D3A;" text="Level:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="levelLabel" alignment="CENTER" minWidth="101.0" style="-fx-text-fill: #95C623;" text="Label">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="331.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" minWidth="150.0" prefHeight="30.0" prefWidth="107.0" style="-fx-text-fill: #F02D3A;" text="XP:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" minWidth="101.0" prefHeight="30.0" prefWidth="101.0" style="-fx-text-fill: #95C623;" text="Label" fx:id="xpLabel">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="38.0" prefWidth="331.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" minWidth="150.0" style="-fx-text-fill: #F02D3A;" text="Rank:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="rankLabel" alignment="CENTER" minWidth="101.0" prefHeight="30.0" prefWidth="104.0" style="-fx-text-fill: #95C623;" text="Label">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="330.0">
+                     <children>
+                        <Label style="-fx-text-fill: #F02D3A;" text="To next level:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="330.0">
+                           <children>
+                              <ProgressBar fx:id="nextLevelBar" prefWidth="217.0" progress="0.78" style="-fx-accent: #95C623;">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </HBox.margin></ProgressBar>
+                              <Label fx:id="nextLevelPercent" contentDisplay="CENTER" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: #95C623;" text="75%">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label style="-fx-text-fill: #F02D3A;" text="To next multiple of 10:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="330.0">
+                           <children>
+                              <ProgressBar fx:id="multipleOfTenBar" prefWidth="217.0" progress="0.46" style="-fx-accent: #95C623;">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </HBox.margin></ProgressBar>
+                              <Label fx:id="next10Percent" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: #95C623;" text="30%">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label style="-fx-text-fill: #F02D3A;" text="To 99:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="330.0">
+                           <children>
+                              <ProgressBar fx:id="to99Bar" prefWidth="217.0" progress="0.3" style="-fx-accent: #95C623;">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </HBox.margin></ProgressBar>
+                              <Label fx:id="next99Percent" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: #95C623;" text="15%">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ex" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="Return to all skills..." textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

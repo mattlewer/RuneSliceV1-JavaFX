@@ -1,0 +1,27 @@
+#username{
+    -fx-border-color:  #F02D3A;
+    -fx-border-radius: 7px;
+    -fx-border-width: 0.3px;
+    -fx-text-fill:#F02D3A;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+    -fx-alignment: center;
+}
+
+#search {
+    -fx-effect: none;
+}
+
+#search:hover, #search:focus, #search:active {
+    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
+}
+
+
+#fav {
+    -fx-effect: none;
+}
+
+#fav:hover, #fav:focus, #fav:active {
+    -fx-effect: dropshadow(three-pass-box, grey, 19, 0.6, 1, 0);
+}
+
