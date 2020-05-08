@@ -8,8 +8,6 @@ package src.sample;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.text.DecimalFormat;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,18 +39,14 @@ public class skillPageController extends pageOpener implements Initializable{
     @FXML public Button exit;
     @FXML public VBox vbox;
    
-    public HashMap<String, Skill> allSkills;
-    public String username;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
     
-    public void myFunction(HashMap<String, Skill> allMySkills, Skill skill, String user, String title, String imageLoc) throws FileNotFoundException{
-        allSkills = allMySkills;
-        username = user;
-
+    public void myFunction(Skill skill,String title, String imageLoc) throws FileNotFoundException{
+       
         Image image = new Image(imageLoc);
         skillImage.setImage(image);
         
@@ -95,6 +89,7 @@ public class skillPageController extends pageOpener implements Initializable{
             }
         }   
         
+        // GET PERCENT TO NEXT 10th LEVEL
         for (int i = 0; i < skillxp.length; i++){
             if(skillxp[i] > myxp && i % 10 == 0){
                 double perc = ((myxp -  skillxp[i-10]) / (skillxp[i] - skillxp[i-10]));
@@ -128,15 +123,8 @@ public class skillPageController extends pageOpener implements Initializable{
         }
     }
     
-    public HashMap<String, Skill> getAllSkills() {
-        return allSkills;
-    }
 
-    public void setAllSkills(HashMap<String, Skill> allSkills) {
-        this.allSkills = allSkills;
-    }
-    
     public void ex (ActionEvent event) throws IOException {
-        exitSkill(event, allSkills, username);
+        exitSkill(event);
     }
 }

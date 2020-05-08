@@ -14,9 +14,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
-import src.sample.pageOpener;
-
 import java.io.IOException;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;

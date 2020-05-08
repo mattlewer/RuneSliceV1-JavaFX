@@ -7,36 +7,31 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.util.HashMap;
 import javafx.animation.FadeTransition;
-import javafx.animation.PauseTransition;
-import javafx.scene.effect.GaussianBlur;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.stage.Modality;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 public class pageOpener {
 
-    public HashMap<String, Skill> myskills;
 
-
+    // When the user searches a username this function is called
     public void openAllSkills(ActionEvent event, String account) throws IOException {
+        
+        // The text to user has entered
         String acc = account;
+       
+        // Make sure it is of valid length
         if(acc.length() > 0) {
+            // Search and retreive the skills for that username
             getSkills getMySkills = new getSkills();
-            myskills = getMySkills.searchAndRetrieveSkills(acc);
+            getMySkills.searchAndRetrieveSkills(acc);
+            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/allSkillHome.fxml"));
             Parent root = (Parent) loader.load();
-            
+            // Call 'myFunction' within 'AllSkillHome' to prepare the page
             allSkillHome allSkill = loader.getController();
-            allSkill.myFunction(myskills, acc);
-            
+            allSkill.myFunction();
+            // Fade in the page
             fade(allSkill.vbox);
             
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();            
@@ -48,186 +43,100 @@ public class pageOpener {
             
         }
         else{
+            // If we encounter an error, return to the home page and run the 'reRun' function to display error
             searchUserHome sc = new searchUserHome();
-            sc.myskills.clear();
             sc.reRun(event);
 
         }
 
     }
 
-    public void openPage(MouseEvent event, String whichPage, HashMap<String, Skill> skills, String user) throws IOException {
+    
+    
+    // Open chosen skill page through image or level on 'All Skill' home
+    public void openPage(MouseEvent event, String whichPage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/WIP.fxml"));
         Parent root = (Parent) loader.load();
         
-        skillPageController skillPage = loader.getController();
-
+        getSkills gs = new getSkills();
+        skillPageController sPC = loader.getController();
+        
+        // Each page will take its section of relevant data from the users Skills
+        // Along with this an image to be displayed
         if(null != whichPage)switch (whichPage) {
             case "agility": 
-                getSkills agilitySkills = new getSkills();
-                Skill ag = agilitySkills.agility(skills);
-                skillPageController agile = loader.getController();
-                agile.myFunction(skills, ag, user, "Agility", "/assets/Agility_icon.png");
-                fade(agile.vbox);
+                sPC.myFunction(gs.agility(), "Agility", "/assets/images/Agility_icon.png");
                 break;
             case "attack":
-                getSkills attackSkills = new getSkills();
-                Skill at = attackSkills.attack(skills);
-                skillPageController attk = loader.getController();
-                attk.myFunction(skills, at, user, "Attack", "/assets/Attack_icon.png");
-                fade(attk.vbox);
+                sPC.myFunction(gs.attack(), "Attack", "/assets/images/Attack_icon.png");
                 break;
             case "construction":
-                getSkills consSkills = new getSkills();
-                Skill con = consSkills.construction(skills);
-                skillPageController cons = loader.getController();
-                cons.myFunction(skills, con, user, "Construction", "/assets/Construction_icon.png");
-                fade(cons.vbox);
+                sPC.myFunction(gs.construction(), "Construction", "/assets/images/Construction_icon.png");
                 break;
             case "cooking":
-                getSkills cookSkill = new getSkills();
-                Skill coo = cookSkill.cooking(skills);
-                skillPageController cook = loader.getController();
-                cook.myFunction(skills, coo, user, "Cooking", "/assets/Cooking_icon.png");
-                fade(cook.vbox);
+                sPC.myFunction(gs.cooking(), "Cooking", "/assets/images/Cooking_icon.png");
                 break;
             case "crafting":
-                getSkills craftSkills = new getSkills();
-                Skill cr = craftSkills.crafting(skills);
-                skillPageController craft = loader.getController();
-                craft.myFunction(skills, cr, user, "Crafting", "/assets/Crafting_icon.png");
-                fade(craft.vbox);
+                sPC.myFunction(gs.crafting(), "Crafting", "/assets/images/Crafting_icon.png");
                 break;
             case "defence":
-                getSkills defSkills = new getSkills();
-                Skill de = defSkills.defense(skills);
-                skillPageController defence = loader.getController();
-                defence.myFunction(skills, de, user, "Defence", "/assets/Defence_icon.png");
-                fade(defence.vbox);
+                sPC.myFunction(gs.defense(), "Defence", "/images/assets/Defence_icon.png");
                 break;
             case "farming":
-                getSkills farmSkills = new getSkills();
-                Skill fa = farmSkills.farming(skills);
-                skillPageController farm = loader.getController();
-                farm.myFunction(skills, fa, user, "Farming", "/assets/Farming_icon.png");
-                fade(farm.vbox);
+                sPC.myFunction(gs.farming(), "Farming", "/images/assets/Farming_icon.png");
                 break;
             case "firemaking":
-                getSkills fireSkill = new getSkills();
-                Skill fi = fireSkill.firemaking(skills);
-                skillPageController fire = loader.getController();
-                fire.myFunction(skills, fi, user, "Firemaking", "/assets/Firemaking_icon.png");
-                fade(fire.vbox);
+                sPC.myFunction(gs.firemaking(), "Firemaking", "/assets/images/Firemaking_icon.png");
                 break;
             case "fishing":
-                getSkills fishSkill = new getSkills();
-                Skill fis = fishSkill.fishing(skills);
-                skillPageController fish = loader.getController();
-                fish.myFunction(skills, fis, user, "Fishing", "/assets/Fishing_icon.png");
-                fade(fish.vbox);
+                sPC.myFunction(gs.fishing(), "Fishing", "/assets/images/Fishing_icon.png");
                 break;
             case "fletching":
-                getSkills fletchSkill = new getSkills();
-                Skill fle = fletchSkill.fletching(skills);
-                skillPageController fletch = loader.getController();
-                fletch.myFunction(skills, fle, user, "Fletching", "/assets/Fletching_icon.png");
-                fade(fletch.vbox);
+                sPC.myFunction(gs.fletching(), "Fletching", "/assets/images/Fletching_icon.png");
                 break;
             case "herblore":
-                getSkills herbSkills = new getSkills();
-                Skill hrb = herbSkills.herblore(skills);
-                skillPageController herb = loader.getController();
-                herb.myFunction(skills, hrb, user, "Herblore", "/assets/Herblore_icon.png");
-                fade(herb.vbox);
+                sPC.myFunction(gs.herblore(), "Herblore", "/assets/images/Herblore_icon.png");
                 break;
             case "hitpoints":
-                getSkills hpSkill = new getSkills();
-                Skill hp = hpSkill.hitpoints(skills);
-                skillPageController hit = loader.getController();
-                hit.myFunction(skills, hp, user, "Hitpoints", "/assets/Hitpoints_icon.png");
-                fade(hit.vbox);
+                sPC.myFunction(gs.hitpoints(), "Hitpoints", "/assets/images/Hitpoints_icon.png");
                 break;
             case "hunter":
-                getSkills huntSkill = new getSkills();
-                Skill hu = huntSkill.hunter(skills);
-                skillPageController hunter = loader.getController();
-                hunter.myFunction(skills, hu, user, "Hunter", "/assets/Hunter_icon.png");
-                fade(hunter.vbox);
+                sPC.myFunction(gs.hunter(), "Hunter", "/assets/images/Hunter_icon.png");
                 break;
             case "magic":
-                getSkills magicSkill = new getSkills();
-                Skill ma = magicSkill.magic(skills);
-                skillPageController magic = loader.getController();
-                magic.myFunction(skills, ma, user, "Magic", "/assets/Magic_icon.png");
-                fade(magic.vbox);
+                sPC.myFunction(gs.magic(), "Magic", "/assets/images/Magic_icon.png");
                 break;
             case "mining":
-                getSkills mineSkill = new getSkills();
-                Skill min = mineSkill.mining(skills);
-                skillPageController mining = loader.getController();
-                mining.myFunction(skills, min, user, "Mining", "/assets/Mining_icon.png");
-                fade(mining.vbox);
+                sPC.myFunction(gs.mining(), "Mining", "/assets/images/Mining_icon.png");
                 break;
             case "prayer":
-                getSkills prayerSkill = new getSkills();
-                Skill pr = prayerSkill.prayer(skills);
-                skillPageController prayer = loader.getController();
-                prayer.myFunction(skills, pr, user, "Prayer", "/assets/Prayer_icon.png");
-                fade(prayer.vbox);
+                sPC.myFunction(gs.prayer(), "Prayer", "/assets/images/Prayer_icon.png");
                 break;
             case "ranged":
-                getSkills rangedSkill = new getSkills();
-                Skill rn = rangedSkill.ranged(skills);
-                skillPageController ranged = loader.getController();
-                ranged.myFunction(skills, rn, user, "Ranged", "/assets/Ranged_icon.png");
-                fade(ranged.vbox);
+                sPC.myFunction(gs.ranged(), "Ranged", "/assets/images/Ranged_icon.png");
                 break;
             case "runecrafting":
-                getSkills rcSkill = new getSkills();
-                Skill rc = rcSkill.runecrafting(skills);
-                skillPageController runecrafting = loader.getController();
-                runecrafting.myFunction(skills, rc, user, "Runecrafting", "/assets/Runecraft_icon.png");
-                fade(runecrafting.vbox);
+                sPC.myFunction(gs.runecrafting(), "Runecrafting", "/assets/images/Runecraft_icon.png");
                 break;
             case "slayer":
-                getSkills slaySkill = new getSkills();
-                Skill sla = slaySkill.slayer(skills);
-                skillPageController slayer = loader.getController();
-                slayer.myFunction(skills, sla, user, "Slayer", "/assets/Slayer_icon.png");
-                fade(slayer.vbox);
+                sPC.myFunction(gs.slayer(), "Slayer", "/assets/images/Slayer_icon.png");
                 break;
             case "smithing":
-                getSkills smithSkill = new getSkills();
-                Skill smi = smithSkill.smithing(skills);
-                skillPageController smith = loader.getController();
-                smith.myFunction(skills, smi, user, "Smithing", "/assets/Smithing_icon.png");
-                fade(smith.vbox);
+                sPC.myFunction(gs.smithing(), "Smithing", "/assets/images/Smithing_icon.png");
                 break;
             case "strength":
-                getSkills strengthSkill = new getSkills();
-                Skill str = strengthSkill.strength(skills);
-                skillPageController strength = loader.getController();
-                strength.myFunction(skills, str, user, "Strength", "/assets/Strength_icon.png");
-                fade(strength.vbox);
+                sPC.myFunction(gs.strength(), "Strength", "/assets/images/Strength_icon.png");
                 break;
             case "thieving":
-                getSkills thievSkill = new getSkills();
-                Skill thi = thievSkill.thieving(skills);
-                skillPageController thieving = loader.getController();
-                thieving.myFunction(skills, thi, user, "Thieving", "/assets/Thieving_icon.png");
-                fade(thieving.vbox);
+                sPC.myFunction(gs.thieving(), "Thieving", "/assets/images/Thieving_icon.png");
                 break;
             case "woodcutting":
-                getSkills woodcuttingSkill = new getSkills();
-                Skill wc = woodcuttingSkill.woodcutting(skills);
-                skillPageController woodcutting = loader.getController();
-                woodcutting.myFunction(skills, wc, user, "Woodcutting", "/assets/Woodcutting_icon.png");
-                fade(woodcutting.vbox);
+                sPC.myFunction(gs.woodcutting(), "Woodcutting", "/assets/images/Woodcutting_icon.png");
                 break;
             default:
                 break;
         }
-
+        fade(sPC.vbox); 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/assets/skillStyle.css").toExternalForm());
@@ -237,26 +146,26 @@ public class pageOpener {
     }
     
     
+    // Exit all Skills and return to the home page
     public void searchNewUser(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/searchUserHome.fxml"));
         Parent root = (Parent) loader.load();
         searchUserHome sec = loader.getController();
         fade(sec.gridpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        
-        
+        Scene scene = new Scene(root); 
         scene.getStylesheets().add(getClass().getResource("/assets/stylesheethome.css").toExternalForm());
         window.setScene(scene);
         window.hide();
         window.show();
     }
 
-    public void exitSkill(ActionEvent event,  HashMap<String, Skill> allSkills, String username) throws IOException {
+    // Exit each individual skill page back to 'All Skills'
+    public void exitSkill(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/allSkillHome.fxml"));
         Parent root = (Parent)loader.load();
         allSkillHome sec = loader.getController();
-        sec.myFunction(allSkills, username);
+        sec.myFunction();
         fade(sec.vbox);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -267,6 +176,7 @@ public class pageOpener {
     }
     
  
+    // Open page with saved Users
     public void openSavedUsers(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/mySavedUsers.fxml"));
         Parent root = (Parent)loader.load();
@@ -297,4 +207,7 @@ public class pageOpener {
         ft.setToValue(0);
         ft.play();
     }
+
+    
+    
 }

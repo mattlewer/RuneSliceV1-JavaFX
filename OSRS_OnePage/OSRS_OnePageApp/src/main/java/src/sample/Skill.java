@@ -2,6 +2,7 @@ package src.sample;
 
 
 public class Skill {
+    
     private int rank;
     private int level;
     private Long experience;
@@ -11,8 +12,6 @@ public class Skill {
         this.level = level;
         this.experience = experience;
     }
-
-
 
     public int getRank() {
         return rank;

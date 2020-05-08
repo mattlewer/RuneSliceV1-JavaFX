@@ -36,7 +36,7 @@
                   <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="154.0" prefWidth="305.0" style="-fx-text-fill: #F02D3A;" text="Tap a skill icon to find out more!" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="1" />
                   <ImageView fx:id="saved" fitHeight="32.0" fitWidth="41.0" onMouseClicked="#saveUser" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                      <image>
-                        <Image url="@star.png" />
+                        <Image url="@images/star.png" />
                      </image>
                   </ImageView>
                </children>
@@ -97,7 +97,7 @@
                   <Label id="skill" fx:id="hunterLabel" alignment="CENTER" onMouseClicked="#openHunter" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openCons" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="10">
                      <image>
-                        <Image url="@Construction_icon.png" />
+                        <Image url="@images/Construction_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -105,7 +105,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openAttack" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@Attack_icon.png" />
+                        <Image url="@images/Attack_icon.png" />
                      </image>
                      <GridPane.margin>
                         <Insets />
@@ -124,7 +124,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openRanged" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@Ranged_icon.png" />
+                        <Image url="@images/Ranged_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -132,7 +132,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openMagic" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                      <image>
-                        <Image url="@Magic_icon.png" />
+                        <Image url="@images/Magic_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -140,7 +140,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openWoodcutting" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
                      <image>
-                        <Image url="@Woodcutting_icon.png" />
+                        <Image url="@images/Woodcutting_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -148,7 +148,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openFishing" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
                      <image>
-                        <Image url="@Fishing_icon.png" />
+                        <Image url="@images/Fishing_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -156,7 +156,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openCrafting" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
                      <image>
-                        <Image url="@Crafting_icon.png" />
+                        <Image url="@images/Crafting_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -164,7 +164,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openMining" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
                      <image>
-                        <Image url="@Mining_icon.png" />
+                        <Image url="@images/Mining_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -172,7 +172,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="28.0" fitWidth="28.0" onMouseClicked="#openAgility" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
                      <image>
-                        <Image url="@Agility_icon.png" />
+                        <Image url="@images/Agility_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -180,7 +180,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openSlayer" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="8">
                      <image>
-                        <Image url="@Slayer_icon.png" />
+                        <Image url="@images/Slayer_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -188,7 +188,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openRC" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9">
                      <image>
-                        <Image url="@Runecraft_icon.png" />
+                        <Image url="@images/Runecraft_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -199,12 +199,12 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <image>
-                        <Image url="@Strength_icon.png" />
+                        <Image url="@images/Strength_icon.png" />
                      </image>
                   </ImageView>
                   <ImageView id="skill" fx:id="hpImage" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openHitpoints" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Hitpoints_icon.png" />
+                        <Image url="@images/Hitpoints_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -212,7 +212,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openDefence" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
                      <image>
-                        <Image url="@Defence_icon.png" />
+                        <Image url="@images/Defence_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -220,7 +220,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openPrayer" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
                      <image>
-                        <Image url="@Prayer_icon.png" />
+                        <Image url="@images/Prayer_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -228,7 +228,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openCooking" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
                      <image>
-                        <Image url="@Cooking_icon.png" />
+                        <Image url="@images/Cooking_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -236,7 +236,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openFletching" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
                      <image>
-                        <Image url="@Fletching_icon.png" />
+                        <Image url="@images/Fletching_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -244,7 +244,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openFiremaking" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
                      <image>
-                        <Image url="@Firemaking_icon.png" />
+                        <Image url="@images/Firemaking_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -252,7 +252,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openSmithing" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
                      <image>
-                        <Image url="@Smithing_icon.png" />
+                        <Image url="@images/Smithing_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -260,7 +260,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openHerblore" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="8">
                      <image>
-                        <Image url="@Herblore_icon.png" />
+                        <Image url="@images/Herblore_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -268,7 +268,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#openThieving" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="9">
                      <image>
-                        <Image url="@Thieving_icon.png" />
+                        <Image url="@images/Thieving_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -276,7 +276,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openFarming" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="10">
                      <image>
-                        <Image url="@Farming_icon.png" />
+                        <Image url="@images/Farming_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -284,7 +284,7 @@
                   </ImageView>
                   <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" onMouseClicked="#openHunter" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="11">
                      <image>
-                        <Image url="@Hunter_icon.png" />
+                        <Image url="@images/Hunter_icon.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />

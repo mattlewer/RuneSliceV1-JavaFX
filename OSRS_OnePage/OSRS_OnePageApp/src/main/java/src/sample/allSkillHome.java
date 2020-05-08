@@ -7,7 +7,6 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXMLLoader;
@@ -54,14 +53,10 @@ public class allSkillHome extends pageOpener implements Initializable {
     @FXML private Label thievingLabel;
     @FXML private Label farmingLabel;
     @FXML private Label hunterLabel;
-    @FXML private ImageView hpImage;
     
     @FXML public VBox vbox;
 
     @FXML Label usernameLabel;
-
-    public HashMap<String, Skill> allSkills;
-    public String username;
 
 
     @Override
@@ -69,130 +64,145 @@ public class allSkillHome extends pageOpener implements Initializable {
 
     }
 
-    public void myFunction(HashMap<String, Skill> skills, String user){
+    
+    // Sets up the page with the users level for each skill 
+    public void myFunction(){
+        
+        // Set Label at the top of the page to the username being searched
+        usernameLabel.setText(getSkills.user.getUsername());
+        
+        
+        // new getSkills to allow access to static User 
+        getSkills gS = new getSkills();
 
-        username = user;
-        usernameLabel.setText(username);
-        allSkills = skills;
-        System.out.println(allSkills);
-        getSkills getMySkills = new getSkills();
-
+        // Set 'saved' image as a filled star if User saved and an outline if not
+        if(getSkills.user.isSaved == true){
+            Image image = new Image("/assets/images/star_filled.png");
+            saved.setImage(image);
+        }else{
+            Image image = new Image("/assets/images/star.png");
+            saved.setImage(image);
+        }
+        
+        
+        
+        // Setting up skill Labels //
         //HP
-        Skill hp = getMySkills.hitpoints(allSkills);
+        Skill hp = gS.hitpoints();
         String hpLevel = String.valueOf(hp.getLevel());
         hitpointsLabel.setText(hpLevel);
 
         //DEFENSE
-        Skill def = getMySkills.defense(allSkills);
+        Skill def = gS.defense();
         String defLevel = String.valueOf(def.getLevel());
         defenseLabel.setText(defLevel);
 
         //STRENGTH
-        Skill str = getMySkills.strength(allSkills);
+        Skill str = gS.strength();
         String strLevel = String.valueOf(str.getLevel());
         strengthLabel.setText(strLevel);
 
         //ATTACK
-        Skill attk = getMySkills.attack(allSkills);
+        Skill attk = gS.attack();
         String attkLevel = String.valueOf(attk.getLevel());
         attackLabel.setText(attkLevel);
 
         //RANGED
-        Skill ranged = getMySkills.ranged(allSkills);
+        Skill ranged = gS.ranged();
         String rangeLevel = String.valueOf(ranged.getLevel());
         rangedLabel.setText(rangeLevel);
 
         //PRAYER
-        Skill prayer = getMySkills.prayer(allSkills);
+        Skill prayer = gS.prayer();
         String prayerLevel = String.valueOf(prayer.getLevel());
         prayerLabel.setText(prayerLevel);
 
         //MAGIC
-        Skill mage = getMySkills.magic(allSkills);
+        Skill mage = gS.magic();
         String mageLevel = String.valueOf(mage.getLevel());
         magicLabel.setText(mageLevel);
 
         //COOKING
-        Skill cook = getMySkills.cooking(allSkills);
+        Skill cook = gS.cooking();
         String cookLevel = String.valueOf(cook.getLevel());
         cookingLabel.setText(cookLevel);
 
         //WOODCUTTING
-        Skill wc = getMySkills.woodcutting(allSkills);
+        Skill wc = gS.woodcutting();
         String wcLevel = String.valueOf(wc.getLevel());
         wcLabel.setText(wcLevel);
 
         //FLETCHING
-        Skill fletch = getMySkills.fletching(allSkills);
+        Skill fletch = gS.fletching();
         String fletchLevel = String.valueOf(fletch.getLevel());
         fletchingLabel.setText(fletchLevel);
 
         //FISHING
-        Skill fish = getMySkills.fishing(allSkills);
+        Skill fish = gS.fishing();
         String fishLvl = String.valueOf(fish.getLevel());
         fishingLabel.setText(fishLvl);
 
         //FIREMAKING
-        Skill fire = getMySkills.firemaking(allSkills);
+        Skill fire = gS.firemaking();
         String fireLevel = String.valueOf(fire.getLevel());
         firemakingLabel.setText(fireLevel);
 
         //CRAFTING
-        Skill craft = getMySkills.crafting(allSkills);
+        Skill craft = gS.crafting();
         String craftLevel = String.valueOf(craft.getLevel());
         craftingLabel.setText(craftLevel);
 
         //SMITHING
-        Skill smith = getMySkills.smithing(allSkills);
+        Skill smith = gS.smithing();
         String smithLevel = String.valueOf(smith.getLevel());
         smithingLabel.setText(smithLevel);
 
         //MINING
-        Skill mine = getMySkills.mining(allSkills);
+        Skill mine = gS.mining();
         String mineLevel = String.valueOf(mine.getLevel());
         miningLabel.setText(mineLevel);
 
         //HERBLORE
-        Skill herb = getMySkills.herblore(allSkills);
+        Skill herb = gS.herblore();
         String herbLevel = String.valueOf(herb.getLevel());
         herbloreLabel.setText(herbLevel);
 
         //AGILITY
-        Skill agile = getMySkills.agility(allSkills);
+        Skill agile = gS.agility();
         String agileLevel = String.valueOf(agile.getLevel());
         agilityLabel.setText(agileLevel);
 
         //THIEVING
-        Skill thieve = getMySkills.thieving(allSkills);
+        Skill thieve = gS.thieving();
         String thieveLevel = String.valueOf(thieve.getLevel());
         thievingLabel.setText(thieveLevel);
 
         //SLAYER
-        Skill slay = getMySkills.slayer(allSkills);
+        Skill slay = gS.slayer();
         String slayLevel = String.valueOf(slay.getLevel());
         slayerLabel.setText(slayLevel);
 
         //FARMING
-        Skill farm = getMySkills.farming(allSkills);
+        Skill farm = gS.farming();
         String farmLevel = String.valueOf(farm.getLevel());
         farmingLabel.setText(farmLevel);
 
         //RUNECRAFTING
-        Skill rc = getMySkills.runecrafting(allSkills);
+        Skill rc = gS.runecrafting();
         String rcLevel = String.valueOf(rc.getLevel());
         rcLabel.setText(rcLevel);
 
         //HUNTER
-        Skill hunt = getMySkills.hunter(allSkills);
+        Skill hunt = gS.hunter();
         String huntLevel = String.valueOf(hunt.getLevel());
         hunterLabel.setText(huntLevel);
 
         //CONSTRUCTION
-        Skill cons = getMySkills.construction(allSkills);
+        Skill cons = gS.construction();
         String consLevel = String.valueOf(cons.getLevel());
         constructionLabel.setText(consLevel);
 
-        Skill overall = getMySkills.overall(allSkills);
+        Skill overall = gS.overall();
         String overallLevel = String.valueOf(overall.getLevel());
         overallSkill.setText(overallLevel);
     }
@@ -200,87 +210,87 @@ public class allSkillHome extends pageOpener implements Initializable {
 
 
 
+    // Funtions for the opening of individual skill pages
 
     public void openAgility(MouseEvent event) throws IOException {
-        openPage(event, "agility" , allSkills, username );
+        openPage(event, "agility");
     }
-
-
     public void openAttack(MouseEvent event) throws IOException {
-        openPage(event, "attack", allSkills, username );
+        openPage(event, "attack");
     }
-
     public void openCons(MouseEvent event) throws IOException {
-        openPage(event, "construction", allSkills, username );
+        openPage(event, "construction");
     }
-
     public void openCooking(MouseEvent event) throws IOException {
-        openPage(event, "cooking", allSkills, username);
+        openPage(event, "cooking");
     }
     public void openCrafting(MouseEvent event) throws IOException {
-        openPage(event, "crafting", allSkills, username);
+        openPage(event, "crafting");
     }
     public void openDefence(MouseEvent event) throws IOException {
-        openPage(event, "defence", allSkills,username );
+        openPage(event, "defence");
     }
     public void openFarming(MouseEvent event) throws IOException {
-        openPage(event, "farming", allSkills,username );
+        openPage(event, "farming");
     }
     public void openFiremaking(MouseEvent event) throws IOException {
-        openPage(event, "firemaking", allSkills, username );
+        openPage(event, "firemaking");
     }
     public void openFishing(MouseEvent event) throws IOException {
-        openPage(event, "fishing", allSkills, username );
+        openPage(event, "fishing");
     }
     public void openFletching(MouseEvent event) throws IOException {
-        openPage(event, "fletching", allSkills, username );
+        openPage(event, "fletching");
     }
     public void openHerblore(MouseEvent event) throws IOException {
-        openPage(event, "herblore", allSkills, username );
+        openPage(event, "herblore");
     }
     public void openHitpoints(MouseEvent event) throws IOException {
-        openPage(event, "hitpoints", allSkills, username );
+        openPage(event, "hitpoints");
     }
     public void openHunter(MouseEvent event) throws IOException {
-        openPage(event, "hunter", allSkills,  username );
+        openPage(event, "hunter");
     }
     public void openMagic(MouseEvent event) throws IOException {
-        openPage(event, "magic", allSkills, username );
+        openPage(event, "magic");
     }
     public void openMining(MouseEvent event) throws IOException {
-        openPage(event, "mining", allSkills, username );
+        openPage(event, "mining");
     }
     public void openPrayer(MouseEvent event) throws IOException {
-        openPage(event, "prayer", allSkills, username);
+        openPage(event, "prayer");
     }
     public void openRanged(MouseEvent event) throws IOException {
-        openPage(event, "ranged", allSkills,  username );
+        openPage(event, "ranged");
     }
     public void openRC(MouseEvent event) throws IOException {
-        openPage(event, "runecrafting", allSkills, username );
+        openPage(event, "runecrafting");
     }
     public void openSlayer(MouseEvent event) throws IOException {
-        openPage(event, "slayer", allSkills, username );
+        openPage(event, "slayer");
     }
     public void openSmithing(MouseEvent event) throws IOException {
-        openPage(event, "smithing", allSkills, username );
+        openPage(event, "smithing");
     }
     public void openStrength(MouseEvent event) throws IOException {
-        openPage(event, "strength", allSkills, username );
+        openPage(event, "strength");
     }
     public void openThieving(MouseEvent event) throws IOException {
-        openPage(event, "thieving", allSkills, username );
+        openPage(event, "thieving");
     }
     public void openWoodcutting(MouseEvent event) throws IOException {
-        openPage(event, "woodcutting", allSkills, username );
+        openPage(event, "woodcutting");
     }
 
     
-    public boolean issaved = false;
+
+    
+    // Checks if the user is currently saved, if not, changes icon and calls 'openPopupNewSave'
+    // If the user is saved already, 'openPopupNewSave' is called without the icon changing as user descision is not yet final
     public void saveUser(MouseEvent event) throws IOException{
-        if (issaved == false){
+        if (getSkills.user.isSaved == false){
             openPopupNewSave(event);
-            Image image = new Image("/assets/star_filled.png");
+            Image image = new Image("/assets/images/star_filled.png");
             saved.setImage(image);
             
         }else{
@@ -289,11 +299,12 @@ public class allSkillHome extends pageOpener implements Initializable {
         }
     }
     
+    // New pop-up window when saving / un-saving a user
     public void openPopupNewSave(MouseEvent event) throws IOException{
-        
-        
+// SETTING UP PAGE //
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/popUpSaveUser.fxml"));
         Parent root = (Parent)loader.load();
+        // Blur the backgrund to bring focus to pop-up
         GaussianBlur gaussianBlur = new GaussianBlur();       
         gaussianBlur.setRadius(10.5); 
         vbox.setEffect(gaussianBlur);
@@ -301,24 +312,31 @@ public class allSkillHome extends pageOpener implements Initializable {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/assets/saveUserPopupStyle.css").toExternalForm());
         Stage window = new Stage();
+        // Load pop-up as trasparent so it appears to float over the blurred scene, no toolbar
         window.initStyle(StageStyle.TRANSPARENT);
         window.initModality(Modality.APPLICATION_MODAL);
         window.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
-     
-        if(issaved == false){
+        
+// OPTIONS //
+        // If the User is not currently saved, display the 'success' version of the pop-up and fade out
+        // Will add to JSON when completed
+        if(getSkills.user.isSaved == false){
             fadeOut(pop.pane);
             window.show();
+            getSkills.user.setIsSaved(true);
             PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
             pause.setOnFinished(e ->{
                 GaussianBlur endGaus = new GaussianBlur();       
                 gaussianBlur.setRadius(0); 
                 vbox.setEffect(gaussianBlur);
-                issaved = true;
+                getSkills.user.isSaved = true;
                 window.close();
             });
             
             pause.play();
+            
+        // If the user is currently saved, prompt with two buttons for final confirmation
         }else{
             pop.text.setText("Are you sure?");
             pop.text.setStyle("-fx-text-fill: #F02D3A");
@@ -327,10 +345,8 @@ public class allSkillHome extends pageOpener implements Initializable {
             pop.warning.setVisible(true);
             window.show();
             
-            
-            
-            
-            
+            // Control what happens when the user clicks the yes button
+            // Will remove from JSON when completed
             pop.yes.setOnAction(e1 ->{
                 fadeOut(pop.pane);
                 PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
@@ -338,15 +354,16 @@ public class allSkillHome extends pageOpener implements Initializable {
                     GaussianBlur endGaus = new GaussianBlur();       
                     gaussianBlur.setRadius(0); 
                     vbox.setEffect(gaussianBlur);
-                    Image image = new Image("/assets/star.png");
+                    Image image = new Image("/assets/images/star.png");
                     saved.setImage(image);
-                    issaved = false;
+                    getSkills.user.isSaved = false;
                     window.close();
                 });
                 pause.play();
             });
             
-            
+            // Control what happens when the user clicks the no button
+            // Closes the pop-up, no changes made
             pop.no.setOnAction(e->{
                 fadeOut(pop.pane);
                 PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
@@ -354,9 +371,9 @@ public class allSkillHome extends pageOpener implements Initializable {
                     GaussianBlur endGaus = new GaussianBlur();       
                     gaussianBlur.setRadius(0); 
                     vbox.setEffect(gaussianBlur);
-                    Image image = new Image("/assets/star_filled.png");
+                    Image image = new Image("/assets/images/star_filled.png");
                     saved.setImage(image);
-                    issaved = true;
+                    getSkills.user.isSaved = true;
                     window.close();
                 });
                 pause.play();
@@ -364,14 +381,4 @@ public class allSkillHome extends pageOpener implements Initializable {
         }
     }
 
-
-
-
-    public HashMap<String, Skill> getAllSkills() {
-        return allSkills;
-    }
-
-    public void setAllSkills(HashMap<String, Skill> allSkills) {
-        this.allSkills = allSkills;
-    }
 }

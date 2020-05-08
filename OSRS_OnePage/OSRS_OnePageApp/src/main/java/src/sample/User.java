@@ -18,10 +18,12 @@ public class User extends getSkills {
     // User has a username and a HashMap of Skills, navigated through getSkills
     public String username;
     public HashMap<String, Skill> skills;
+    public Boolean isSaved = false;
 
-    public User(String username, HashMap<String, Skill> skills){
+    public User(String username, HashMap<String, Skill> skills, Boolean isSaved){
         this.username = username;
         this.skills = skills;
+        this.isSaved = isSaved;
     }
     
     
@@ -41,4 +43,14 @@ public class User extends getSkills {
     public void setSkills(HashMap<String, Skill> skills) {
         this.skills = skills;
     }
+
+    public Boolean getIsSaved() {
+        return isSaved;
+    }
+
+    public void setIsSaved(Boolean isSaved) {
+        this.isSaved = isSaved;
+    }
+    
+    
 }

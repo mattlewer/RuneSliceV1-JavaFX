@@ -1,138 +1,123 @@
 package src.sample;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 public class getSkills {
+    
+    // Static user, called from other classes to determine info
+    static public User user;
 
-    public HashMap<String, Skill> searchAndRetrieveSkills(String username) throws IOException {
+    
+    // Function for retreiving a users data, will call upon 'HiscoresLookup' and store data in Static
+    public void searchAndRetrieveSkills(String username) throws IOException {
                 HiscoresLookup hi = new HiscoresLookup();
-                return hi.boot(username);
+                user = hi.boot(username);
     }
 
-    public Skill woodcutting(HashMap<String, Skill> data){
-        Skill wc = data.get("Woodcutting");
+    
+    // Functions for retrieving specific sections of data
+    public Skill woodcutting(){
+        Skill wc = user.skills.get("Woodcutting");
         return wc;
-
     }
-    public Skill attack(HashMap<String, Skill> data){
-        Skill attack = data.get("Attack");
+    public Skill attack(){
+        Skill attack = user.skills.get("Attack");
         return attack;
-
     }
-    public Skill strength(HashMap<String, Skill> data){
-        Skill strength = data.get("Strength");
+    public Skill strength(){
+        Skill strength = user.skills.get("Strength");
         return strength;
-
     }
-    public Skill defense(HashMap<String, Skill> data){
-        Skill defense = data.get("Defence");
+    public Skill defense(){
+        Skill defense = user.skills.get("Defence");
         return defense;
-
     }
-    public Skill ranged(HashMap<String, Skill> data){
-        Skill ranged = data.get("Ranged");
+    public Skill ranged(){
+        Skill ranged = user.skills.get("Ranged");
         return ranged;
-
     }
-
-    public Skill prayer(HashMap<String, Skill> data){
-        Skill prayer = data.get("Prayer");
+    public Skill prayer(){
+        Skill prayer = user.skills.get("Prayer");
         return prayer;
-
     }
-    public Skill magic(HashMap<String, Skill> data){
-        Skill magic = data.get("Magic");
+    public Skill magic(){
+        Skill magic = user.skills.get("Magic");
         return magic;
-
     }
-
-    public Skill hitpoints(HashMap<String, Skill> data){
-        Skill hitpoints = data.get("Hitpoints");
+    public Skill hitpoints(){
+        Skill hitpoints = user.skills.get("Hitpoints");
         return hitpoints;
-
     }
-    public Skill crafting(HashMap<String, Skill> data){
-        Skill crafting = data.get("Crafting");
+    public Skill crafting(){
+        Skill crafting = user.skills.get("Crafting");
         return crafting;
-
     }
-    public Skill mining(HashMap<String, Skill> data){
-        Skill mining = data.get("Mining");
+    public Skill mining(){
+        Skill mining = user.skills.get("Mining");
         return mining;
-
     }
-    public Skill smithing(HashMap<String, Skill> data){
-        Skill smithing = data.get("Smithing");
+    public Skill smithing(){
+        Skill smithing = user.skills.get("Smithing");
         return smithing;
-
     }
-    public Skill agility(HashMap<String, Skill> data){
-        Skill agility = data.get("Agility");
+    public Skill agility(){
+        Skill agility = user.skills.get("Agility");
         return agility;
-
     }
-    public Skill herblore(HashMap<String, Skill> data){
-        Skill herblore = data.get("Herblore");
+    public Skill herblore(){
+        Skill herblore = user.skills.get("Herblore");
         return herblore;
-
     }
-    public Skill thieving(HashMap<String, Skill> data){
-        Skill thieving = data.get("Thieving");
+    public Skill thieving(){
+        Skill thieving = user.skills.get("Thieving");
         return thieving;
-
     }
-    public Skill fletching(HashMap<String, Skill> data){
-        Skill fletching = data.get("Fletching");
+    public Skill fletching(){
+        Skill fletching = user.skills.get("Fletching");
         return fletching;
-
     }
-    public Skill slayer(HashMap<String, Skill> data){
-        Skill slayer = data.get("Slayer");
+    public Skill slayer(){
+        Skill slayer = user.skills.get("Slayer");
         return slayer;
-
     }
-    public Skill farming(HashMap<String, Skill> data){
-        Skill farming = data.get("Farming");
+    public Skill farming(){
+        Skill farming = user.skills.get("Farming");
         return farming;
-
     }
-    public Skill construction(HashMap<String, Skill> data){
-        Skill construction = data.get("Construction");
+    public Skill construction(){
+        Skill construction = user.skills.get("Construction");
         return construction;
-
     }
-    public Skill hunter(HashMap<String, Skill> data){
-        Skill hunter = data.get("Hunter");
+    public Skill hunter(){
+        Skill hunter = user.skills.get("Hunter");
         return hunter;
-
     }
-    public Skill cooking(HashMap<String, Skill> data){
-        Skill cooking = data.get("Cooking");
+    public Skill cooking(){
+        Skill cooking = user.skills.get("Cooking");
         return cooking;
-
     }
-    public Skill fishing(HashMap<String, Skill> data){
-        Skill fishing = data.get("Fishing");
+    public Skill fishing(){
+        Skill fishing = user.skills.get("Fishing");
         return fishing;
-
     }
-    public Skill firemaking(HashMap<String, Skill> data){
-        Skill firemaking = data.get("Firemaking");
+    public Skill firemaking(){
+        Skill firemaking = user.skills.get("Firemaking");
         return firemaking;
-
     }
 
-    public Skill runecrafting(HashMap<String, Skill> data){
-        Skill runecrafting = data.get("Runecraft");
+    public Skill runecrafting(){
+        Skill runecrafting = user.skills.get("Runecraft");
         return runecrafting;
-
     }
 
-    public Skill overall(HashMap<String, Skill> data){
-        Skill overall = data.get("Overall");
+    public Skill overall(){
+        Skill overall = user.skills.get("Overall");
         return overall;
+    }
 
+    // Retrieve the user
+    public static User getUser() {
+        return user;
     }
 
 

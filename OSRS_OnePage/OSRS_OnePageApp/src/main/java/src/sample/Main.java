@@ -14,11 +14,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        // Starts our application and loads the FXML
         Parent root = FXMLLoader.load(getClass().getResource("/assets/searchUserHome.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/assets/stylesheethome.css").toExternalForm());
         primaryStage.setScene(scene);
       
+        // Set the size of our app the the size of the users screen
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
         primaryStage.setX(bounds.getMinX());
@@ -26,8 +28,9 @@ public class Main extends Application {
         primaryStage.setWidth(bounds.getWidth());
         primaryStage.setHeight(bounds.getHeight());
 
-      
+        // Ensure no element is focused upon loading
         root.requestFocus();
+        // Show our App
         primaryStage.show();
 
     }

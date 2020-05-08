@@ -53,7 +53,7 @@
                                  <children>
                                     <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@star_filled.png" />
+                                          <Image url="@images/star_filled.png" />
                                        </image>
                                     </ImageView>
                                     <Label prefHeight="31.0" prefWidth="82.0" style="-fx-text-fill: #F02D3A;" text="Saved Users">
@@ -67,7 +67,7 @@
                                  </children></HBox>
                               <ImageView fx:id="logo" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                                  <image>
-                                    <Image url="@clipart-food-watermelon-4-transparent.png" />
+                                    <Image url="@images/clipart-food-watermelon-4-transparent.png" />
                                  </image>
                                  <GridPane.margin>
                                     <Insets />

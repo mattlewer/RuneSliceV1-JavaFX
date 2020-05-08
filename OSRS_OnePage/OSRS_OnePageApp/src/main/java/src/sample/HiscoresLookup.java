@@ -39,15 +39,13 @@ public class HiscoresLookup {
 
     }
 
-    public HashMap<String, Skill> boot(String username) throws IOException {
+    public User boot(String username) throws IOException {
         webpage = downloadHiscoresWebpage(username);
         extractSkills();
         
-        // Will add in method to return a user rather than hashmap of skills
-        User newuser = new User(username, mySkills);
-        System.out.println(newuser.agility(mySkills).getLevel());
-       
-        return mySkills;
+        // Build our User and return
+        User newuser = new User(username, mySkills, false);
+        return newuser;
     }
 
     
