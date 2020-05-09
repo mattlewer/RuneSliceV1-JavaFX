@@ -5,8 +5,11 @@
  */
 package src.sample;
 
+import com.gluonhq.charm.down.Services;
+import com.gluonhq.charm.down.plugins.StorageService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,15 +23,24 @@ import java.util.Arrays;
  */
 public class LoadAndSave {
    
+    
     // ArrayList of saved users
     public static ArrayList<User> users = new ArrayList<>();
+    
+    // Get local storage to save file to
+    public static final File ROOT_DIR;
+    static{
+        ROOT_DIR = Services.get(StorageService.class).flatMap(StorageService::getPrivateStorage)
+                .orElseThrow(()-> new RuntimeException("Error retrieving private storage"));
+    }
     
     // Function to save a user
     public void saveUser() throws IOException{
         // Add the currently searched user to the 'users' ArrayList
         users.add(getSkills.user);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        FileWriter fileWriter = new FileWriter("users.json");
+        File usersFile = new File(ROOT_DIR, "users.json");
+        FileWriter fileWriter = new FileWriter(usersFile);
         // Write the updated ArrayList to JSON
         gson.toJson(users, fileWriter);
         fileWriter.close();
@@ -47,7 +59,8 @@ public class LoadAndSave {
         }
         System.out.println(users.size());
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        FileWriter fileWriter = new FileWriter("users.json");
+        File usersFile = new File(ROOT_DIR, "users.json");
+        FileWriter fileWriter = new FileWriter(usersFile);
         // Write the updated ArrayList to JSON
         gson.toJson(users, fileWriter);
         fileWriter.close();
@@ -57,7 +70,8 @@ public class LoadAndSave {
     public void loadUsers(){
         Gson gson = new Gson();
         // Read the users.json file
-        try (Reader reader = new FileReader("users.json")) {
+        File usersFile = new File(ROOT_DIR, "users.json");
+        try (Reader reader = new FileReader(usersFile)) {
             // Convert JSON File to Java Object
             User[] jsonlist = gson.fromJson(reader, User[].class);
             // Convert array to ArrayList
