@@ -182,6 +182,7 @@ public class pageOpener {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/mySavedUsers.fxml"));
         Parent root = (Parent)loader.load();
         mySavedUsers sec = loader.getController();
+        sec.myFunction();
         fade(sec.gridpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

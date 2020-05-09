@@ -6,10 +6,6 @@
 package src.sample;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.animation.Animation;
-import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.PauseTransition;
 import javafx.animation.RotateTransition;
@@ -28,7 +24,6 @@ import javafx.util.Duration;
  */
 public class mySavedUsers extends pageOpener {
     
-    @FXML private Button search;
     @FXML public ScrollPane scrollPane;
     @FXML public GridPane gridpane;
     @FXML public ImageView icon;
@@ -56,6 +51,27 @@ public class mySavedUsers extends pageOpener {
     @FXML private Button searchNine;
     
     public String name;
+    
+    public void myFunction(){
+        Button[] buttons = new Button[]{searchOne, searchTwo, searchThree, searchFour, searchFive, 
+            searchSix, searchSeven, searchEight, searchNine, searchTen};
+        
+        Label[] labels = new Label[]{userOne, userTwo, userThree, userFour, userFive,
+        userSix, userSeven, userEight, userNine, userTen};
+        
+        if(LoadAndSave.users.size() < 1){
+            loading.setText("You have no saved users!");
+            loading.setVisible(true);
+        }
+        int i = 0;
+        while(i < LoadAndSave.users.size()){
+            buttons[i].setVisible(true);
+            labels[i].setVisible(true);
+            labels[i].setText(LoadAndSave.users.get(i).username);
+            i++;
+        }
+        
+    }
     
     
     public void getUserToSearch(ActionEvent event) throws IOException{
@@ -102,7 +118,6 @@ public class mySavedUsers extends pageOpener {
             pause.play();
         });
         rt.play();
-        
         
     }
     

@@ -1,6 +1,7 @@
 package src.sample;
 
 import java.io.IOException;
+import static src.sample.LoadAndSave.users;
 
 public class getSkills {
     
@@ -12,6 +13,13 @@ public class getSkills {
     public void searchAndRetrieveSkills(String username) throws IOException {
                 HiscoresLookup hi = new HiscoresLookup();
                 user = hi.boot(username);
+                
+                // Checks if the user is currently stored, if it is, set the user as saved
+                for(User n : users){
+                    if(user.username.equals(n.username)){
+                        user.setIsSaved(true);
+                    }
+                }
     }
 
     

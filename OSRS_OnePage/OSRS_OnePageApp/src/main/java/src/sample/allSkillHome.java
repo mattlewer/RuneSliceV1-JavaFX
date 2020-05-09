@@ -1,8 +1,6 @@
     package src.sample;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import java.io.FileWriter;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -10,7 +8,6 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -299,6 +296,7 @@ public class allSkillHome extends pageOpener implements Initializable {
             Image image = new Image("/assets/images/star_filled.png");
             saved.setImage(image);
             
+            
         }else{
             openPopupNewSave(event);
             
@@ -308,6 +306,7 @@ public class allSkillHome extends pageOpener implements Initializable {
     // New pop-up window when saving / un-saving a user
     public void openPopupNewSave(MouseEvent event) throws IOException{
 // SETTING UP PAGE //
+        LoadAndSave lnS = new LoadAndSave();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/popUpSaveUser.fxml"));
         Parent root = (Parent)loader.load();
         // Blur the backgrund to bring focus to pop-up
@@ -327,7 +326,6 @@ public class allSkillHome extends pageOpener implements Initializable {
 // OPTIONS //
         // If the User is not currently saved, display the 'success' version of the pop-up and fade out
         // Will add to JSON when completed
-         LoadAndSave lnS = new LoadAndSave();
         if(getSkills.user.isSaved == false){
             fadeOut(pop.pane);
             window.show();

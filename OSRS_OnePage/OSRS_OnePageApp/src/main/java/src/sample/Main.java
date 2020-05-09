@@ -14,6 +14,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        // Load our saved users from JSON if any exist  
+        LoadAndSave lns = new LoadAndSave();
+        lns.loadUsers();
+        
         // Starts our application and loads the FXML
         Parent root = FXMLLoader.load(getClass().getResource("/assets/searchUserHome.fxml"));
         Scene scene = new Scene(root);

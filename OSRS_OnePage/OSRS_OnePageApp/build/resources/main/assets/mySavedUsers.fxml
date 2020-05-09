@@ -47,8 +47,11 @@
                                        <children>
                                           <ImageView fx:id="icon" fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@star_filled.png" />
+                                                <Image url="@images/star_filled.png" />
                                              </image>
+                                             <HBox.margin>
+                                                <Insets bottom="3.0" />
+                                             </HBox.margin>
                                           </ImageView>
                                           <Label prefHeight="35.0" prefWidth="140.0" style="-fx-text-fill: #F02D3A;" text="Saved Users">
                                              <font>
@@ -96,12 +99,12 @@
                                                       <RowConstraints maxHeight="349.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
                                                   </rowConstraints>
                                                    <children>
-                                                      <Label id="user" fx:id="userOne" text="LEWER" />
-                                                      <Label id="user" fx:id="userTwo" text="Big Flaps" GridPane.rowIndex="1" />
-                                                      <Label id="user" fx:id="userThree" text="Nerbes" GridPane.rowIndex="2" />
-                                                      <Label id="user" fx:id="userFour" text="Gsus_Piece" GridPane.rowIndex="3" />
-                                                      <Label id="user" fx:id="userFive" text="Wolgast1" GridPane.rowIndex="4" />
-                                                      <Button fx:id="searchOne" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" GridPane.columnIndex="1">
+                                                      <Label id="user" fx:id="userOne" text="LEWER" visible="false" />
+                                                      <Label id="user" fx:id="userTwo" text="Big Flaps" visible="false" GridPane.rowIndex="1" />
+                                                      <Label id="user" fx:id="userThree" text="Nerbes" visible="false" GridPane.rowIndex="2" />
+                                                      <Label id="user" fx:id="userFour" text="Gsus_Piece" visible="false" GridPane.rowIndex="3" />
+                                                      <Label id="user" fx:id="userFive" text="Wolgast1" visible="false" GridPane.rowIndex="4" />
+                                                      <Button fx:id="searchOne" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -109,7 +112,7 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <Button fx:id="searchTwo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                      <Button fx:id="searchTwo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -117,7 +120,7 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <Button fx:id="searchThree" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                      <Button fx:id="searchThree" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -125,7 +128,7 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <Button fx:id="searchFour" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                      <Button fx:id="searchFour" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -133,7 +136,7 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <Button fx:id="searchFive" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                      <Button fx:id="searchFive" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -141,7 +144,7 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <Button fx:id="searchTen" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="Search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                                      <Button fx:id="searchTen" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="Search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -149,12 +152,12 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <Label id="user" fx:id="userSix" text="Label" GridPane.rowIndex="5" />
-                                                      <Label id="user" fx:id="userSeven" text="Label" GridPane.rowIndex="6" />
-                                                      <Label id="user" fx:id="userEight" text="Label" GridPane.rowIndex="7" />
-                                                      <Label id="user" fx:id="userNine" text="Label" GridPane.rowIndex="8" />
-                                                      <Label id="user" fx:id="userTen" text="Label" GridPane.rowIndex="9" />
-                                                      <Button fx:id="searchSix" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                      <Label id="user" fx:id="userSix" text="Label" visible="false" GridPane.rowIndex="5" />
+                                                      <Label id="user" fx:id="userSeven" text="Label" visible="false" GridPane.rowIndex="6" />
+                                                      <Label id="user" fx:id="userEight" text="Label" visible="false" GridPane.rowIndex="7" />
+                                                      <Label id="user" fx:id="userNine" text="Label" visible="false" GridPane.rowIndex="8" />
+                                                      <Label id="user" fx:id="userTen" text="Label" visible="false" GridPane.rowIndex="9" />
+                                                      <Button fx:id="searchSix" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -162,7 +165,7 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <Button fx:id="searchSeven" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                      <Button fx:id="searchSeven" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -170,7 +173,7 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <Button fx:id="searchEight" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                                      <Button fx:id="searchEight" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -178,7 +181,7 @@
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <Button fx:id="searchNine" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                      <Button fx:id="searchNine" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
@@ -200,10 +203,10 @@
                               </StackPane>
                               <ImageView id="search" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <image>
-                                    <Image url="@group.png" />
+                                    <Image url="@images/group.png" />
                                  </image>
                               </ImageView>
-                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="251.0" style="-fx-text-fill: white;" text="compare saved users" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="251.0" style="-fx-text-fill: #F02D3A;" text="compare saved users" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>
