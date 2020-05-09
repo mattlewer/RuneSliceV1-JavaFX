@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.SplashScreenController">
+   <children>
+      <StackPane fx:id="stack" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox fx:id="hbox" alignment="CENTER" prefWidth="335.0" style="-fx-background-color: #273043;">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="600.0" prefWidth="389.0" style="-fx-background-color: #273043;">
+                     <children>
+                        <GridPane fx:id="gridpane" alignment="CENTER" maxHeight="600.0" maxWidth="335.0" prefHeight="600.0" prefWidth="345.0" VBox.vgrow="ALWAYS">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="313.6666259765625" minWidth="10.0" prefWidth="313.6666259765625" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="249.33334350585938" minHeight="0.0" prefHeight="88.33332824707031" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="467.8888854980469" minHeight="0.0" prefHeight="197.33334350585938" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="417.6666564941406" minHeight="0.0" prefHeight="69.66665649414062" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="255.0" minHeight="0.0" prefHeight="235.33334350585938" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="255.3333282470703" minHeight="0.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <VBox prefHeight="47.0" prefWidth="247.0" />
+                              <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@images/clipart-food-watermelon-4-transparent.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="progress" alignment="CENTER" prefHeight="21.0" prefWidth="270.0" style="-fx-text-fill: #F02D3A;" text="Loading saved users..." GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

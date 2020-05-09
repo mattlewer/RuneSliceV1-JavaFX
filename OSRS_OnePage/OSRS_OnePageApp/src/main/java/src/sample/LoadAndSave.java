@@ -83,5 +83,31 @@ public class LoadAndSave {
         }
     }
     
+    
+    // Function to update stats of current saved users
+    public void updateUsers() throws IOException{
+        HiscoresLookup hsl = new HiscoresLookup();
+        for(User user : users){
+            user = hsl.boot(user.username);
+        }
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        File usersFile = new File(ROOT_DIR, "users.json");
+        FileWriter fileWriter = new FileWriter(usersFile);
+        // Write the updated ArrayList to JSON
+        gson.toJson(users, fileWriter);
+        fileWriter.close();
+    }
+
+    public static ArrayList<User> getUsers() {
+        return users;
+    }
+
+    public static void setUsers(ArrayList<User> users) {
+        LoadAndSave.users = users;
+    }
+    
+    
+    
+    
 
 }
