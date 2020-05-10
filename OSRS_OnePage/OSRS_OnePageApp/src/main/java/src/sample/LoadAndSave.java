@@ -57,7 +57,6 @@ public class LoadAndSave {
             }
             i++;
         }
-        System.out.println(users.size());
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         File usersFile = new File(ROOT_DIR, "users.json");
         FileWriter fileWriter = new FileWriter(usersFile);
@@ -88,7 +87,7 @@ public class LoadAndSave {
     public void updateUsers() throws IOException{
         HiscoresLookup hsl = new HiscoresLookup();
         for(User user : users){
-            user = hsl.boot(user.username);
+            user = hsl.boot(user.username);     
         }
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         File usersFile = new File(ROOT_DIR, "users.json");
@@ -97,6 +96,9 @@ public class LoadAndSave {
         gson.toJson(users, fileWriter);
         fileWriter.close();
     }
+    
+    
+    
 
     public static ArrayList<User> getUsers() {
         return users;

@@ -19,6 +19,7 @@ public class HiscoresLookup {
     private static final String FAKE_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36";
     private static final String SKILL_STATISTIC_MATCH;
 
+    
 
     static {
 
@@ -39,10 +40,11 @@ public class HiscoresLookup {
 
     }
 
+   
+    
     public User boot(String username) throws IOException {
         webpage = downloadHiscoresWebpage(username);
         extractSkills();
-        
         // Build our User and return
         User newuser = new User(username, mySkills, false);
         return newuser;
@@ -75,7 +77,7 @@ public class HiscoresLookup {
         return webpage.toString();
     }
 
-    private static void extractSkills() {
+    private void extractSkills() {
         ArrayList<String> skills = new ArrayList<>();
 
         skills.add("Overall");
@@ -105,17 +107,18 @@ public class HiscoresLookup {
 
         for(String i : skills){
             extractSkill(i);
+            
         }
+       
 
     }
 
 
 
+    public HashMap<String, Skill> mySkills = new HashMap<>();
 
-    public static HashMap<String, Skill> mySkills = new HashMap<>();
 
-
-    private static SkillStatistic extractSkill(String name) throws NumberFormatException {
+    private  HashMap<String, Skill> extractSkill(String name) throws NumberFormatException {
 
         SkillStatistic statistic = null;
 
@@ -142,10 +145,9 @@ public class HiscoresLookup {
 
             Skill skill = new Skill(myRank, myLevel, xp);
             mySkills.put(name, skill);
-
         }
 
-        return statistic;
+        return mySkills;
     }
 
 

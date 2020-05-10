@@ -26,8 +26,23 @@ public class User extends getSkills {
         this.isSaved = isSaved;
     }
     
+//    // Compare users based on Overall Stats
+//    public static Comparator<User> overallComp = new Comparator<User>() {
+//      
+//
+//	public int compare(User s1, User s2) {
+//            
+//	   int exp1 = s1.getSkills().get("Woodcutting").getLevel();
+//	   int exp2 = s2.getSkills().get("Woodcutting").getLevel();
+//	   //ascending order
+//           
+//	   //return exp1 - exp2;
+//           
+//           return exp2 - exp1;
+//    }};
+// 
     
-    // SImple getters and setters for the username and skills
+    // Simple getters and setters for the username and skills
     public String getUsername() {
         return username;
     }

@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 
@@ -123,6 +124,11 @@ public class mySavedUsers extends pageOpener {
     
     public void openUser(ActionEvent event, String name) throws IOException{
         openAllSkills(event, name);
+    }
+    
+    
+    public void openCompareUsers(MouseEvent event) throws IOException{
+        compareUsers(event);
     }
     
     

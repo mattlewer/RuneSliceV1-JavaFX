@@ -38,7 +38,7 @@
                                     <Image url="@images/clipart-food-watermelon-4-transparent.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="progress" alignment="CENTER" prefHeight="21.0" prefWidth="270.0" style="-fx-text-fill: #F02D3A;" text="Loading saved users..." GridPane.rowIndex="2">
+                              <Label fx:id="progress" alignment="CENTER" prefHeight="70.0" prefWidth="270.0" style="-fx-text-fill: #F02D3A;" text="Loading saved users..." GridPane.rowIndex="2">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

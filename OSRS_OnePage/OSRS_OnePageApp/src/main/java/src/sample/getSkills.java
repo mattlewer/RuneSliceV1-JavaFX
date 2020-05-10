@@ -13,7 +13,6 @@ public class getSkills {
     public void searchAndRetrieveSkills(String username) throws IOException {
                 HiscoresLookup hi = new HiscoresLookup();
                 user = hi.boot(username);
-                
                 // Checks if the user is currently stored, if it is, set the user as saved
                 for(User n : users){
                     if(user.username.equals(n.username)){
@@ -21,6 +20,7 @@ public class getSkills {
                     }
                 }
     }
+   
 
     
     // Functions for retrieving specific sections of data

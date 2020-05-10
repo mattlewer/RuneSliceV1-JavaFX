@@ -201,7 +201,7 @@
                                     </ScrollPane>
                                  </children>
                               </StackPane>
-                              <ImageView id="search" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <ImageView id="search" fitHeight="46.0" fitWidth="46.0" onMouseClicked="#openCompareUsers" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <image>
                                     <Image url="@images/group.png" />
                                  </image>

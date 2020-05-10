@@ -1,0 +1,84 @@
+
+
+.scroll-pane{
+    -fx-background-color: #273043;
+    -fx-effect: innershadow( gaussian, #273043, 30, 0, 0, -30 );
+    -fx-background-insets: 0, 1;
+    -fx-padding: 1;
+    -fx-vbar-policy:always;
+}
+
+.scroll-pane:focused{
+    -fx-background-color:  #273043;
+    -fx-background-insets: 0, 1;
+    -fx-padding: 1;
+    
+}
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-effect: innershadow( gaussian, white, 30, 0, 0, -30 );
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical *.increment-arrow, 
+.scroll-bar:vertical *.decrement-arrow{
+    -fx-background-color:transparent;
+}
+
+.scroll-bar:vertical .thumb {
+        -fx-background-color:  transparent;
+	-fx-background-insets: 0, 0, 0;
+	-fx-background-radius: 0em;
+}
+
+
+
+
+.combo-box .arrow{
+    -fx-background-color:#F02D3A;
+}
+.combo-box .arrow-button{
+    -fx-background-color: #273043;
+    -fx-border-style:none;
+}
+.combo-box .list-cell{
+    -fx-background-color:#273043;
+    -fx-text-fill: #F02D3A;
+     -fx-alignment: center;
+     -fx-padding: 3 0 2 7;
+}
+
+
+.combo-box-popup .list-view 
+{
+    -fx-background-color: #273043, #273043;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+    
+}  
+
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: #F02D3A;
+    -fx-text-fill: #273043;
+}
+
+.combo-box-base  
+{
+    -fx-background-color: #F02D3A, #F02D3A, #F02D3A, #F02D3A;
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-padding: 0;
+}
+
+
+

@@ -81,10 +81,10 @@ public class pageOpener {
                 sPC.myFunction(gs.crafting(), "Crafting", "/assets/images/Crafting_icon.png");
                 break;
             case "defence":
-                sPC.myFunction(gs.defense(), "Defence", "/images/assets/Defence_icon.png");
+                sPC.myFunction(gs.defense(), "Defence", "/assets/images/Defence_icon.png");
                 break;
             case "farming":
-                sPC.myFunction(gs.farming(), "Farming", "/images/assets/Farming_icon.png");
+                sPC.myFunction(gs.farming(), "Farming", "/assets/images/Farming_icon.png");
                 break;
             case "firemaking":
                 sPC.myFunction(gs.firemaking(), "Firemaking", "/assets/images/Firemaking_icon.png");
@@ -187,6 +187,21 @@ public class pageOpener {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/assets/mySavedUsersStyle.css").toExternalForm());
+        window.setScene(scene);
+        window.hide();
+        window.show();
+    }
+    
+    // Open page to compare users
+    public void compareUsers(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/compareUsers.fxml"));
+        Parent root = (Parent)loader.load();
+        CompareUsersController sec = loader.getController();
+        sec.myFunction();
+        fade(sec.hbox);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/assets/compareUserStyle.css").toExternalForm());
         window.setScene(scene);
         window.hide();
         window.show();

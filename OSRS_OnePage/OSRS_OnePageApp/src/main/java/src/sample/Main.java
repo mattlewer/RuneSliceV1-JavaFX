@@ -69,8 +69,9 @@ public class Main extends Application {
             try {
                 // Update saved users
                 lns.updateUsers();
-            } catch (IOException ex) {
+            } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                 splash.progress.setText("ERROR: No Connection Found");
             }
             // Close splash screen and show Homepage
             ft.play();
