@@ -95,7 +95,7 @@
                                                       <Label id="user" fx:id="userEight" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" />
                                                       <Label id="user" fx:id="userNine" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" />
                                                       <Label id="user" fx:id="userTen" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                                                      <ImageView fx:id="firstPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                                      <ImageView fx:id="firstPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1">
                                                          <image>
                                                             <Image url="@images/crown_gold.png" />
                                                          </image>
