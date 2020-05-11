@@ -117,7 +117,7 @@ public class CompareUsersController extends pageOpener {
         // Order saved users by Overall level
         Collections.sort(reorderedList, new Comparator<User>() {
             @Override public int compare(User p1, User p2) {
-                return (int) (p2.skills.get("Overall").getExperience() - p1.skills.get("Overall").getExperience()); // Descending
+                return (int) (p2.skills.get("Overall").getLevel() - p1.skills.get("Overall").getLevel()); // Descending
             }
         });     
     
@@ -145,12 +145,20 @@ public class CompareUsersController extends pageOpener {
         String compSkill = combo.getValue().toString();
         
          // Order saved users by selected skill
-        Collections.sort(reorderedList, new Comparator<User>() {
-            @Override public int compare(User p1, User p2) {
-                return (int) (p2.skills.get(compSkill).getExperience() - p1.skills.get(compSkill).getExperience()); // Descending
-            }
-        });   
-        
+         
+         if(compSkill != "Overall"){
+             Collections.sort(reorderedList, new Comparator<User>() {
+                @Override public int compare(User p1, User p2) {
+                    return (int) (p2.skills.get(compSkill).getExperience() - p1.skills.get(compSkill).getExperience()); // Descending
+                }
+            });   
+         }else{
+             Collections.sort(reorderedList, new Comparator<User>() {
+                @Override public int compare(User p1, User p2) {
+                    return (int) (p2.skills.get(compSkill).getLevel() - p1.skills.get(compSkill).getLevel()); // Descending
+                }
+            });  
+         }
          
         // Set saved users to fields in order  
         int i = 0;
