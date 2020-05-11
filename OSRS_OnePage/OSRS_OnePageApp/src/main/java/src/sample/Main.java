@@ -2,6 +2,7 @@ package src.sample;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,6 +26,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        // Get rid of API restriction
+        doHorribleHack();
         // Load our saved users from JSON if any exist  
         LoadAndSave lns = new LoadAndSave();
         lns.loadUsers();
@@ -118,6 +121,36 @@ public class Main extends Application {
         root.requestFocus();
         window.show();
     }
+    
+    public static void doHorribleHack() {
+    try {
+        try {
+            Class<?> testCls = Class.forName("dalvik.system.VMRuntime");
+            Method method = testCls.getDeclaredMethod("setHiddenApiExemptions", String[].class);
+        } catch (Exception ex) {
+            // This will fail
+            ex.printStackTrace();
+        }
+        Method forName = Class.class.getDeclaredMethod("forName", String.class);
+        Method getDeclaredMethod = Class.class.getDeclaredMethod("getDeclaredMethod", String.class, Class[].class);
+        Class<?> vmRuntimeClass = (Class<?>) forName.invoke(null, "dalvik.system.VMRuntime");
+        Method getRuntimeMethod = (Method) getDeclaredMethod.invoke(vmRuntimeClass, "getRuntime", null);
+        Method setHiddenApiExemptions = (Method) getDeclaredMethod.invoke(vmRuntimeClass, "setHiddenApiExemptions", new Class[]{String[].class});
+        if (getRuntimeMethod != null && setHiddenApiExemptions != null) {
+            Object vmRuntime = getRuntimeMethod.invoke(null);
+            setHiddenApiExemptions.invoke(vmRuntime, (Object) new String[]{"L"});
+        }
+        try {
+            Class<?> testCls = Class.forName("dalvik.system.VMRuntime");
+            Method method = testCls.getDeclaredMethod("setHiddenApiExemptions", String[].class);
+        } catch (Exception ex) {
+            // This will not
+            ex.printStackTrace();
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
+}
 
 
     public static void main(String[] args) {

@@ -400,7 +400,7 @@ public class allSkillHome extends pageOpener implements Initializable {
             Image image = new Image("/assets/images/star.png");
             saved.setImage(image);
             pop.text.setText("Saved List Full!");
-            pop.text.setStyle("-fx-text-fill: #F02D3A; -fx-font-size:14px;");
+            pop.text.setStyle("-fx-text-fill: #F02D3A;");
             window.show();
             PauseTransition pause = new PauseTransition(Duration.seconds(3));
             pause.setOnFinished(e ->{
