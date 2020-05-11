@@ -26,14 +26,11 @@ public class Main extends Application {
         LoadAndSave lns = new LoadAndSave();
         lns.loadUsers();
         
-        // Starts our application and loads the FXML
-        
-       
+        // Loads the FXML and gets the controller
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/splashScreen.fxml"));
         Parent root = (Parent)loader.load();
         SplashScreenController splash = loader.getController();
         Scene scene = new Scene(root);
-        
         primaryStage.setScene(scene);
         
         // Set the size of our app the the size of the users screen
@@ -63,24 +60,26 @@ public class Main extends Application {
             }
         });
         
-        
+   
         // On pause finish...
         pt.setOnFinished(e->{
             try {
                 // Update saved users
                 lns.updateUsers();
+                ft.play();
             } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                 splash.progress.setText("ERROR: No Connection Found");
+                 splash.progress.setText("ERROR: No Connection Found\n Saved users will not be updated!");
+                 PauseTransition ps = new PauseTransition(millis(3000));
+                 ps.setOnFinished(Ee->{
+                     ft.play();
+                 });
+                 ps.play();
+                 
             }
-            // Close splash screen and show Homepage
-            ft.play();
+            
         });
         pt.play();
-     
-        
-        
-
     }
     
     

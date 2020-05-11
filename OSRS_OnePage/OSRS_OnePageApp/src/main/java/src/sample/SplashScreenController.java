@@ -20,6 +20,5 @@ public class SplashScreenController {
     @FXML public StackPane stackpane;
     @FXML public ImageView logo;
     @FXML public HBox hbox;
-    @FXML public Label progress;
-    
+    @FXML public Label progress;    
 }

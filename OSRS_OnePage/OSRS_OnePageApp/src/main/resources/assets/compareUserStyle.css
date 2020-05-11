@@ -1,5 +1,11 @@
-
-
+#xp{
+    -fx-text-fill: #F02D3A;
+    -fx-font-size:13px;
+}
+#user{
+    -fx-text-fill: white;
+    -fx-font-size:13px;   
+}
 .scroll-pane{
     -fx-background-color: #273043;
     -fx-effect: innershadow( gaussian, #273043, 30, 0, 0, -30 );
@@ -50,13 +56,18 @@
     -fx-background-color: #273043;
     -fx-border-style:none;
 }
-.combo-box .list-cell{
+.combo-box .list-cell:even{
     -fx-background-color:#273043;
     -fx-text-fill: #F02D3A;
      -fx-alignment: center;
-     -fx-padding: 3 0 2 7;
+     -fx-padding: 10 0 10 7;
 }
-
+.combo-box .list-cell:odd{
+    -fx-background-color:#273247;
+    -fx-text-fill: #F02D3A;
+     -fx-alignment: center;
+     -fx-padding: 10 0 10 7;
+}
 
 .combo-box-popup .list-view 
 {

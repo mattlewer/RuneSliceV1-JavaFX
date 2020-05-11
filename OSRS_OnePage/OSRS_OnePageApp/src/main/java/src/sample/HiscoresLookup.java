@@ -107,7 +107,6 @@ public class HiscoresLookup {
 
         for(String i : skills){
             extractSkill(i);
-            
         }
        
 

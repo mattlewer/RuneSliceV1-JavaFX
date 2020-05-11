@@ -81,13 +81,14 @@ public class LoadAndSave {
             e.printStackTrace();
         }
     }
+
     
     
     // Function to update stats of current saved users
     public void updateUsers() throws IOException{
         HiscoresLookup hsl = new HiscoresLookup();
         for(User user : users){
-            user = hsl.boot(user.username);     
+            user = hsl.boot(user.username);
         }
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         File usersFile = new File(ROOT_DIR, "users.json");
@@ -96,6 +97,7 @@ public class LoadAndSave {
         gson.toJson(users, fileWriter);
         fileWriter.close();
     }
+
     
     
     

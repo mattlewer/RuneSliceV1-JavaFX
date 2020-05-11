@@ -58,8 +58,8 @@
                                     <Font size="13.0" />
                                  </font>
                               </Button>
-                              <ComboBox id="comboBox" fx:id="combo" focusTraversable="false" onAction="#chosenSkill" prefHeight="26.0" prefWidth="183.0" promptText="Select skill..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <StackPane alignment="TOP_CENTER" prefHeight="356.0" prefWidth="333.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <ComboBox id="comboBox" fx:id="combo" cacheShape="false" centerShape="false" focusTraversable="false" onAction="#chosenSkill" onHiding="#opener" prefHeight="26.0" prefWidth="183.0" promptText="Select skill..." scaleShape="false" visibleRowCount="15" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <StackPane fx:id="stackpane" alignment="TOP_CENTER" prefHeight="356.0" prefWidth="333.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <children>
                                     <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" prefHeight="360.0" prefWidth="293.0" style="-fx-background: #273043; -fx-border-color: #273043;" vbarPolicy="NEVER">
                                        <content>
@@ -84,7 +84,7 @@
                                                       <RowConstraints maxHeight="349.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
                                                    </rowConstraints>
                                                    <children>
-                                                      <Label id="user" fx:id="userOne" text="LEWER" GridPane.columnIndex="1" />
+                                                      <Label id="user" fx:id="userOne" text="LEWER" visible="false" GridPane.columnIndex="1" />
                                                       <Label id="user" fx:id="userTwo" text="Big Flaps" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                       <Label id="user" fx:id="userThree" text="Nerbes" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                                       <Label id="user" fx:id="userFour" text="Gsus_Piece" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -94,31 +94,31 @@
                                                       <Label id="user" fx:id="userEight" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                                       <Label id="user" fx:id="userNine" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                                                       <Label id="user" fx:id="userTen" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                                                      <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fx:id="firstPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                                          <image>
                                                             <Image url="@images/crown_gold.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                                                      <ImageView fx:id="secondPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="1">
                                                          <image>
                                                             <Image url="@images/crown_silver.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                                                      <ImageView fx:id="thirdPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="2">
                                                          <image>
                                                             <Image url="@images/crown_bronze.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <Label text="Label" GridPane.columnIndex="2" fx:id="xpOne" />
-                                                      <Label text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" fx:id="xpTwo" />
-                                                      <Label text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="xpThree" />
-                                                      <Label text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="xpFour" />
-                                                      <Label text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" fx:id="xpFive" />
-                                                      <Label text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" fx:id="xpSix" />
-                                                      <Label text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" fx:id="xpSeven" />
-                                                      <Label text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" fx:id="xpEight" />
-                                                      <Label text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" fx:id="xpNine" />
-                                                      <Label text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="9" fx:id="xpTen" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" fx:id="xpOne" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" fx:id="xpTwo" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="xpThree" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="xpFour" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" fx:id="xpFive" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" fx:id="xpSix" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" fx:id="xpSeven" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" fx:id="xpEight" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" fx:id="xpNine" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="9" fx:id="xpTen" />
                                                    </children>
                                                 </GridPane>
                                              </children>
