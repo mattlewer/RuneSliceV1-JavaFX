@@ -1,3 +1,8 @@
+#rank{
+    -fx-text-fill: #95C623;
+    -fx-font-size:11px;
+}
+
 #xp{
     -fx-text-fill: #F02D3A;
     -fx-font-size:13px;

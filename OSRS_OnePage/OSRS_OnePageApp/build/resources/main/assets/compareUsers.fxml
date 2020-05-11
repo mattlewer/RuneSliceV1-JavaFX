@@ -67,9 +67,10 @@
                                              <children>
                                                 <GridPane layoutX="-2.0" layoutY="2.0" prefHeight="663.0" prefWidth="325.0">
                                                    <columnConstraints>
-                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="78.0" />
-                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="110.0" />
-                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="166.0" minWidth="0.0" prefWidth="87.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="41.333343505859375" />
+                                                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="46.3333740234375" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="140.3333740234375" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="166.0" minWidth="0.0" prefWidth="97.6666259765625" />
                                                    </columnConstraints>
                                                    <rowConstraints>
                                                       <RowConstraints maxHeight="54.0" minHeight="0.0" prefHeight="54.0" vgrow="SOMETIMES" />
@@ -84,76 +85,86 @@
                                                       <RowConstraints maxHeight="349.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
                                                    </rowConstraints>
                                                    <children>
-                                                      <Label id="user" fx:id="userOne" text="LEWER" visible="false" GridPane.columnIndex="1" />
-                                                      <Label id="user" fx:id="userTwo" text="Big Flaps" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                      <Label id="user" fx:id="userThree" text="Nerbes" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                      <Label id="user" fx:id="userFour" text="Gsus_Piece" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                                      <Label id="user" fx:id="userFive" text="Wolgast1" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                                      <Label id="user" fx:id="userSix" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                                      <Label id="user" fx:id="userSeven" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                                      <Label id="user" fx:id="userEight" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                                      <Label id="user" fx:id="userNine" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                                      <Label id="user" fx:id="userTen" text="Label" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                                                      <ImageView fx:id="firstPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                      <Label id="user" fx:id="userOne" text="LEWER" visible="false" GridPane.columnIndex="2" />
+                                                      <Label id="user" fx:id="userTwo" text="Big Flaps" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                      <Label id="user" fx:id="userThree" text="Nerbes" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                      <Label id="user" fx:id="userFour" text="Gsus_Piece" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                      <Label id="user" fx:id="userFive" text="Wolgast1" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                      <Label id="user" fx:id="userSix" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                      <Label id="user" fx:id="userSeven" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                      <Label id="user" fx:id="userEight" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                                      <Label id="user" fx:id="userNine" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                                      <Label id="user" fx:id="userTen" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                                      <ImageView fx:id="firstPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                                                          <image>
                                                             <Image url="@images/crown_gold.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fx:id="secondPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="1">
+                                                      <ImageView fx:id="secondPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                          <image>
                                                             <Image url="@images/crown_silver.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fx:id="thirdPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="2">
+                                                      <ImageView fx:id="thirdPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                          <image>
                                                             <Image url="@images/crown_bronze.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" fx:id="xpOne" />
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" fx:id="xpTwo" />
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="xpThree" />
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="xpFour" />
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" fx:id="xpFive" />
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" fx:id="xpSix" />
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" fx:id="xpSeven" />
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" fx:id="xpEight" />
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" fx:id="xpNine" />
-                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="9" fx:id="xpTen" />
-                                                      <ImageView fx:id="fourthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="3">
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" fx:id="xpOne" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="1" fx:id="xpTwo" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="2" fx:id="xpThree" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="xpFour" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4" fx:id="xpFive" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="5" fx:id="xpSix" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="6" fx:id="xpSeven" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="7" fx:id="xpEight" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="8" fx:id="xpNine" />
+                                                      <Label id="xp" text="Label" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="9" fx:id="xpTen" />
+                                                      <ImageView fx:id="fourthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                          <image>
                                                             <Image url="@images/Gnome_child.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fx:id="fifthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="4">
+                                                      <ImageView fx:id="fifthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                          <image>
                                                             <Image url="@images/Gnome_child.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fx:id="sixthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="5">
+                                                      <ImageView fx:id="sixthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                          <image>
                                                             <Image url="@images/Gnome_child.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fx:id="seventhPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="6">
+                                                      <ImageView fx:id="seventhPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                                          <image>
                                                             <Image url="@images/Gnome_child.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fx:id="eighthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="7">
+                                                      <ImageView fx:id="eighthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                                          <image>
                                                             <Image url="@images/Gnome_child.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fx:id="ninthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="8">
+                                                      <ImageView fx:id="ninthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                                          <image>
                                                             <Image url="@images/Gnome_child.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <ImageView fx:id="tenthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="9">
+                                                      <ImageView fx:id="tenthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                                          <image>
                                                             <Image url="@images/Gnome_child.png" />
                                                          </image>
                                                       </ImageView>
+                                                      <Label id="rank" fx:id="rankOne" text="#1" visible="false" />
+                                                      <Label id="rank" fx:id="rankTwo" text="#2" visible="false" GridPane.rowIndex="1" />
+                                                      <Label id="rank" fx:id="rankThree" text="#3" visible="false" GridPane.rowIndex="2" />
+                                                      <Label id="rank" fx:id="rankFour" text="#4" visible="false" GridPane.rowIndex="3" />
+                                                      <Label id="rank" fx:id="rankFive" text="#5" visible="false" GridPane.rowIndex="4" />
+                                                      <Label id="rank" fx:id="rankSix" text="#6" visible="false" GridPane.rowIndex="5" />
+                                                      <Label id="rank" fx:id="rankSeven" text="#7" visible="false" GridPane.rowIndex="6" />
+                                                      <Label id="rank" fx:id="rankEight" text="#8" visible="false" GridPane.rowIndex="7" />
+                                                      <Label id="rank" fx:id="rankNine" text="#9" visible="false" GridPane.rowIndex="8" />
+                                                      <Label id="rank" fx:id="rankTen" text="#10" visible="false" GridPane.rowIndex="9" />
                                                    </children>
                                                 </GridPane>
                                              </children>

@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import javafx.animation.FadeTransition;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -33,6 +31,18 @@ public class CompareUsersController extends pageOpener {
     @FXML public HBox hbox;
     @FXML public ComboBox combo;
     @FXML public StackPane stackpane;
+    
+    // Ranks Labels
+    @FXML private Label rankOne;
+    @FXML private Label rankTwo;
+    @FXML private Label rankThree;
+    @FXML private Label rankFour;
+    @FXML private Label rankFive;
+    @FXML private Label rankSix;
+    @FXML private Label rankSeven;
+    @FXML private Label rankEight;
+    @FXML private Label rankNine;
+    @FXML private Label rankTen;
     
     //User labels
     @FXML private Label userOne;
@@ -70,6 +80,7 @@ public class CompareUsersController extends pageOpener {
     @FXML private ImageView ninthPlace;
     @FXML private ImageView tenthPlace;
       
+    private Label[] rankLabelss;
     private Label[] userLabelss;
     private Label[] xpLabelss;
     private ImageView[] images;
@@ -92,9 +103,12 @@ public class CompareUsersController extends pageOpener {
         combo.setValue("Overall");
         
         // Create array of buttons, as create on page load will set without null pointer
+        Label rankLabels[]={rankOne, rankTwo, rankThree, rankFour, rankFive, rankSix, rankSeven, rankEight, rankNine, rankTen};
         Label userLabels[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
         Label xpLabels[] = {xpOne, xpTwo, xpThree, xpFour, xpFive, xpSix, xpSeven, xpEight, xpNine, xpTen};
         ImageView image[] = {firstPlace, secondPlace, thirdPlace, fourthPlace, fifthPlace, sixthPlace, seventhPlace, eighthPlace, ninthPlace, tenthPlace};
+        
+        rankLabelss = rankLabels;
         images = image;
         userLabelss = xpLabels;
         xpLabelss = xpLabels;
@@ -116,7 +130,8 @@ public class CompareUsersController extends pageOpener {
             xpLabels[i].setText(level);
             userLabels[i].setVisible(true);
             xpLabels[i].setVisible(true);
-            images[i].setVisible(true);
+            image[i].setVisible(true);
+            rankLabels[i].setVisible(true);
             i++;
         }   
     }
@@ -150,6 +165,7 @@ public class CompareUsersController extends pageOpener {
             userLabels2[i].setVisible(true);
             xpLabelss[i].setVisible(true);
             images[i].setVisible(true);
+            rankLabelss[i].setVisible(true);
             i++;
         }   
         close = true;
