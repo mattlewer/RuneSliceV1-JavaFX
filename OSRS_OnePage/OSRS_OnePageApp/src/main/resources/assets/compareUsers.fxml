@@ -33,11 +33,11 @@
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints maxHeight="223.3333536783854" minHeight="0.0" prefHeight="70.33334350585938" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="467.8888854980469" minHeight="0.0" prefHeight="63.666656494140625" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="467.8888854980469" minHeight="10.0" prefHeight="21.333343505859375" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="417.6666564941406" minHeight="10.0" prefHeight="360.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="417.6666564941406" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="255.0" minHeight="0.0" prefHeight="61.66668701171875" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="467.8888854980469" minHeight="0.0" prefHeight="74.66665649414062" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="467.8888854980469" minHeight="10.0" prefHeight="22.333343505859375" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="417.6666564941406" minHeight="10.0" prefHeight="343.33331298828125" valignment="BOTTOM" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="417.6666564941406" minHeight="0.0" prefHeight="15.66668701171875" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="255.0" minHeight="0.0" prefHeight="74.66668701171875" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="255.3333282470703" minHeight="0.0" prefHeight="5.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
@@ -119,6 +119,41 @@
                                                       <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" fx:id="xpEight" />
                                                       <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" fx:id="xpNine" />
                                                       <Label id="xp" text="Label" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="9" fx:id="xpTen" />
+                                                      <ImageView fx:id="fourthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@images/Gnome_child.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="fifthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="4">
+                                                         <image>
+                                                            <Image url="@images/Gnome_child.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="sixthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="5">
+                                                         <image>
+                                                            <Image url="@images/Gnome_child.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="seventhPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="6">
+                                                         <image>
+                                                            <Image url="@images/Gnome_child.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="eighthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="7">
+                                                         <image>
+                                                            <Image url="@images/Gnome_child.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="ninthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="8">
+                                                         <image>
+                                                            <Image url="@images/Gnome_child.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="tenthPlace" fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="9">
+                                                         <image>
+                                                            <Image url="@images/Gnome_child.png" />
+                                                         </image>
+                                                      </ImageView>
                                                    </children>
                                                 </GridPane>
                                              </children>

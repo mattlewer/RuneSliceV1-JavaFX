@@ -58,11 +58,17 @@ public class CompareUsersController extends pageOpener {
     @FXML private Label xpNine;
     @FXML private Label xpTen;
     
-    // Crowns
-    @FXML ImageView firstPlace;
-    @FXML ImageView secondPlace;
-    @FXML ImageView thirdPlace;
-    
+    // Crowns & Gnomes
+    @FXML private ImageView firstPlace;
+    @FXML private ImageView secondPlace;
+    @FXML private ImageView thirdPlace;
+    @FXML private ImageView fourthPlace;
+    @FXML private ImageView fifthPlace;
+    @FXML private ImageView sixthPlace;
+    @FXML private ImageView seventhPlace;
+    @FXML private ImageView eighthPlace;
+    @FXML private ImageView ninthPlace;
+    @FXML private ImageView tenthPlace;
       
     private Label[] userLabelss;
     private Label[] xpLabelss;
@@ -88,7 +94,7 @@ public class CompareUsersController extends pageOpener {
         // Create array of buttons, as create on page load will set without null pointer
         Label userLabels[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
         Label xpLabels[] = {xpOne, xpTwo, xpThree, xpFour, xpFive, xpSix, xpSeven, xpEight, xpNine, xpTen};
-        ImageView image[] = {firstPlace, secondPlace, thirdPlace};
+        ImageView image[] = {firstPlace, secondPlace, thirdPlace, fourthPlace, fifthPlace, sixthPlace, seventhPlace, eighthPlace, ninthPlace, tenthPlace};
         images = image;
         userLabelss = xpLabels;
         xpLabelss = xpLabels;
@@ -97,7 +103,7 @@ public class CompareUsersController extends pageOpener {
         // Order saved users by Overall level
         Collections.sort(reorderedList, new Comparator<User>() {
             @Override public int compare(User p1, User p2) {
-                return (int) (p2.skills.get("Overall").getLevel() - p1.skills.get("Overall").getLevel()); // Descending
+                return (int) (p2.skills.get("Overall").getExperience() - p1.skills.get("Overall").getExperience()); // Descending
             }
         });     
     
@@ -110,9 +116,7 @@ public class CompareUsersController extends pageOpener {
             xpLabels[i].setText(level);
             userLabels[i].setVisible(true);
             xpLabels[i].setVisible(true);
-            if(i< 3){
-                images[i].setVisible(true);
-            }
+            images[i].setVisible(true);
             i++;
         }   
     }
@@ -128,7 +132,7 @@ public class CompareUsersController extends pageOpener {
          // Order saved users by selected skill
         Collections.sort(reorderedList, new Comparator<User>() {
             @Override public int compare(User p1, User p2) {
-                return (int) (p2.skills.get(compSkill).getLevel() - p1.skills.get(compSkill).getLevel()); // Descending
+                return (int) (p2.skills.get(compSkill).getExperience() - p1.skills.get(compSkill).getExperience()); // Descending
             }
         });   
         
@@ -145,9 +149,7 @@ public class CompareUsersController extends pageOpener {
             xpLabelss[i].setText(level);
             userLabels2[i].setVisible(true);
             xpLabelss[i].setVisible(true);
-            if(i< 3){
-                images[i].setVisible(true);
-            }
+            images[i].setVisible(true);
             i++;
         }   
         close = true;

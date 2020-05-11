@@ -1,6 +1,8 @@
 package src.sample;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
@@ -15,6 +17,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import static javafx.util.Duration.millis;
+import static src.sample.LoadAndSave.ROOT_DIR;
 
 public class Main extends Application {
 
@@ -68,9 +71,15 @@ public class Main extends Application {
                 lns.updateUsers();
                 ft.play();
             } catch (Exception ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                 splash.progress.setText("ERROR: No Connection Found\n Saved users will not be updated!");
-                 PauseTransition ps = new PauseTransition(millis(3000));
+                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                 String lastedit = getLastModified();
+                 splash.errorMssg.setVisible(true);
+                 splash.errorImage.setVisible(true);
+                 splash.dateModLabel.setVisible(true);
+                 splash.progress.setText("ERROR:");
+                 splash.errorMssg.setText("No Connection Found \n\nSaved users will not be updated!");
+                 splash.dateModLabel.setText("Using historical data from: \n" + lastedit);
+                 PauseTransition ps = new PauseTransition(millis(4000));
                  ps.setOnFinished(Ee->{
                      ft.play();
                  });
@@ -82,6 +91,13 @@ public class Main extends Application {
         pt.play();
     }
     
+    public String getLastModified(){
+        File usersFile = new File(ROOT_DIR, "users.json");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy HH:mm:ss");
+        String lastEdited = sdf.format(usersFile.lastModified());
+        return lastEdited;
+        
+    }
     
     // Open Homepage
     public void newstage() throws IOException{

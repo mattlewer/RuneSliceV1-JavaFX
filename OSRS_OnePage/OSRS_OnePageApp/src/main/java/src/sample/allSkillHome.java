@@ -291,7 +291,7 @@ public class allSkillHome extends pageOpener implements Initializable {
     // Checks if the user is currently saved, if not, changes icon and calls 'openPopupNewSave'
     // If the user is saved already, 'openPopupNewSave' is called without the icon changing as user descision is not yet final
     public void saveUser(MouseEvent event) throws IOException{
-        if (getSkills.user.isSaved == false){
+        if (getSkills.user.isSaved == false && LoadAndSave.users.size() < 10){
             openPopupNewSave(event);
             Image image = new Image("/assets/images/star_filled.png");
             saved.setImage(image);
@@ -324,9 +324,10 @@ public class allSkillHome extends pageOpener implements Initializable {
         scene.setFill(Color.TRANSPARENT);
         
 // OPTIONS //
-        // If the User is not currently saved, display the 'success' version of the pop-up and fade out
-        // Will add to JSON when completed
-        if(getSkills.user.isSaved == false){
+        // If the User is not currently saved, and there are less than 10 users saved: 
+        // display the 'success' version of the pop-up and fade out
+        // Add to JSON
+        if(getSkills.user.isSaved == false && lnS.users.size() < 10){
             fadeOut(pop.pane);
             window.show();
             getSkills.user.setIsSaved(true);
@@ -347,7 +348,7 @@ public class allSkillHome extends pageOpener implements Initializable {
             pause.play();
             
         // If the user is currently saved, prompt with two buttons for final confirmation
-        }else{
+        }else if (getSkills.user.isSaved == true){
             pop.text.setText("Are you sure?");
             pop.text.setStyle("-fx-text-fill: #F02D3A");
             pop.yes.setVisible(true);
@@ -395,11 +396,25 @@ public class allSkillHome extends pageOpener implements Initializable {
                 });
                 pause.play();
             });
-        }
+        }else if(getSkills.user.isSaved == false && lnS.users.size() == 10){
+            Image image = new Image("/assets/images/star.png");
+            saved.setImage(image);
+            pop.text.setText("Saved List Full!");
+            pop.text.setStyle("-fx-text-fill: #F02D3A; -fx-font-size:14px;");
+            window.show();
+            PauseTransition pause = new PauseTransition(Duration.seconds(3));
+            pause.setOnFinished(e ->{
+                GaussianBlur endGaus = new GaussianBlur();       
+                gaussianBlur.setRadius(0); 
+                vbox.setEffect(gaussianBlur);
+                window.close();
+            });
+            
+            pause.play();
     }
     
 
-    
+    }
 
    
 }

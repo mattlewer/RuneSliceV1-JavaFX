@@ -103,11 +103,23 @@ public class mySavedUsers extends pageOpener {
         loading.setVisible(true);
         loading.setText("Loading...");
         PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
+        LoadAndSave lns = new LoadAndSave();
         pause.setOnFinished(e ->{
             try {
-                openUser(event, name);
+                openAllSkills(event, name);
             } catch (Exception err) {
-                loading.setText("Error: User not found!");
+                try {
+                    for(User u : lns.users){
+                    if(u.getUsername().toString().equals(name)){
+                        getSkills.user = u;
+                        exitSkill(event);
+                    }else{
+                        loading.setText("ERROR: Please try again.");
+                    }
+                }
+                }catch(Exception eeee){
+                    System.out.println("All went wrong");
+                }
             }
         });
         

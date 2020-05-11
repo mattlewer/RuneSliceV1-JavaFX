@@ -44,6 +44,7 @@ public class searchUserHome extends pageOpener {
 
 
     public void openStage(ActionEvent event){
+        LoadAndSave lns = new LoadAndSave();
         rotate(logo);
         username.setDisable(true);
         textUsername.setText("Loading...");
@@ -55,12 +56,19 @@ public class searchUserHome extends pageOpener {
                 openAllSkills(event, user);
             } catch (Exception err) {
                 try {
-                    System.out.println(err);
+                    for(User u : lns.users){
+                    if(u.getUsername().toString().equals(user)){
+                        getSkills.user = u;
+                        exitSkill(event);
+                    }else{
+                        System.out.println(err);
                     reRun(event);
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                    }
                 }
-            }
+                }catch(Exception eeee){
+                    System.out.println("All went wrong");
+                }
+            } 
         });
         pause.play();
     }
