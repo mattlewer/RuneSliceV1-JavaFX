@@ -110,7 +110,9 @@ public class CompareUsersController extends pageOpener {
             xpLabels[i].setText(level);
             userLabels[i].setVisible(true);
             xpLabels[i].setVisible(true);
-            images[i].setVisible(true);
+            if(i< 3){
+                images[i].setVisible(true);
+            }
             i++;
         }   
     }
@@ -143,7 +145,9 @@ public class CompareUsersController extends pageOpener {
             xpLabelss[i].setText(level);
             userLabels2[i].setVisible(true);
             xpLabelss[i].setVisible(true);
-            images[i].setVisible(true);
+            if(i< 3){
+                images[i].setVisible(true);
+            }
             i++;
         }   
         close = true;
