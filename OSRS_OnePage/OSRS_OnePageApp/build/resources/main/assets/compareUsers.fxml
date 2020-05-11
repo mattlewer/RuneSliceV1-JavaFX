@@ -58,7 +58,7 @@
                                     <Font size="13.0" />
                                  </font>
                               </Button>
-                              <ComboBox id="comboBox" fx:id="combo" cacheShape="false" centerShape="false" focusTraversable="false" onAction="#chosenSkill" onHiding="#opener" prefHeight="26.0" prefWidth="183.0" promptText="Select skill..." scaleShape="false" visibleRowCount="15" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ComboBox id="comboBox" fx:id="combo" cacheShape="false" centerShape="false" focusTraversable="false" onAction="#chosenSkill" onHidden="#opener" prefHeight="26.0" prefWidth="183.0" promptText="Select skill..." scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <StackPane fx:id="stackpane" alignment="TOP_CENTER" prefHeight="356.0" prefWidth="333.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <children>
                                     <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" prefHeight="360.0" prefWidth="293.0" style="-fx-background: #273043; -fx-border-color: #273043;" vbarPolicy="NEVER">

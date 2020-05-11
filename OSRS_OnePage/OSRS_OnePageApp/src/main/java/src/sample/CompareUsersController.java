@@ -146,20 +146,18 @@ public class CompareUsersController extends pageOpener {
             images[i].setVisible(true);
             i++;
         }   
-        
+        close = true;
+        combo.hide();
     }
     
-   
+   public boolean close = false;
     public void opener(){
-        combo.valueProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if(oldValue == newValue){
-                    combo.show();
-                }
-            }
-        }); 
-        
+        if(close == false){
+            combo.show();
+        }else{
+            combo.hide();
+            close = false;
+        }
     }
     // Function for visually resfreshing the user data
     public void refreshFade(Node node){

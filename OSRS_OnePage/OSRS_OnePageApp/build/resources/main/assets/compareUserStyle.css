@@ -56,18 +56,13 @@
     -fx-background-color: #273043;
     -fx-border-style:none;
 }
-.combo-box .list-cell:even{
+.combo-box .list-cell{
     -fx-background-color:#273043;
     -fx-text-fill: #F02D3A;
      -fx-alignment: center;
-     -fx-padding: 10 0 10 7;
+     -fx-padding: 4 0 4 7;
 }
-.combo-box .list-cell:odd{
-    -fx-background-color:#273247;
-    -fx-text-fill: #F02D3A;
-     -fx-alignment: center;
-     -fx-padding: 10 0 10 7;
-}
+
 
 .combo-box-popup .list-view 
 {
