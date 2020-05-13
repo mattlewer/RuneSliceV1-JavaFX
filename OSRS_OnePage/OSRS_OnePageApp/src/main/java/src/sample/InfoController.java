@@ -6,6 +6,7 @@
 package src.sample;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
@@ -17,4 +18,5 @@ public class InfoController extends pageOpener{
     
     @FXML public VBox vbox;
     @FXML public ScrollPane scrollPane;
+    @FXML public Button returnToHome;
 }

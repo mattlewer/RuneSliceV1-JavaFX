@@ -17,11 +17,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.ContactController">
    <children>
-      <StackPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane fx:id="stackpane" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox alignment="CENTER" prefHeight="600.0" prefWidth="389.0" style="-fx-background-color: #273043;">
                <children>
-                  <GridPane fx:id="gridpane" alignment="CENTER" maxHeight="600.0" maxWidth="335.0" prefHeight="600.0" prefWidth="345.0" VBox.vgrow="ALWAYS">
+                  <GridPane fx:id="gridpane" alignment="CENTER" maxHeight="600.0" maxWidth="335.0" onMouseClicked="#focusOff" prefHeight="600.0" prefWidth="345.0" VBox.vgrow="ALWAYS">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.3333740234375" minWidth="10.0" prefWidth="48.0" />
                         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="260.33331298828125" minWidth="10.0" prefWidth="246.0" />
@@ -46,7 +46,7 @@
                               </Label>
                            </children>
                         </VBox>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to home" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Button id="btn" fx:id="returnToHome" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to home" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -56,12 +56,12 @@
                         </Button>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="1">
                            <children>
-                              <Label id="link" alignment="CENTER" onMouseClicked="#openInfo" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #F02D3A;" text=" how-to" textAlignment="CENTER" wrapText="true">
+                              <Label id="page" alignment="CENTER" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #95C623;" text="contact" textAlignment="CENTER" wrapText="true">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label id="link" alignment="CENTER" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #95C623;" text="contact" textAlignment="CENTER" wrapText="true">
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openInfo" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #F02D3A;" text=" how-to" textAlignment="CENTER" wrapText="true">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -70,12 +70,12 @@
                         </HBox>
                         <VBox fx:id="vbox" opacity="0.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <children>
-                              <Label alignment="CENTER" prefHeight="94.0" prefWidth="244.0" style="-fx-text-fill: #95C623;" text="Get in touch...">
+                              <Label fx:id="header" alignment="CENTER" prefHeight="94.0" prefWidth="244.0" style="-fx-text-fill: #95C623;" text="Get in touch...">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label alignment="BOTTOM_LEFT" prefHeight="27.0" prefWidth="244.0" style="-fx-text-fill: #95C623;" text="Name">
+                              <Label fx:id="namePrompt" alignment="BOTTOM_LEFT" prefHeight="27.0" prefWidth="244.0" style="-fx-text-fill: #95C623;" text="Name*">
                                  <font>
                                     <Font size="11.0" />
                                  </font>
@@ -83,8 +83,8 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField id="field" prefHeight="10.0" prefWidth="244.0" />
-                              <Label alignment="BOTTOM_LEFT" prefHeight="37.0" prefWidth="59.0" style="-fx-text-fill: #95C623;" text="Email">
+                              <TextField id="field" fx:id="nameField" onKeyReleased="#checkStyle" onMouseClicked="#hidePlaceHolder" prefHeight="10.0" prefWidth="244.0" />
+                              <Label fx:id="emailPrompt" alignment="BOTTOM_LEFT" prefHeight="37.0" prefWidth="59.0" style="-fx-text-fill: #95C623;" text="Email*">
                                  <font>
                                     <Font size="11.0" />
                                  </font>
@@ -92,8 +92,8 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField id="field" />
-                              <Label alignment="BOTTOM_LEFT" prefHeight="37.0" prefWidth="59.0" style="-fx-text-fill: #95C623;" text="Message">
+                              <TextField id="field" fx:id="emailField" onKeyReleased="#checkStyle" onMouseClicked="#hidePlaceHolder" />
+                              <Label fx:id="mssgPrompt" alignment="BOTTOM_LEFT" prefHeight="37.0" prefWidth="59.0" style="-fx-text-fill: #95C623;" text="Message*">
                                  <font>
                                     <Font size="11.0" />
                                  </font>
@@ -101,14 +101,10 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextArea id="field" prefHeight="92.0" prefWidth="244.0">
-                                 <font>
-                                    <Font size="11.0" />
-                                 </font>
-                              </TextArea>
+                              <TextArea id="field" fx:id="mssgField" onKeyReleased="#checkStyle" onMouseClicked="#hidePlaceHolder" prefHeight="92.0" prefWidth="244.0" wrapText="true" />
                               <VBox alignment="TOP_CENTER" prefHeight="51.0" prefWidth="244.0">
                                  <children>
-                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="1.0" prefWidth="111.0" style="-fx-background-color: #95C623; -fx-text-fill: #273043;" text="submit" textAlignment="CENTER">
+                                    <Button id="hov" fx:id="submit" alignment="CENTER" contentDisplay="CENTER" maxHeight="24.0" maxWidth="111.0" mnemonicParsing="false" onMouseClicked="#sendMail" prefHeight="1.0" prefWidth="111.0" style="-fx-background-color: #95C623; -fx-text-fill: #273043; -fx-font-weight: bold;" text="submit" textAlignment="CENTER">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
@@ -123,6 +119,11 @@
                               </VBox>
                            </children>
                         </VBox>
+                        <Label fx:id="errorLabel" alignment="TOP_CENTER" prefHeight="38.0" prefWidth="248.0" style="-fx-text-fill: #F02D3A;" text="Label" textAlignment="CENTER" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
                      </children>
                   </GridPane>
                </children>

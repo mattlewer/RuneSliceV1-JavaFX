@@ -12,6 +12,7 @@ import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -79,6 +80,7 @@ public class CompareUsersController extends pageOpener {
     @FXML private ImageView eighthPlace;
     @FXML private ImageView ninthPlace;
     @FXML private ImageView tenthPlace;
+    @FXML public Button returnToSaved;
       
     private Label[] rankLabelss;
     private Label[] userLabelss;

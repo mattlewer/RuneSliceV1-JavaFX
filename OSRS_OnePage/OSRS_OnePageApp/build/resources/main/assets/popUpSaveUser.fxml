@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancpane" maxHeight="200.0" maxWidth="300.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="145.0" prefWidth="232.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.saveUserPopup">
+<AnchorPane fx:id="ancpane" maxHeight="492.0" maxWidth="330.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="330.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.saveUserPopup">
    <children>
       <StackPane fx:id="pane" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -44,6 +44,9 @@
                            <font>
                               <Font size="13.0" />
                            </font>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
                         </Button>
                         <Button fx:id="no" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="No" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <cursor>
@@ -52,10 +55,13 @@
                            <font>
                               <Font size="13.0" />
                            </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
                         </Button>
                         <Label fx:id="warning" alignment="CENTER" prefHeight="48.0" prefWidth="234.0" style="-fx-text-fill: #F02D3A;" text="WARNING:&#10;Removing a user will remove all tracking data.&#10;" textAlignment="CENTER" visible="false" GridPane.columnSpan="2" GridPane.rowSpan="2">
                            <font>
-                              <Font size="11.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                      </children>

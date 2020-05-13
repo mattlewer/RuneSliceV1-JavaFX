@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-License: https://javaee.github.io/javamail/LICENSE
+Bundle-SymbolicName: com.sun.mail.android-activation
+Archiver-Version: Plexus Archiver
+Built-By: shannon
+Bnd-LastModified: 1535581908537
+Implementation-Vendor-Id: com.sun
+Specification-Title: com.sun.mail.android-activation
+Bundle-DocURL: http://www.oracle.com
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+DynamicImport-Package: *
+Export-Package: javax.activation;version="1.2",com.sun.activation.regi
+ stries;version="1.6.2"
+Bundle-Name: JavaBeans Activation Framework fork for Android
+Extension-Name: com.sun.mail.android-activation
+Implementation-Title: com.sun.mail.android-activation
+Bundle-Description: JavaBeans Activation Framework fork for Android
+Implementation-Version: 1.6.2
+Specification-Vendor: Oracle
+Bundle-ManifestVersion: 2
+Bundle-Vendor: Oracle
+Tool: Bnd-3.5.0.201709291849
+Implementation-Vendor: Oracle
+Originally-Created-By: Apache Maven Bundle Plugin
+Probe-Provider-XML-File-Names: 
+Bundle-Version: 1.6.2
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.8.0_181
+Specification-Version: 1.6
+

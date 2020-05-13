@@ -238,6 +238,7 @@ javafx/scene/PropertyHelper$$Lambda$1.class
 com/sun/javafx/css/parser/CSSLexer$$Lambda$40.class
 com/sun/javafx/scene/control/behavior/TwoLevelFocusPopupBehavior$$Lambda$12.class
 javafx/scene/control/ToolBar.class
+com/sun/mail/imap/protocol/IMAPProtocol.class
 javafx/beans/property/ReadOnlyFloatProperty$1$$Lambda$1.class
 com/sun/javafx/scene/control/skin/ListViewSkin$$Lambda$13.class
 com/sun/javafx/scene/control/skin/TreeViewSkin$$Lambda$8.class
@@ -521,6 +522,7 @@ javafx/scene/control/PasswordFieldBuilder.class
 android/support/v4/os/ParcelableCompatCreatorCallbacks.class
 android/support/v4/view/VelocityTrackerCompat.class
 com/sun/javafx/scene/control/skin/TextAreaSkin$$Lambda$8.class
+javax/mail/MailSessionDefinitions.class
 javafx/css/StyleablePropertyFactory$$Lambda$9.class
 com/sun/javafx/scene/control/behavior/TwoLevelFocusBehavior$$Lambda$5.class
 com/sun/javafx/css/StyleMap$$Lambda$1.class
@@ -825,6 +827,7 @@ javafx/scene/control/Cell.class
 javafx/scene/control/cell/CellUtils$$Lambda$2.class
 com/sun/javafx/scene/control/skin/ComboBoxPopupControl$$Lambda$4.class
 javafx/scene/layout/GridPaneBuilder.class
+com/sun/mail/imap/IMAPFolder$FetchProfileItem.class
 com/sun/javafx/scene/control/ControlAcceleratorSupport$$Lambda$3.class
 com/sun/javafx/scene/control/skin/DatePickerContent$$Lambda$6.class
 javafx/scene/control/ComboBoxBuilder.class
@@ -999,6 +1002,7 @@ com/sun/javafx/scene/control/skin/ComboBoxPopupControl$$Lambda$8.class
 com/sun/javafx/scene/control/skin/TabPaneSkin$$Lambda$2.class
 javafx/scene/control/Tooltip$TooltipBehavior$$Lambda$2.class
 javafx/scene/control/Tab.class
+com/sun/mail/util/MailLogger.class
 javafx/scene/Scene$$Lambda$3.class
 javafx/scene/control/PaginationBuilder.class
 javafx/scene/effect/SepiaToneBuilder.class
@@ -1021,6 +1025,7 @@ com/sun/javafx/scene/control/skin/TreeTableViewSkin$$Lambda$3.class
 javafx/scene/control/cell/ComboBoxTableCell.class
 javafx/concurrent/Task$TaskCallable$$Lambda$3.class
 com/sun/javafx/scene/control/skin/MenuBarSkin$$Lambda$3.class
+com/sun/mail/imap/protocol/SearchSequence.class
 javafx/scene/Scene$$Lambda$1.class
 com/sun/javafx/scene/control/skin/ComboBoxBaseSkin$$Lambda$2.class
 android/support/v4/media/session/PlaybackStateCompatApi22.class
@@ -1639,6 +1644,7 @@ com/sun/javafx/css/parser/CSSLexer$$Lambda$34.class
 com/sun/javafx/scene/control/skin/TextFieldSkin$$Lambda$4.class
 com/gluonhq/charm/glisten/control/ToggleButtonGroup.class
 javafx/scene/media/MediaPlayer$_PlayerStateListener$$Lambda$3.class
+com/sun/mail/util/PropUtil.class
 javafx/scene/media/MediaPlayer$$Lambda$1.class
 com/sun/javafx/tk/quantum/GlassSceneDnDEventHandler$$Lambda$5.class
 javafx/scene/shape/ArcBuilder.class
@@ -2046,6 +2052,7 @@ android/support/multidex/ZipUtil.class
 javafx/beans/value/WritableValue.class
 com/sun/javafx/logging/PrintLogger$$Lambda$2.class
 javafx/scene/control/TreeItem$$Lambda$1.class
+javax/mail/MailSessionDefinition.class
 javafx/scene/Parent.class
 android/support/annotation/FractionRes.class
 android/support/annotation/PluralsRes.class
@@ -2096,3 +2103,4 @@ android/support/v4/util/PatternsCompat.class
 javafx/scene/control/AccordionBuilder.class
 com/sun/javafx/logging/PrintLogger$$Lambda$3.class
 javafx/scene/AmbientLight.class
+com/sun/mail/util/SocketFetcher.class

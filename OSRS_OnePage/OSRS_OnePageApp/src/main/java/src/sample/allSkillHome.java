@@ -89,14 +89,7 @@ public class allSkillHome extends pageOpener implements Initializable {
         }else{
             Image image = new Image("/assets/images/star.png");
             saved.setImage(image);
-        }
-        exit.setOnKeyReleased(t -> {
-        if (t.getCode() == KeyCode.ESCAPE) {
-            exit.fire();
-            System.out.println("Wooop");
-        }
-        });
-        
+        }        
         
         // Setting up skill Labels //
         //HP
@@ -341,6 +334,7 @@ public class allSkillHome extends pageOpener implements Initializable {
             window.show();
             getSkills.user.setIsSaved(true);
             PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
+            pop.text.setStyle("-fx-font-weight:bold; -fx-text-fill:#95C623;");
             pause.setOnFinished(e ->{
                 GaussianBlur endGaus = new GaussianBlur();       
                 gaussianBlur.setRadius(0); 
@@ -359,10 +353,11 @@ public class allSkillHome extends pageOpener implements Initializable {
         // If the user is currently saved, prompt with two buttons for final confirmation
         }else if (getSkills.user.isSaved == true){
             pop.text.setText("Are you sure?");
-            pop.text.setStyle("-fx-text-fill: #F02D3A");
+            pop.text.setStyle("-fx-text-fill: #F02D3A; -fx-font-weight:bold;");
             pop.yes.setVisible(true);
             pop.no.setVisible(true);
             pop.warning.setVisible(true);
+            pop.warning.setStyle("-fx-font-size:11px;-fx-text-fill: #F02D3A;");
             window.show();
             
             // Control what happens when the user clicks the yes button
@@ -409,7 +404,7 @@ public class allSkillHome extends pageOpener implements Initializable {
             Image image = new Image("/assets/images/star.png");
             saved.setImage(image);
             pop.text.setText("Saved List Full!");
-            pop.text.setStyle("-fx-text-fill: #F02D3A;");
+            pop.text.setStyle("-fx-text-fill: #F02D3A; -fx-font-weight:bold;");
             window.show();
             PauseTransition pause = new PauseTransition(Duration.seconds(3));
             pause.setOnFinished(e ->{

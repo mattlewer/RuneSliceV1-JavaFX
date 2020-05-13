@@ -47,7 +47,7 @@
                               </Label>
                            </children>
                         </VBox>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to home" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Button fx:id="returnToHome" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to home" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -74,7 +74,7 @@
                                                 <RowConstraints maxHeight="831.6666259765625" minHeight="10.0" prefHeight="304.333251953125" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <ImageView fitHeight="322.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                                <ImageView fitHeight="322.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                                                    <image>
                                                       <Image url="@images/Screenshots/HomeScreen.PNG" />
                                                    </image>
@@ -84,7 +84,7 @@
                                                 </ImageView>
                                                 <Label alignment="CENTER" prefHeight="152.0" prefWidth="132.0" style="-fx-text-fill: #95C623;" text="Upon opening the app you will be prompted to search a user..." textAlignment="CENTER" wrapText="true">
                                                    <font>
-                                                      <Font size="9.0" />
+                                                      <Font size="10.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -98,9 +98,9 @@
                                                       <Insets left="10.0" />
                                                    </GridPane.margin>
                                                 </ImageView>
-                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="169.0" style="-fx-text-fill: #95C623;" text="... after searching a user you will be presented with a screen showing that users skill levels&#10;&#10;Here you have the posibility to save the user or see more infomation about a skill..." textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="149.0" style="-fx-text-fill: #95C623;" text="... after searching a user, you will be presented with a screen showing that users skill levels&#10;&#10;Here you have the posibility to save the user or see more infomation about a skill..." textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font size="9.0" />
+                                                      <Font size="10.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -111,9 +111,9 @@
                                                       <Image url="@images/Screenshots/IndividualSkill.PNG" />
                                                    </image>
                                                 </ImageView>
-                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="138.0" style="-fx-text-fill: #95C623;" text="... after clicking on a skill icon, you will be taken to that  skills info page where infomation about the users progress is displayed." textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="138.0" style="-fx-text-fill: #95C623;" text="... after clicking on a skill icon, you will be taken to that skills info page where infomation about the users progress is displayed." textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font size="9.0" />
+                                                      <Font size="10.0" />
                                                    </font>
                                                 </Label>
                                                 <ImageView fitHeight="322.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
@@ -123,7 +123,7 @@
                                                 </ImageView>
                                                 <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="138.0" style="-fx-text-fill: #95C623;" text="You can access saved users from the home page for easy searching. &#10;&#10;From this page you can also compare saved users stats.." textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                    <font>
-                                                      <Font size="9.0" />
+                                                      <Font size="10.0" />
                                                    </font>
                                                 </Label>
                                                 <ImageView fitHeight="322.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -133,7 +133,7 @@
                                                 </ImageView>
                                                 <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="138.0" style="-fx-text-fill: #95C623;" text="From here you can choose a skill from the dropdown box to compare users by.&#10;&#10;Enjoy! " textAlignment="CENTER" wrapText="true" GridPane.rowIndex="4">
                                                    <font>
-                                                      <Font size="9.0" />
+                                                      <Font size="10.0" />
                                                    </font>
                                                 </Label>
                                              </children>
@@ -149,12 +149,12 @@
                         </StackPane>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="1">
                            <children>
-                              <Label id="link" alignment="CENTER" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #95C623;" text=" how-to" textAlignment="CENTER" wrapText="true">
+                              <Label id="link" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #F02D3A;" text="contact" textAlignment="CENTER" wrapText="true">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Label>
-                              <Label id="link" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #F02D3A;" text="contact" textAlignment="CENTER" wrapText="true">
+                              <Label id="link" alignment="CENTER" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #95C623;" text=" how-to" textAlignment="CENTER" wrapText="true">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>

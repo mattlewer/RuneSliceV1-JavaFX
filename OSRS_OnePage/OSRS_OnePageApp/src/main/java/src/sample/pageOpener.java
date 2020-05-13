@@ -9,9 +9,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.animation.FadeTransition;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseButton;
 import javafx.util.Duration;
 
 public class pageOpener {
@@ -158,6 +160,14 @@ public class pageOpener {
         fade(sPC.vbox); 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    sPC.exit.fire();
+                }
+            }
+        });
         scene.getStylesheets().add(getClass().getResource("/assets/skillStyle.css").toExternalForm());
         window.setScene(scene);
         window.hide();
@@ -188,6 +198,15 @@ public class pageOpener {
         fade(sec.vbox);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.exit, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
+                }
+            }
+        });
         scene.getStylesheets().add(getClass().getResource("/assets/allSkillStyle.css").toExternalForm());
         window.setScene(scene);
         window.hide();
@@ -204,6 +223,15 @@ public class pageOpener {
         fade(sec.gridpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.search, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
+                }
+            }
+        });
         scene.getStylesheets().add(getClass().getResource("/assets/mySavedUsersStyle.css").toExternalForm());
         window.setScene(scene);
         window.hide();
@@ -219,6 +247,15 @@ public class pageOpener {
         fade(sec.hbox);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.returnToSaved, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
+                }
+            }
+        });
         scene.getStylesheets().add(getClass().getResource("/assets/compareUserStyle.css").toExternalForm());
         window.setScene(scene);
         window.hide();
@@ -241,6 +278,15 @@ public class pageOpener {
         fade(sec.scrollPane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.returnToHome, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
+                }
+            }
+        });
         scene.getStylesheets().add(getClass().getResource("/assets/infoPageStyle.css").toExternalForm());
         window.setScene(scene);
         window.hide();
@@ -254,6 +300,15 @@ public class pageOpener {
         fade(sec.vbox);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.returnToHome, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
+                }
+            }
+        });
         scene.getStylesheets().add(getClass().getResource("/assets/contactPageStyle.css").toExternalForm());
         window.setScene(scene);
         window.hide();

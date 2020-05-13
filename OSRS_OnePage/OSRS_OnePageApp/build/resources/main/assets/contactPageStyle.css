@@ -17,9 +17,34 @@ and open the template in the editor.
     -fx-background-radius: 5 5 5 5;
     -fx-background-color: #41393E;
     -fx-text-box-border: #E55812;
+    -fx-prompt-text-fill: #F02D3A;
 }
 
 .text-area .content {
     -fx-background-color: #41393E;
     -fx-text-box-border: #E55812;
+    -fx-prompt-text-fill: #F02D3A;
+}
+.text-area .scroll-pane {
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: never;
+}
+
+#hov{
+    -fx-effect:none;
+    -fx-font-size:11px;
+}
+#hov:hover, #hov:focus, #hov:active {
+    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
+    -fx-font-weight:bold;
+    -fx-font-size:11px;
+}
+#page:hover, #page:focus, #page:active {
+    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
+}
+#btn{
+    -fx-effect:none;
+}
+#btn:hover, #btn:focus, #btn:active {
+    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
 }

@@ -35,8 +35,8 @@
                               <RowConstraints maxHeight="223.3333536783854" minHeight="0.0" prefHeight="70.33334350585938" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="467.8888854980469" minHeight="0.0" prefHeight="74.66665649414062" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="467.8888854980469" minHeight="10.0" prefHeight="22.333343505859375" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="417.6666564941406" minHeight="10.0" prefHeight="343.33331298828125" valignment="BOTTOM" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="417.6666564941406" minHeight="0.0" prefHeight="15.66668701171875" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="417.6666564941406" minHeight="10.0" prefHeight="326.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="417.6666564941406" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="255.0" minHeight="0.0" prefHeight="74.66668701171875" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="255.3333282470703" minHeight="0.0" prefHeight="5.0" vgrow="SOMETIMES" />
                            </rowConstraints>
@@ -50,7 +50,7 @@
                                     </Label>
                                  </children>
                               </VBox>
-                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#openSavedUsers" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to saved" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                              <Button fx:id="returnToSaved" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#openSavedUsers" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to saved" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
