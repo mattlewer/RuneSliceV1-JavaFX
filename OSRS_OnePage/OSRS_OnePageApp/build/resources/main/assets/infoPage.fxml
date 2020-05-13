@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.InfoController">
+   <children>
+      <StackPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="vbox" alignment="CENTER" prefHeight="600.0" prefWidth="389.0" style="-fx-background-color: #273043;">
+               <children>
+                  <GridPane fx:id="gridpane" alignment="CENTER" maxHeight="600.0" maxWidth="335.0" prefHeight="600.0" prefWidth="345.0" VBox.vgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.3333740234375" minWidth="10.0" prefWidth="48.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="260.33331298828125" minWidth="10.0" prefWidth="246.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="24.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="24.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="223.3333536783854" minHeight="0.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="223.3333536783854" minHeight="10.0" prefHeight="38.66667175292969" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="467.8888854980469" minHeight="0.0" prefHeight="395.3333282470703" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="417.6666564941406" minHeight="0.0" prefHeight="33.666656494140625" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="255.0" minHeight="0.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="255.3333282470703" minHeight="0.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="64.0" prefWidth="244.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="140.0" style="-fx-text-fill: #F02D3A;" text="Info">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to home" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <StackPane alignment="TOP_CENTER" prefHeight="356.0" prefWidth="333.0" GridPane.columnSpan="4" GridPane.rowIndex="2">
+                           <children>
+                              <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" opacity="0.0" prefHeight="413.0" prefWidth="291.0" style="-fx-background: #273043; -fx-border-color: #273043;" vbarPolicy="NEVER">
+                                <content>
+                                  <AnchorPane id="anc" minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="328.0">
+                                       <children>
+                                          <GridPane alignment="CENTER" layoutX="-4.0" prefHeight="1458.0" prefWidth="333.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="144.33331298828125" />
+                                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="232.0" minWidth="0.0" prefWidth="168.66668701171875" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="518.333251953125" minHeight="0.0" prefHeight="340.66668701171875" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="895.0" minHeight="10.0" prefHeight="283.33331298828125" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="936.666748046875" minHeight="0.0" prefHeight="313.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="936.666748046875" minHeight="10.0" prefHeight="313.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="831.6666259765625" minHeight="10.0" prefHeight="304.333251953125" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <ImageView fitHeight="322.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                                   <image>
+                                                      <Image url="@images/Screenshots/HomeScreen.PNG" />
+                                                   </image>
+                                                   <GridPane.margin>
+                                                      <Insets right="10.0" />
+                                                   </GridPane.margin>
+                                                </ImageView>
+                                                <Label alignment="CENTER" prefHeight="152.0" prefWidth="132.0" style="-fx-text-fill: #95C623;" text="Upon opening the app you will be prompted to search a user..." textAlignment="CENTER" wrapText="true">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <ImageView fitHeight="322.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                                                   <image>
+                                                      <Image url="@images/Screenshots/AllSkillHome.PNG" />
+                                                   </image>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </GridPane.margin>
+                                                </ImageView>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="169.0" style="-fx-text-fill: #95C623;" text="... after searching a user you will be presented with a screen showing that users skill levels&#10;&#10;Here you have the posibility to save the user or see more infomation about a skill..." textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <ImageView fitHeight="322.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <image>
+                                                      <Image url="@images/Screenshots/IndividualSkill.PNG" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="138.0" style="-fx-text-fill: #95C623;" text="... after clicking on a skill icon, you will be taken to that  skills info page where infomation about the users progress is displayed." textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="322.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                                                   <image>
+                                                      <Image url="@images/Screenshots/SavedUsersOverall.PNG" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="138.0" style="-fx-text-fill: #95C623;" text="You can access saved users from the home page for easy searching. &#10;&#10;From this page you can also compare saved users stats.." textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="322.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <image>
+                                                      <Image url="@images/Screenshots/CompareUsers.PNG" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="194.0" prefWidth="138.0" style="-fx-text-fill: #95C623;" text="From here you can choose a skill from the dropdown box to compare users by.&#10;&#10;Enjoy! " textAlignment="CENTER" wrapText="true" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <StackPane.margin>
+                                    <Insets right="2.0" />
+                                 </StackPane.margin>
+                              </ScrollPane>
+                           </children>
+                        </StackPane>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="1">
+                           <children>
+                              <Label id="link" alignment="CENTER" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #95C623;" text=" how-to" textAlignment="CENTER" wrapText="true">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label id="link" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #F02D3A;" text="contact" textAlignment="CENTER" wrapText="true">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

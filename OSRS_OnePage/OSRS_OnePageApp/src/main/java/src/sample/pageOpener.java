@@ -9,6 +9,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.animation.FadeTransition;
+import javafx.event.EventHandler;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
 
 public class pageOpener {
@@ -26,7 +29,7 @@ public class pageOpener {
             // User is set as a static value in 'getSkills'
             getSkills getMySkills = new getSkills();
             getMySkills.searchAndRetrieveSkills(acc);
-            
+            //Load FXML
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/allSkillHome.fxml"));
             Parent root = (Parent) loader.load();
             // Call 'myFunction' within 'AllSkillHome' to prepare the page
@@ -34,11 +37,26 @@ public class pageOpener {
             allSkill.myFunction();
             // Fade in the page
             fade(allSkill.vbox);
-            
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();            
+            // Get the Stage of the source of click and set as the new Stage / Window
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();  
+            // Set FXML as root
             Scene scene = new Scene(root);
+            // If the user presses the 'back' button on their mobile
+            // fire the exit button on the page we are opening, which links
+            // back to searchNewUser
+            scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+                @Override
+                public void handle(KeyEvent t) {
+                    if(t.getCode()==KeyCode.ESCAPE){
+                        allSkill.exit.fire();
+                    }
+                }
+            });
+            // Set CSS
             scene.getStylesheets().add(getClass().getResource("/assets/allSkillStyle.css").toExternalForm());
+            // Set the scene to the Stage / Window
             window.setScene(scene);
+            // Refresh the page by closing and opening to stop focus on top element, dodgy hack but works well on mobile
             window.hide();
             window.show();
             
@@ -216,6 +234,32 @@ public class pageOpener {
         ft.setToValue(1);
         ft.play();
     }
+       public void openInfo(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/infoPage.fxml"));
+        Parent root = (Parent)loader.load();
+        InfoController sec = loader.getController();
+        fade(sec.scrollPane);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/assets/infoPageStyle.css").toExternalForm());
+        window.setScene(scene);
+        window.hide();
+        window.show();
+    }
+    
+       public void openContact(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/contactPage.fxml"));
+        Parent root = (Parent)loader.load();
+        ContactController sec = loader.getController();
+        fade(sec.vbox);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/assets/contactPageStyle.css").toExternalForm());
+        window.setScene(scene);
+        window.hide();
+        window.show();
+    }
+    
     
     public void fadeOut(Node node){
         FadeTransition ft = new FadeTransition(Duration.millis(1500));

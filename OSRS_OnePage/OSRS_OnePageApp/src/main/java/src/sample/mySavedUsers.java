@@ -50,7 +50,7 @@ public class mySavedUsers extends pageOpener {
     @FXML private Button searchSeven;
     @FXML private Button searchEight;
     @FXML private Button searchNine;
-    
+    @FXML public Button search;
     public String name;
     
     public void myFunction(){

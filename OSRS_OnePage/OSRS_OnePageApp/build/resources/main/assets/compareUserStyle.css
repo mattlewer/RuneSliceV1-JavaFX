@@ -8,7 +8,7 @@
     -fx-font-size:13px;
 }
 #user{
-    -fx-text-fill: white;
+    -fx-text-fill: #F02D3A;
     -fx-font-size:13px;   
 }
 .scroll-pane{
@@ -17,6 +17,9 @@
     -fx-background-insets: 0, 1;
     -fx-padding: 1;
     -fx-vbar-policy:always;
+}
+.button:hover, .button:focus, .button:active {
+    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
 }
 
 .scroll-pane:focused{

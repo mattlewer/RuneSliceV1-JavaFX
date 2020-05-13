@@ -87,6 +87,8 @@ public class searchUserHome extends pageOpener {
         window.show();
     }
     
+   
+    
     public void rotate(ImageView imageView){
         RotateTransition rt = new RotateTransition(Duration.millis(1000), imageView);
         rt.setByAngle(360);

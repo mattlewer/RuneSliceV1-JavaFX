@@ -1,3 +1,7 @@
+#info:hover, #info:focus, #info:active {
+    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
+}
+
 #username{
     -fx-border-color:  #F02D3A;
     -fx-border-radius: 7px;

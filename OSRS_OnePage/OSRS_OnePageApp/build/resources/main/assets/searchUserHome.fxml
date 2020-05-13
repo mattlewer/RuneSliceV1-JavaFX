@@ -96,6 +96,18 @@
                                     <Font size="13.0" />
                                  </font>
                               </Button>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <ImageView id="info" fitHeight="70.0" fitWidth="30.0" onMouseClicked="#openInfo" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/info.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets top="13.0" />
+                                 </GridPane.margin>
+                              </VBox>
                            </children>
                         </GridPane>
                      </children>

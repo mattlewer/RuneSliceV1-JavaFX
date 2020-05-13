@@ -82,7 +82,7 @@ public class Main extends Application {
                  splash.progress.setText("ERROR:");
                  splash.errorMssg.setText("No Connection Found \n\nSaved users will not be updated!");
                  splash.dateModLabel.setText("Using historical data from: \n" + lastedit);
-                 PauseTransition ps = new PauseTransition(millis(4000));
+                 PauseTransition ps = new PauseTransition(millis(5000));
                  ps.setOnFinished(Ee->{
                      ft.play();
                  });

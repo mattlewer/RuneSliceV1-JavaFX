@@ -15,9 +15,11 @@ import javafx.animation.PauseTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
@@ -60,6 +62,7 @@ public class allSkillHome extends pageOpener implements Initializable {
     @FXML public VBox vbox;
 
     @FXML Label usernameLabel;
+    @FXML public Button exit;
 
 
     @Override
@@ -70,6 +73,7 @@ public class allSkillHome extends pageOpener implements Initializable {
     
     // Sets up the page with the users level for each skill 
     public void myFunction(){
+        
         
         // Set Label at the top of the page to the username being searched
         usernameLabel.setText(getSkills.user.getUsername());
@@ -86,7 +90,12 @@ public class allSkillHome extends pageOpener implements Initializable {
             Image image = new Image("/assets/images/star.png");
             saved.setImage(image);
         }
-        
+        exit.setOnKeyReleased(t -> {
+        if (t.getCode() == KeyCode.ESCAPE) {
+            exit.fire();
+            System.out.println("Wooop");
+        }
+        });
         
         
         // Setting up skill Labels //

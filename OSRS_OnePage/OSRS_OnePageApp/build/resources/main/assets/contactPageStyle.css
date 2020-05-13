@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-May-2020, 01:23:23
+    Author     : mlewe
+*/
+
+#field{
+    -fx-border-color:  #F02D3A;
+    -fx-border-radius: 7px;
+    -fx-border-width: 0.3px;
+    -fx-text-fill:#F02D3A;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+    -fx-background-color: #41393E;
+    -fx-text-box-border: #E55812;
+}
+
+.text-area .content {
+    -fx-background-color: #41393E;
+    -fx-text-box-border: #E55812;
+}

@@ -991,6 +991,7 @@ com/sun/javafx/tk/quantum/PrismImageLoader2$AsyncImageLoader$$Lambda$4.class
 android/support/annotation/Size.class
 javafx/scene/control/TreeView.class
 android/support/v4/media/AudioAttributesCompat.class
+src/sample/InfoController.class
 com/sun/glass/ui/GestureSupport$$Lambda$1.class
 javafx/scene/control/ControlUtils$$Lambda$1.class
 android/support/v4/media/RatingCompat.class
@@ -1098,6 +1099,7 @@ javafx/beans/property/adapter/ReadOnlyJavaBeanObjectProperty$$Lambda$1.class
 com/sun/javafx/tk/quantum/GlassViewEventHandler$$Lambda$12.class
 javafx/scene/control/TableView$TableViewArrayListSelectionModel$$Lambda$2.class
 com/sun/javafx/tk/quantum/QuantumRenderer$QuantumThreadFactory$$Lambda$1.class
+src/sample/ContactController.class
 com/sun/javafx/scene/control/skin/PaginationSkin$NavigationControl$$Lambda$5.class
 com/sun/javafx/scene/control/behavior/TextAreaBehavior$$Lambda$3.class
 com/sun/javafx/scene/control/skin/MenuBarSkin$$Lambda$19.class
