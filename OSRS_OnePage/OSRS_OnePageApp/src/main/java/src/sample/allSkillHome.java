@@ -19,8 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -59,8 +58,7 @@ public class allSkillHome extends pageOpener implements Initializable {
     @FXML private Label farmingLabel;
     @FXML private Label hunterLabel;
     
-    @FXML public VBox vbox;
-
+    @FXML public BorderPane borderpane;
     @FXML Label usernameLabel;
     @FXML public Button exit;
 
@@ -314,7 +312,7 @@ public class allSkillHome extends pageOpener implements Initializable {
         // Blur the backgrund to bring focus to pop-up
         GaussianBlur gaussianBlur = new GaussianBlur();       
         gaussianBlur.setRadius(10.5); 
-        vbox.setEffect(gaussianBlur);
+        borderpane.setEffect(gaussianBlur);
         saveUserPopup pop = loader.getController(); 
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/assets/saveUserPopupStyle.css").toExternalForm());
@@ -338,7 +336,7 @@ public class allSkillHome extends pageOpener implements Initializable {
             pause.setOnFinished(e ->{
                 GaussianBlur endGaus = new GaussianBlur();       
                 gaussianBlur.setRadius(0); 
-                vbox.setEffect(gaussianBlur);
+                borderpane.setEffect(gaussianBlur);
                 getSkills.user.isSaved = true;
                 window.close();
                 try {
@@ -368,7 +366,7 @@ public class allSkillHome extends pageOpener implements Initializable {
                 pause.setOnFinished(e ->{
                     GaussianBlur endGaus = new GaussianBlur();       
                     gaussianBlur.setRadius(0); 
-                    vbox.setEffect(gaussianBlur);
+                    borderpane.setEffect(gaussianBlur);
                     Image image = new Image("/assets/images/star.png");
                     saved.setImage(image);
                     getSkills.user.isSaved = false;
@@ -391,7 +389,7 @@ public class allSkillHome extends pageOpener implements Initializable {
                 pause.setOnFinished(ei ->{
                     GaussianBlur endGaus = new GaussianBlur();       
                     gaussianBlur.setRadius(0); 
-                    vbox.setEffect(gaussianBlur);
+                    borderpane.setEffect(gaussianBlur);
                     Image image = new Image("/assets/images/star_filled.png");
                     saved.setImage(image);
                     getSkills.user.isSaved = true;
@@ -410,7 +408,7 @@ public class allSkillHome extends pageOpener implements Initializable {
             pause.setOnFinished(e ->{
                 GaussianBlur endGaus = new GaussianBlur();       
                 gaussianBlur.setRadius(0); 
-                vbox.setEffect(gaussianBlur);
+                borderpane.setEffect(gaussianBlur);
                 window.close();
             });
             

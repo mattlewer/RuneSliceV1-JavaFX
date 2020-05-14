@@ -7,17 +7,17 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="window" maxHeight="600.0" minHeight="-Infinity" minWidth="335.0" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.allSkillHome">
    <children>
-      <VBox fx:id="vbox" alignment="CENTER" opacity="0.0" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <GridPane alignment="TOP_CENTER" prefHeight="77.0" prefWidth="305.0">
+      <BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <GridPane alignment="TOP_CENTER" prefHeight="77.0" prefWidth="305.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints halignment="LEFT" maxWidth="106.66668701171875" minWidth="10.0" prefWidth="39.5" />
                   <ColumnConstraints halignment="CENTER" maxWidth="239.0" minWidth="10.0" prefWidth="221.33331298828125" />
@@ -40,11 +40,10 @@
                      </image>
                   </ImageView>
                </children>
-               <VBox.margin>
-                  <Insets bottom="15.0" left="15.0" right="15.0" />
-               </VBox.margin>
             </GridPane>
-            <GridPane alignment="CENTER" prefHeight="419.0" prefWidth="287.0">
+         </top>
+         <center>
+            <GridPane alignment="CENTER" prefHeight="435.0" prefWidth="256.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="NEVER" prefWidth="100.0" />
                   <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
@@ -288,22 +287,24 @@
                      </font>
                   </Label>
                </children>
-               <VBox.margin>
-                  <Insets left="15.0" right="15.0" />
-               </VBox.margin>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </BorderPane.margin>
             </GridPane>
-            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search new user" textAlignment="CENTER">
+         </center>
+         <bottom>
+            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search new user" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
                   <Font size="13.0" />
                </font>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" />
+               </BorderPane.margin>
             </Button>
-         </children>
-      </VBox>
+         </bottom>
+      </BorderPane>
    </children>
 </AnchorPane>

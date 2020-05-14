@@ -38,7 +38,7 @@ public class pageOpener {
             allSkillHome allSkill = loader.getController();
             allSkill.myFunction();
             // Fade in the page
-            fade(allSkill.vbox);
+            fade(allSkill.borderpane);
             // Get the Stage of the source of click and set as the new Stage / Window
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();  
             // Set FXML as root
@@ -195,7 +195,7 @@ public class pageOpener {
         Parent root = (Parent)loader.load();
         allSkillHome sec = loader.getController();
         sec.myFunction();
-        fade(sec.vbox);
+        fade(sec.borderpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {

@@ -6,13 +6,11 @@
 package src.sample;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.PauseTransition;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,6 +21,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -32,6 +31,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import static javafx.util.Duration.millis;
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -61,21 +61,19 @@ public class ContactController extends pageOpener {
     @FXML private Label errorLabel;
     @FXML public Button returnToHome;
     
-    static String readFile(String path, Charset encoding) throws IOException {
-        byte[] encoded = Files.readAllBytes(Paths.get(path));
-        return new String(encoded, encoding);
-    }
-    
+//    static String readFile(String path, Charset encoding) throws IOException {
+//        byte[] encoded = Files.readAllBytes(Paths.get(path));
+//        return new String(encoded, encoding);
+//    }
+//    
     public void sendMail(MouseEvent event) throws IOException{
         checkForm(event);
-        
     }
     
     private final String errorStyle = "-fx-text-fill: #F02D3A;";
     private final String completeStyle = "-fx-text-fill: #95C623;";
     
     public void checkForm(MouseEvent event) throws IOException{
-       
         if(nameField.getText().isEmpty()){
             namePrompt.setStyle(errorStyle);
             nameField.setPromptText("Name required...");
@@ -95,9 +93,22 @@ public class ContactController extends pageOpener {
             mssgPrompt.setStyle(completeStyle);
         }
         if((!nameField.getText().isEmpty() && !emailField.getText().isEmpty() && !mssgPrompt.getText().isEmpty())){
-            sendToRuneSlice(event, "runeslice.connect@gmail.com");
+                    // Blur the backgrund to bring focus to pop-up
+            GaussianBlur gaussianBlur = new GaussianBlur();       
+            gaussianBlur.setRadius(10.5); 
+            stackpane.setEffect(gaussianBlur);
+            PauseTransition pt = new PauseTransition(millis(200));
+            pt.setOnFinished(e->{
+                try {
+                    sendToRuneSlice(event, "runeslice.connect@gmail.com");
+                } catch (IOException ex) {
+                    Logger.getLogger(ContactController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            });
+            pt.play();
         }else{
             //do nothing
+     
         }
         
  
@@ -105,13 +116,13 @@ public class ContactController extends pageOpener {
     
     
     public void sendToRuneSlice(MouseEvent event, String recepient) throws IOException{
-//        String content = readFile("src/main/resources/assets/images/config.txt", StandardCharsets.UTF_8);
         String content = "7e_<C?$A%by8U=zD";
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
         
         String myAccount = "runeslice.connect@gmail.com";
         String p = content;
@@ -127,17 +138,19 @@ public class ContactController extends pageOpener {
         String mssg = mssgField.getText();
         
         Message message = prepareMessage(session, myAccount, recepient, name, replyEmail, mssg);
+        Message confirmMessage = confirmMessage(session, replyEmail, myAccount, name);
         try {
+            // Sending confirmation email first - if email provided by user is not valid it will fail
+            // saves our imbox being sent non active email addresses to reply to
+            Transport.send(confirmMessage);
             Transport.send(message);
             openPopup(event, true);
         } catch (MessagingException ex) {
             Logger.getLogger(ContactController.class.getName()).log(Level.SEVERE, null, ex);
             openPopup(event, false);
             System.out.println("Failed");
+            
         }
-        
-        
-        
     }
     
     public static Message prepareMessage(Session session, String myAccount, String recepient, String name, String replyEmail, String mssg){
@@ -154,6 +167,26 @@ public class ContactController extends pageOpener {
         }
         return null;
     }
+    
+    public static Message confirmMessage(Session session, String toEmail, String fromEmail, String name){
+        try{
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(fromEmail));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+            message.setSubject("RuneSlice - Message Received!");
+            String htmlCode = "<h1 style='color:#F02D3A;'>RuneSlice</h1><br/>"
+                    + "<h3>Hi %s, thank you for contacting RuneSlice!</h3>"
+                    + "<p>Your message has been recieved and we will be in contact shortly.</p>";
+            String text = String.format(htmlCode, name);
+            message.setContent(text, "text/html");
+            return message;
+        }catch(Exception ex){
+            
+            
+        }
+        return null;
+    }
+    
     
     public void hidePlaceHolder(MouseEvent event){
         if(event.getSource() == nameField){
@@ -187,10 +220,6 @@ public class ContactController extends pageOpener {
 // SETTING UP PAGE //
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/popUpSaveUser.fxml"));
         Parent root = (Parent)loader.load();
-        // Blur the backgrund to bring focus to pop-up
-        GaussianBlur gaussianBlur = new GaussianBlur();       
-        gaussianBlur.setRadius(10.5); 
-        stackpane.setEffect(gaussianBlur);
         saveUserPopup pop = loader.getController(); 
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/assets/saveUserPopupStyle.css").toExternalForm());
@@ -221,19 +250,15 @@ public class ContactController extends pageOpener {
         PauseTransition pause = new PauseTransition(Duration.seconds(2));
         pause.setOnFinished(e ->{
             GaussianBlur endGaus = new GaussianBlur();       
-            gaussianBlur.setRadius(0); 
-            stackpane.setEffect(gaussianBlur);    
+            endGaus.setRadius(0); 
+            stackpane.setEffect(endGaus);    
             window.close();
-            stackpane.requestFocus();
+            header.requestFocus();
         });
 
             pause.play();
 
-    }
-    
-    
-    
-    
+    }  
     
     
 }
