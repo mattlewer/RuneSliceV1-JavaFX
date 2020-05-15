@@ -17,8 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
-
+import javafx.scene.layout.BorderPane;
 /**
  *
  * @author mlewe
@@ -37,7 +36,7 @@ public class skillPageController extends pageOpener implements Initializable{
     @FXML public Label next99Percent;
     @FXML public ProgressBar to99Bar;
     @FXML public Button exit;
-    @FXML public VBox vbox;
+    @FXML public BorderPane borderpane;
    
 
     @Override

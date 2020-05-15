@@ -157,7 +157,7 @@ public class pageOpener {
             default:
                 break;
         }
-        fade(sPC.vbox); 
+        fade(sPC.borderpane); 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
@@ -180,7 +180,7 @@ public class pageOpener {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/searchUserHome.fxml"));
         Parent root = (Parent) loader.load();
         searchUserHome sec = loader.getController();
-        fade(sec.gridpane);
+        fade(sec.borderpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root); 
         scene.getStylesheets().add(getClass().getResource("/assets/stylesheethome.css").toExternalForm());
@@ -220,7 +220,7 @@ public class pageOpener {
         Parent root = (Parent)loader.load();
         mySavedUsers sec = loader.getController();
         sec.myFunction();
-        fade(sec.gridpane);
+        fade(sec.borderpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
@@ -244,7 +244,7 @@ public class pageOpener {
         Parent root = (Parent)loader.load();
         CompareUsersController sec = loader.getController();
         sec.myFunction();
-        fade(sec.hbox);
+        fade(sec.borderpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
@@ -312,6 +312,7 @@ public class pageOpener {
         scene.getStylesheets().add(getClass().getResource("/assets/contactPageStyle.css").toExternalForm());
         window.setScene(scene);
         window.hide();
+        root.requestFocus();
         window.show();
     }
     
@@ -323,7 +324,4 @@ public class pageOpener {
         ft.setToValue(0);
         ft.play();
     }
-
-    
-    
 }

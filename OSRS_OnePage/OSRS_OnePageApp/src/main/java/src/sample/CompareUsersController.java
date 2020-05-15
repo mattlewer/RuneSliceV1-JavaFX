@@ -16,7 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
@@ -29,7 +29,7 @@ import javafx.util.Duration;
 public class CompareUsersController extends pageOpener {
     
     
-    @FXML public HBox hbox;
+    @FXML public BorderPane borderpane;
     @FXML public ComboBox combo;
     @FXML public StackPane stackpane;
     

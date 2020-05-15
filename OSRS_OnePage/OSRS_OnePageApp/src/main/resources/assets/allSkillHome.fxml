@@ -15,7 +15,7 @@
 
 <AnchorPane fx:id="window" maxHeight="600.0" minHeight="-Infinity" minWidth="335.0" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.allSkillHome">
    <children>
-      <BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="borderpane" opacity="0.0" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <GridPane alignment="TOP_CENTER" prefHeight="77.0" prefWidth="305.0" BorderPane.alignment="CENTER">
               <columnConstraints>
@@ -40,6 +40,9 @@
                      </image>
                   </ImageView>
                </children>
+               <BorderPane.margin>
+                  <Insets top="20.0" />
+               </BorderPane.margin>
             </GridPane>
          </top>
          <center>
@@ -301,7 +304,7 @@
                   <Font size="13.0" />
                </font>
                <BorderPane.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="30.0" />
                </BorderPane.margin>
             </Button>
          </bottom>

@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 
@@ -25,6 +26,7 @@ import javafx.util.Duration;
  */
 public class mySavedUsers extends pageOpener {
     
+    @FXML public BorderPane borderpane;
     @FXML public ScrollPane scrollPane;
     @FXML public GridPane gridpane;
     @FXML public ImageView icon;

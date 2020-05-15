@@ -20,7 +20,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.BorderPane;
 
 
 public class searchUserHome extends pageOpener {
@@ -31,7 +31,8 @@ public class searchUserHome extends pageOpener {
     @FXML public TextField username;
     @FXML public Label textUsername;
     @FXML public Label error;
-    @FXML public GridPane gridpane;
+    @FXML public BorderPane borderpane;
+
 
     public void enterKey(ActionEvent event) {
         username.setOnKeyReleased(e -> {
@@ -119,7 +120,7 @@ public class searchUserHome extends pageOpener {
     }
     
     public void focusOff(MouseEvent event){
-        gridpane.requestFocus();
+        borderpane.requestFocus();
     }
     
 }

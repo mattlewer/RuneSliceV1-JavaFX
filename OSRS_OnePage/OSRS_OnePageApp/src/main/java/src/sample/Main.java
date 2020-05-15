@@ -7,7 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
-
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -150,7 +149,7 @@ public class Main extends Application {
     } catch (Exception ex) {
         ex.printStackTrace();
     }
-}
+    }
 
 
     public static void main(String[] args) {

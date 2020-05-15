@@ -10,7 +10,6 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.PauseTransition;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,10 +20,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
@@ -47,9 +45,8 @@ import javax.mail.internet.MimeMessage;
  */
 public class ContactController extends pageOpener {
     
-    @FXML public StackPane stackpane;
+    @FXML public BorderPane borderpane;
     @FXML public VBox vbox;
-    @FXML private GridPane gridpane;
     @FXML private Label header;
     @FXML private Label namePrompt;
     @FXML private TextField nameField;
@@ -96,7 +93,7 @@ public class ContactController extends pageOpener {
                     // Blur the backgrund to bring focus to pop-up
             GaussianBlur gaussianBlur = new GaussianBlur();       
             gaussianBlur.setRadius(10.5); 
-            stackpane.setEffect(gaussianBlur);
+            borderpane.setEffect(gaussianBlur);
             PauseTransition pt = new PauseTransition(millis(200));
             pt.setOnFinished(e->{
                 try {
@@ -200,7 +197,7 @@ public class ContactController extends pageOpener {
     }
     
     public void focusOff(MouseEvent event){
-        gridpane.requestFocus();
+        borderpane.requestFocus();
     }
     
     public void checkStyle(KeyEvent event){
@@ -251,7 +248,7 @@ public class ContactController extends pageOpener {
         pause.setOnFinished(e ->{
             GaussianBlur endGaus = new GaussianBlur();       
             endGaus.setRadius(0); 
-            stackpane.setEffect(endGaus);    
+            borderpane.setEffect(endGaus);    
             window.close();
             header.requestFocus();
         });
