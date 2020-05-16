@@ -24,6 +24,7 @@ public class SplashScreenController {
     @FXML public Label errorMssg;
     @FXML public ImageView errorImage;
     @FXML public Label dateModLabel;
+    @FXML public Label tip;
     
     
 }

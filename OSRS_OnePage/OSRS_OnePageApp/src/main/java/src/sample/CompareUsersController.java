@@ -32,6 +32,8 @@ public class CompareUsersController extends pageOpener {
     @FXML public BorderPane borderpane;
     @FXML public ComboBox combo;
     @FXML public StackPane stackpane;
+    @FXML public Label title;
+    @FXML public Label levelKills;
     
     // Ranks Labels
     @FXML private Label rankOne;
@@ -88,9 +90,11 @@ public class CompareUsersController extends pageOpener {
     private ImageView[] images;
     private ArrayList<User> reorderedList;
     
-    // Setup Page
-    public void myFunction(){
-      
+    public static int skillOrBoss = 0;
+    
+    // Setup Page For Skills
+    public void mySkillFunction(){
+        
         reorderedList = LoadAndSave.getUsers();
       // Setup Skills to search
         String skills[] = {"Overall", "Agility", "Attack", "Construction", "Cooking", 
@@ -138,50 +142,172 @@ public class CompareUsersController extends pageOpener {
         }   
     }
     
-    // Function to switch ordering of users and replace data shown dependant on skill selected
-    public void chosenSkill(ActionEvent event){
+    public void myBossFunction(){
+        levelKills.setText("Kills");
+        title.setText("Compare Boss Kills");
+        reorderedList = LoadAndSave.getUsers();
+        String bosses[] = {
+        "Abyssal Sire", "Alchemical Hydra","Barrows Chests","Bryophyta","Callisto","Cerberus",
+            "Chambers of Xeric","Chaos Elemental","Chaos Fanatic","Commander Zilyana","Corporeal Beast",
+            "Crazy Archaeologist","Dagannoth Prime","Dagannoth Rex","Dagannoth Supreme","Deranged Archaeologist",
+            "General Graardor","Giant Mole","Grotesque Guardians","Hespori","Kalphite Queen","King Black Dragon",
+            "Kraken","Kree'Arra","K'ril Tsutsaroth","Mimic","Nightmare","Obor","Sarachnis","Scorpia","Skotizo",
+            "The Gauntlet","The Corrupted Gauntlet","Theatre of Blood","Thermonuclear Smoke Devil","TzKal-Zuk","TzTok-Jad","Venenatis",
+            "Vet'ion","Vorkath","Wintertodt","Zalcano","Zulrah"};
         
-        // Fade the StackPane containing the infomation out and back in again whilst change taking place
-        refreshFade(stackpane);
-        // Get value from ComboBox, this will be the skill we are comparing
-        String compSkill = combo.getValue().toString();
+        for(String s : bosses){
+            combo.getItems().add(s); 
+        }
+        combo.setValue("Abyssal Sire");
         
-         // Order saved users by selected skill
-         
-         if(compSkill != "Overall"){
-             Collections.sort(reorderedList, new Comparator<User>() {
-                @Override public int compare(User p1, User p2) {
-                    return (int) (p2.skills.get(compSkill).getExperience() - p1.skills.get(compSkill).getExperience()); // Descending
-                }
-            });   
-         }else{
-             Collections.sort(reorderedList, new Comparator<User>() {
-                @Override public int compare(User p1, User p2) {
-                    return (int) (p2.skills.get(compSkill).getLevel() - p1.skills.get(compSkill).getLevel()); // Descending
-                }
-            });  
-         }
-         
+        // Create array of buttons, as create on page load will set without null pointer
+        Label rankLabels[]={rankOne, rankTwo, rankThree, rankFour, rankFive, rankSix, rankSeven, rankEight, rankNine, rankTen};
+        Label userLabels[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
+        Label xpLabels[] = {xpOne, xpTwo, xpThree, xpFour, xpFive, xpSix, xpSeven, xpEight, xpNine, xpTen};
+        ImageView image[] = {firstPlace, secondPlace, thirdPlace, fourthPlace, fifthPlace, sixthPlace, seventhPlace, eighthPlace, ninthPlace, tenthPlace};
+        
+        rankLabelss = rankLabels;
+        images = image;
+        userLabelss = xpLabels;
+        xpLabelss = xpLabels;
+        
+        // Order saved users by Abyssal Sire kills as first alphabetically
+        Collections.sort(reorderedList, new Comparator<User>() {
+            @Override public int compare(User p1, User p2) {
+               int p1Kills;
+               int p2Kills;
+               try{
+                   p1Kills = p1.bossKills.get("Abyssal Sire").getKills(); 
+               }catch(NullPointerException e){
+                   p1Kills = 0;
+               }
+               try{
+                   p2Kills = p2.bossKills.get("Abyssal Sire").getKills(); 
+               }catch(NullPointerException e){
+                   p2Kills = 0;
+               }                
+                return (int) (p2Kills - p1Kills); // Descending
+            }
+        });    
+        
         // Set saved users to fields in order  
         int i = 0;
         for(User u3 : reorderedList){
-            
-            Label userLabels2[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
-            String level = String.valueOf(u3.getSkills().get(compSkill).getLevel());
-            String User = String.valueOf(u3.getUsername());
-  
-            userLabels2[i].setText(User);
-            xpLabelss[i].setText(level);
-            userLabels2[i].setVisible(true);
-            xpLabelss[i].setVisible(true);
-            images[i].setVisible(true);
-            rankLabelss[i].setVisible(true);
+            String level;
+            try{
+                level = String.valueOf(u3.getBossKills().get("Abyssal Sire").getKills());
+            }catch(NullPointerException e1){
+                level = "0";
+            }
+            userLabels[i].setText(u3.username);
+            xpLabels[i].setText(level);
+            userLabels[i].setVisible(true);
+            xpLabels[i].setVisible(true);
+            image[i].setVisible(true);
+            rankLabels[i].setVisible(true);
             i++;
         }   
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Function to switch ordering of users and replace data shown dependant on skill selected
+    public void chosenSkill(ActionEvent event){
+        if(skillOrBoss == 0){
+            // Fade the StackPane containing the infomation out and back in again whilst change taking place
+            refreshFade(stackpane);
+            // Get value from ComboBox, this will be the skill we are comparing
+            String compSkill = combo.getValue().toString();
+            // Order saved users by selected skill
+            if(compSkill != "Overall"){
+                Collections.sort(reorderedList, new Comparator<User>() {
+                    @Override public int compare(User p1, User p2) {
+                        return (int) (p2.skills.get(compSkill).getExperience() - p1.skills.get(compSkill).getExperience()); // Descending
+                    }
+                });   
+            }else{
+                    Collections.sort(reorderedList, new Comparator<User>() {
+                        @Override public int compare(User p1, User p2) {
+                            return (int) (p2.skills.get(compSkill).getLevel() - p1.skills.get(compSkill).getLevel()); // Descending
+                        }
+                    });  
+                }
+            // Set saved users to fields in order  
+            int i = 0;
+            for(User u3 : reorderedList){
+                Label userLabels2[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
+                String level = String.valueOf(u3.getSkills().get(compSkill).getLevel());
+                String User = String.valueOf(u3.getUsername());
+                userLabels2[i].setText(User);
+                xpLabelss[i].setText(level);
+                userLabels2[i].setVisible(true);
+                xpLabelss[i].setVisible(true);
+                images[i].setVisible(true);
+                rankLabelss[i].setVisible(true);
+                i++;
+            }   
+        }else{
+            // Fade the StackPane containing the infomation out and back in again whilst change taking place
+            refreshFade(stackpane);
+            // Get value from ComboBox, this will be the boss we are comparing
+            String compSkill = combo.getValue().toString();
+            // Order saved users by selected boss
+            Collections.sort(reorderedList, new Comparator<User>() {
+               @Override public int compare(User p1, User p2) {
+               int p1Kills;
+               int p2Kills;
+                try{
+                   p1Kills = p1.bossKills.get(compSkill).getKills(); 
+                }catch(NullPointerException e){
+                    p1Kills = 0;
+                }
+                try{
+                   p2Kills = p2.bossKills.get(compSkill).getKills(); 
+                }catch(NullPointerException e){
+                    p2Kills = 0;
+                }
+                    return (int) (p2Kills - p1Kills); // Descending
+                }
+            });   
+            
+            // Set saved users to fields in order  
+            int i = 0;
+            for(User u3 : reorderedList){
+                Label userLabels2[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
+                String level;
+                try{
+                    level = String.valueOf(u3.getBossKills().get(compSkill).getKills());
+                }catch(NullPointerException e1){
+                    level = "0";
+                }
+                String User = String.valueOf(u3.getUsername());
+                userLabels2[i].setText(User);
+                xpLabelss[i].setText(level);
+                userLabels2[i].setVisible(true);
+                xpLabelss[i].setVisible(true);
+                images[i].setVisible(true);
+                rankLabelss[i].setVisible(true);
+                i++;     
+            }
+        }
         close = true;
         combo.hide();
     }
+        
     
+    
+    
+    
+    // Force Combo box to stay open
    public boolean close = false;
     public void opener(){
         if(close == false){

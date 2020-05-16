@@ -18,29 +18,16 @@ public class User extends getSkills {
     // User has a username and a HashMap of Skills, navigated through getSkills
     public String username;
     public HashMap<String, Skill> skills;
+    public HashMap<String, Boss> bossKills;
     public Boolean isSaved = false;
 
-    public User(String username, HashMap<String, Skill> skills, Boolean isSaved){
+    public User(String username, HashMap<String, Skill> skills, HashMap<String, Boss> bossKills, Boolean isSaved){
         this.username = username;
         this.skills = skills;
+        this.bossKills = bossKills;
         this.isSaved = isSaved;
     }
     
-//    // Compare users based on Overall Stats
-//    public static Comparator<User> overallComp = new Comparator<User>() {
-//      
-//
-//	public int compare(User s1, User s2) {
-//            
-//	   int exp1 = s1.getSkills().get("Woodcutting").getLevel();
-//	   int exp2 = s2.getSkills().get("Woodcutting").getLevel();
-//	   //ascending order
-//           
-//	   //return exp1 - exp2;
-//           
-//           return exp2 - exp1;
-//    }};
-// 
     
     // Simple getters and setters for the username and skills
     public String getUsername() {
@@ -58,6 +45,16 @@ public class User extends getSkills {
     public void setSkills(HashMap<String, Skill> skills) {
         this.skills = skills;
     }
+
+    public HashMap<String, Boss> getBossKills() {
+        return bossKills;
+    }
+
+    public void setBossKills(HashMap<String, Boss> bossKills) {
+        this.bossKills = bossKills;
+    }
+    
+    
 
     public Boolean getIsSaved() {
         return isSaved;

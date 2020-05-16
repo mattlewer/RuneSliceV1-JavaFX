@@ -11,6 +11,7 @@ import java.io.IOException;
 import javafx.animation.FadeTransition;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
@@ -27,6 +28,7 @@ public class pageOpener {
        
         // Make sure it is of valid length
         if(acc.length() > 0) {
+            
             // Search and retreive the skills for that username
             // User is set as a static value in 'getSkills'
             getSkills getMySkills = new getSkills();
@@ -238,12 +240,10 @@ public class pageOpener {
         window.show();
     }
     
-    // Open page to compare users
-    public void compareUsers(MouseEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/compareUsers.fxml"));
+    public void compareUsersHome(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/compareUserHome.fxml"));
         Parent root = (Parent)loader.load();
-        CompareUsersController sec = loader.getController();
-        sec.myFunction();
+        CompareUserHome sec = loader.getController();
         fade(sec.borderpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -256,7 +256,40 @@ public class pageOpener {
                 }
             }
         });
-        scene.getStylesheets().add(getClass().getResource("/assets/compareUserStyle.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/assets/compareUserHomeStyle.css").toExternalForm());
+        window.setScene(scene);
+        window.hide();
+        window.show();
+    }
+    
+    // Open page to compare users
+    public void compareUsers(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/compareUsersData.fxml"));
+        Parent root = (Parent)loader.load();
+        CompareUsersController sec = loader.getController();
+        
+        String text = ((Button)event.getSource()).getText();
+
+        if(text.equals("compare by skill")){
+            CompareUsersController.skillOrBoss = 0;
+            sec.mySkillFunction();
+        }else{
+            CompareUsersController.skillOrBoss = 1;
+            sec.myBossFunction();
+        }
+        fade(sec.borderpane);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.returnToSaved, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
+                }
+            }
+        });
+        scene.getStylesheets().add(getClass().getResource("/assets/compareUserDataStyle.css").toExternalForm());
         window.setScene(scene);
         window.hide();
         window.show();

@@ -169,9 +169,9 @@
                         <RowConstraints maxHeight="467.8888854980469" minHeight="10.0" prefHeight="42.33332824707031" valignment="CENTER" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <VBox prefHeight="47.0" prefWidth="247.0" GridPane.columnIndex="1">
+                        <VBox alignment="CENTER" prefHeight="47.0" prefWidth="247.0" GridPane.columnIndex="1">
                            <children>
-                              <Label alignment="BOTTOM_CENTER" prefHeight="68.0" prefWidth="325.0" style="-fx-text-fill: #F02D3A;" text="Compare Users">
+                              <Label fx:id="title" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="325.0" style="-fx-text-fill: #F02D3A;" text="Compare Skills">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
@@ -191,7 +191,7 @@
                            </rowConstraints>
                            <children>
                               <Label alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="60.0" style="-fx-text-fill: #95C623;" text="User" GridPane.columnIndex="1" />
-                              <Label alignment="BOTTOM_CENTER" prefHeight="46.0" prefWidth="61.0" style="-fx-text-fill: #95C623;" text="Level" textAlignment="CENTER" GridPane.columnIndex="2" />
+                              <Label fx:id="levelKills" alignment="BOTTOM_CENTER" prefHeight="46.0" prefWidth="61.0" style="-fx-text-fill: #95C623;" text="Level" textAlignment="CENTER" GridPane.columnIndex="2" />
                               <Label alignment="BOTTOM_CENTER" prefHeight="43.0" prefWidth="68.0" style="-fx-text-fill: #95C623;" text="Position" />
                            </children>
                         </GridPane>
@@ -201,7 +201,7 @@
             </VBox>
          </top>
          <bottom>
-            <Button fx:id="returnToSaved" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#openSavedUsers" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to saved" textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <Button fx:id="returnToSaved" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#compareUsersHome" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to compare" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

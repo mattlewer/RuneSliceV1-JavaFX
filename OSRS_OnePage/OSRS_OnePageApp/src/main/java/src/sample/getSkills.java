@@ -19,11 +19,12 @@ public class getSkills {
                         user.setIsSaved(true);
                     }
                 }
+                
     }
    
 
     
-    // Functions for retrieving specific sections of data
+    // Functions for retrieving specific sections of data for skills
     public Skill woodcutting(){
         Skill wc = user.skills.get("Woodcutting");
         return wc;
@@ -123,11 +124,21 @@ public class getSkills {
         return overall;
     }
 
+    // Functions for retreiving specific Boss data
+    public Boss barrows(){
+        Boss boss = user.bossKills.get("Barrows Chests");
+        return boss;
+    }
     // Retrieve the user
     public static User getUser() {
         return user;
     }
 
+    public static void setUser(User user) {
+        getSkills.user = user;
+    }
+
+    
 
 
 

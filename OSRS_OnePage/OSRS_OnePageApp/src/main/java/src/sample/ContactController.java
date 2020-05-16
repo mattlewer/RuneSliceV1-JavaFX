@@ -22,7 +22,6 @@ import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
@@ -252,10 +251,7 @@ public class ContactController extends pageOpener {
             window.close();
             header.requestFocus();
         });
-
             pause.play();
-
-    }  
-    
-    
+    }
+   
 }

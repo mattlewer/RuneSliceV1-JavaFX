@@ -70,6 +70,8 @@ public class Main extends Application {
         pt.setOnFinished(e->{
             try {
                 // Update saved users
+                splash.errorMssg.setText("updating saved users");
+                splash.errorMssg.setVisible(true);
                 lns.updateUsers();
                 ft.play();
             } catch (Exception ex) {
@@ -78,6 +80,7 @@ public class Main extends Application {
                  splash.errorMssg.setVisible(true);
                  splash.errorImage.setVisible(true);
                  splash.dateModLabel.setVisible(true);
+                 splash.tip.setVisible(false);
                  splash.progress.setText("ERROR:");
                  splash.errorMssg.setText("No Connection Found \n\nSaved users will not be updated!");
                  splash.dateModLabel.setText("Using historical data from: \n" + lastedit);

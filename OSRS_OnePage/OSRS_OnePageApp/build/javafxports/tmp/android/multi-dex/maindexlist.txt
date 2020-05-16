@@ -471,6 +471,7 @@ javafx/scene/input/ClipboardContentBuilder.class
 com/google/gson/annotations/Since.class
 com/sun/javafx/scene/control/behavior/TwoLevelFocusComboBehavior$$Lambda$5.class
 javafx/animation/ParallelTransition$$Lambda$1.class
+src/sample/CompareUserHome.class
 javafx/scene/control/cell/ComboBoxTreeCell$$Lambda$1.class
 com/sun/glass/ui/EventLoop$$Lambda$2.class
 com/sun/javafx/scene/control/behavior/ListViewBehavior$$Lambda$1.class

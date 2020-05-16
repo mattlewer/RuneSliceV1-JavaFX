@@ -15,9 +15,9 @@
 
 <AnchorPane fx:id="window" maxHeight="600.0" minHeight="-Infinity" minWidth="335.0" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.allSkillHome">
    <children>
-      <BorderPane fx:id="borderpane" opacity="0.0" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <GridPane alignment="TOP_CENTER" prefHeight="77.0" prefWidth="305.0" BorderPane.alignment="CENTER">
+            <GridPane alignment="TOP_CENTER" prefHeight="105.0" prefWidth="335.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints halignment="LEFT" maxWidth="106.66668701171875" minWidth="10.0" prefWidth="39.5" />
                   <ColumnConstraints halignment="CENTER" maxWidth="239.0" minWidth="10.0" prefWidth="221.33331298828125" />
@@ -26,6 +26,7 @@
               <rowConstraints>
                 <RowConstraints maxHeight="51.666656494140625" minHeight="10.0" prefHeight="51.666656494140625" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="32.66667175292969" minHeight="10.0" prefHeight="25.333343505859375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="32.66667175292969" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label fx:id="usernameLabel" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="51.0" prefWidth="305.0" style="-fx-text-fill: #95C623;" text="Label" textAlignment="CENTER" GridPane.columnSpan="3">
@@ -39,6 +40,20 @@
                         <Image url="@images/star.png" />
                      </image>
                   </ImageView>
+                  <GridPane alignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="91.0" style="-fx-text-fill: #F02D3A;" text="Bosses" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="145.0" style="-fx-text-fill: #95C623;" text="Skills" textAlignment="CENTER" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
                </children>
                <BorderPane.margin>
                   <Insets top="20.0" />

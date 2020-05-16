@@ -142,7 +142,7 @@ public class mySavedUsers extends pageOpener {
     
     
     public void openCompareUsers(MouseEvent event) throws IOException{
-        compareUsers(event);
+        compareUsersHome(event);
     }
     
     

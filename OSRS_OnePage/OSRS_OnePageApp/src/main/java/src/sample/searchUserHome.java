@@ -52,6 +52,7 @@ public class searchUserHome extends pageOpener {
         search.setDisable(true);
         String user = username.getText();
         PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        
         pause.setOnFinished(e ->{
             try {
                 openAllSkills(event, user);
@@ -63,7 +64,7 @@ public class searchUserHome extends pageOpener {
                         exitSkill(event);
                     }else{
                         System.out.println(err);
-                    reRun(event);
+                        reRun(event);
                     }
                 }
                 }catch(Exception eeee){
