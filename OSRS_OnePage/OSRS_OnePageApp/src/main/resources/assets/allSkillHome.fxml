@@ -50,8 +50,14 @@
                         <RowConstraints />
                     </rowConstraints>
                      <children>
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="91.0" style="-fx-text-fill: #F02D3A;" text="Bosses" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="145.0" style="-fx-text-fill: #95C623;" text="Skills" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label id="nav" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#viewAllBosses" prefHeight="17.0" prefWidth="91.0" style="-fx-text-fill: #F02D3A;" text="Bosses" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Label>
+                        <Label id="nav" alignment="CENTER" prefHeight="17.0" prefWidth="145.0" style="-fx-text-fill: #95C623;" text="Skills" textAlignment="CENTER" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Label>
                      </children>
                   </GridPane>
                </children>
@@ -61,7 +67,7 @@
             </GridPane>
          </top>
          <center>
-            <GridPane alignment="CENTER" prefHeight="435.0" prefWidth="256.0" BorderPane.alignment="CENTER">
+            <GridPane fx:id="gridpane" alignment="CENTER" opacity="0.0" prefHeight="435.0" prefWidth="256.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="NEVER" prefWidth="100.0" />
                   <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />

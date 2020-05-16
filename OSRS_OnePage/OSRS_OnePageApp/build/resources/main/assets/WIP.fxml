@@ -147,7 +147,7 @@
             </VBox>
          </center>
          <bottom>
-            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ex" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to all skills..." textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#ex" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to all skills..." textAlignment="CENTER" BorderPane.alignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

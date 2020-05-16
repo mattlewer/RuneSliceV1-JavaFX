@@ -20,6 +20,7 @@ import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -58,6 +59,7 @@ public class allSkillHome extends pageOpener implements Initializable {
     @FXML private Label farmingLabel;
     @FXML private Label hunterLabel;
     
+    @FXML public GridPane gridpane;
     @FXML public BorderPane borderpane;
     @FXML Label usernameLabel;
     @FXML public Button exit;

@@ -15,4 +15,6 @@
 #skill:hover, #skill:focus, #skill:active {
     -fx-effect: dropshadow(three-pass-box,  white, 19, 0, 0.5, 0);
 }
-
+#nav:pressed{
+    -fx-effect: dropshadow(three-pass-box,  white, 19, 0, 0.5, 0);
+}

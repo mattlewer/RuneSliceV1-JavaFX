@@ -176,7 +176,7 @@ public class pageOpener {
         window.show();
     }
     
-    
+        
     // Exit all Skills and return to the home page
     public void searchNewUser(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/searchUserHome.fxml"));
@@ -190,14 +190,61 @@ public class pageOpener {
         window.hide();
         window.show();
     }
-
-    // Exit each individual skill page back to 'All Skills'
+    
+    // Exit all Skills and return to the home page
+    public void viewAllBosses(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/allBossHome.fxml"));
+        Parent root = (Parent) loader.load();
+        AllBossHomeController sec = loader.getController();
+        sec.myFunction();
+        fade(sec.stackpane);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root); 
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+                @Override
+                public void handle(KeyEvent t) {
+                    if(t.getCode()==KeyCode.ESCAPE){
+                        sec.exit.fire();
+                    }
+                }
+            });
+        scene.getStylesheets().add(getClass().getResource("/assets/allBossHomeStyle.css").toExternalForm());
+        window.setScene(scene);
+        window.hide();
+        window.show();
+    }
+    
+        // Exit each individual skill page back to 'All Skills'
     public void exitSkill(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/allSkillHome.fxml"));
         Parent root = (Parent)loader.load();
         allSkillHome sec = loader.getController();
         sec.myFunction();
-        fade(sec.borderpane);
+        fade(sec.gridpane);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.exit, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
+                }
+            }
+        });
+        scene.getStylesheets().add(getClass().getResource("/assets/allSkillStyle.css").toExternalForm());
+        window.setScene(scene);
+        window.hide();
+        window.show();
+    }
+
+    // Exit each individual skill page back to 'All Skills'
+    public void exitSkillMouse(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/allSkillHome.fxml"));
+        Parent root = (Parent)loader.load();
+        allSkillHome sec = loader.getController();
+        sec.myFunction();
+        fade(sec.gridpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {

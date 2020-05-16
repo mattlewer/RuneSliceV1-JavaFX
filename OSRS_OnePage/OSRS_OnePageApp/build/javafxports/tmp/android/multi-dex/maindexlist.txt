@@ -260,6 +260,7 @@ com/sun/javafx/scene/control/skin/InputFieldSkin$$Lambda$2.class
 com/sun/javafx/scene/control/skin/TextAreaSkin$$Lambda$20.class
 com/sun/javafx/tk/quantum/GlassWindowEventHandler$$Lambda$1.class
 com/sun/prism/impl/ps/CachingShapeRepState$MaskCache$$Lambda$1.class
+src/sample/AllBossHomeController.class
 com/sun/javafx/tk/quantum/GlassViewEventHandler$$Lambda$25.class
 com/sun/javafx/fxml/expression/Expression$$Lambda$10.class
 com/sun/javafx/scene/control/skin/MenuButtonSkin$$Lambda$2.class
