@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="window" maxHeight="600.0" minHeight="-Infinity" minWidth="335.0" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.AllBossHomeController">
+<AnchorPane fx:id="window" maxHeight="600.0" minHeight="-Infinity" minWidth="335.0" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.AllBossHomeController">
    <children>
-      <BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <GridPane alignment="TOP_CENTER" prefHeight="105.0" prefWidth="335.0" BorderPane.alignment="CENTER">
               <columnConstraints>
@@ -66,401 +66,409 @@
                   </GridPane>
                </children>
                <BorderPane.margin>
-                  <Insets top="20.0" />
+                  <Insets bottom="10.0" top="20.0" />
                </BorderPane.margin>
             </GridPane>
          </top>
          <bottom>
-            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search new user" textAlignment="CENTER" BorderPane.alignment="CENTER">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
+            <JFXButton fx:id="exit" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search new user" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <font>
                   <Font size="13.0" />
                </font>
                <BorderPane.margin>
                   <Insets bottom="30.0" top="20.0" />
                </BorderPane.margin>
-            </Button>
+            </JFXButton>
          </bottom>
          <center>
-            <StackPane fx:id="stackpane" opacity="0.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #273043;" BorderPane.alignment="CENTER">
+            <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" vbarPolicy="NEVER" StackPane.alignment="CENTER">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1158.0" prefWidth="331.0" style="-fx-background-color: #273043;">
-                           <children>
-                              <GridPane alignment="CENTER" layoutY="1.0" prefHeight="1105.0" prefWidth="336.0" style="-fx-background-color: #273043;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="1.0">
-                                 <columnConstraints>
-                                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" prefWidth="100.0" />
-                                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
+                  <StackPane fx:id="stackpane" prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" vbarPolicy="NEVER">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1179.0" prefWidth="329.0" style="-fx-background-color: #273043;">
                                  <children>
-                                    <Label id="kill" fx:id="hydraLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" />
-                                    <Label id="kill" fx:id="callistoLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Label id="kill" fx:id="barrowsLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <Label id="kill" alignment="CENTER" prefHeight="35.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="xericLabel" />
-                                    <Label id="kill" fx:id="chaosFanaticLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <Label id="kill" fx:id="corpLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                    <Label id="kill" fx:id="primeLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                    <Label id="kill" fx:id="supremeLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                    <Label id="kill" fx:id="generalGraardorLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                                    <Label id="kill" fx:id="grotesqueGuardianLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                                    <Label id="kill" fx:id="kalphiteQueenLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                                    <Label id="kill" fx:id="sireLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" />
-                                    <Label id="kill" fx:id="bryophytaLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                    <Label id="kill" fx:id="cerberusLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                    <Label id="kill" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="xericChallengeLabel" />
-                                    <Label id="kill" fx:id="zilyanaLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                                    <Label id="kill" fx:id="crazyArchaeologistLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                                    <Label id="kill" fx:id="rexLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                                    <Label id="kill" fx:id="derangedArchaeologistLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                                    <Label id="kill" fx:id="giantMoleLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-                                    <Label id="kill" fx:id="hesporiLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                                    <Label id="kill" fx:id="kbdLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-                                    <Label id="kill" fx:id="krakenLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="11">
-                                       <image>
-                                          <Image url="@images/bossImages/Kalphite_Queen.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                                       <image>
-                                          <Image url="@images/bossImages/Bryophyta.png" />
-                                       </image>
-                                       <GridPane.margin>
-                                          <Insets />
-                                       </GridPane.margin>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-                                       <image>
-                                          <Image url="@images/bossImages/Barrows_Chests.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-                                       <image>
-                                          <Image url="@images/bossImages/Callisto.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
-                                       <image>
-                                          <Image url="@images/bossImages/Chambers_of_Xeric.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
-                                       <image>
-                                          <Image url="@images/bossImages/Chaos_Fanatic.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
-                                       <image>
-                                          <Image url="@images/bossImages/Corporeal_Beast.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
-                                       <image>
-                                          <Image url="@images/bossImages/Dagannoth_Prime.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="8">
-                                       <image>
-                                          <Image url="@images/bossImages/Dagannoth_Supreme.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9">
-                                       <image>
-                                          <Image url="@images/bossImages/General_Graardor.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="10">
-                                       <image>
-                                          <Image url="@images/bossImages/Grotesque_Guardians.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                       <image>
-                                          <Image url="@images/bossImages/Alchemical_Hydra.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/bossImages/Abyssal_Sire.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                                       <image>
-                                          <Image url="@images/bossImages/Cerberus.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                                       <image>
-                                          <Image url="@images/bossImages/Chambers_of_Xeric_Challenge.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
-                                       <image>
-                                          <Image url="@images/bossImages/Commander_Zilyana.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
-                                       <image>
-                                          <Image url="@images/bossImages/Crazy_Archaeologist.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
-                                       <image>
-                                          <Image url="@images/bossImages/Dagannoth_Rex.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
-                                       <image>
-                                          <Image url="@images/bossImages/Deranged_archaeologist.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="8">
-                                       <image>
-                                          <Image url="@images/bossImages/Giant_Mole.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="9">
-                                       <image>
-                                          <Image url="@images/bossImages/Hespori.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="10">
-                                       <image>
-                                          <Image url="@images/bossImages/King_Black_Dragon.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="12">
-                                       <image>
-                                          <Image url="@images/bossImages/Kraken.png" />
-                                       </image>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                    <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="11">
-                                       <image>
-                                          <Image url="@images/bossImages/Kree'arra.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="13">
-                                       <image>
-                                          <Image url="@images/bossImages/K'ril_Tsutsaroth.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="12">
-                                       <image>
-                                          <Image url="@images/bossImages/Mimic.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="13">
-                                       <image>
-                                          <Image url="@images/bossImages/Sarachnis.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="14">
-                                       <image>
-                                          <Image url="@images/bossImages/Skotizo.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="15">
-                                       <image>
-                                          <Image url="@images/bossImages/The_Gauntlet_Corrupted.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="16">
-                                       <image>
-                                          <Image url="@images/bossImages/Thermonuclear_Smoke_Devil.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="17">
-                                       <image>
-                                          <Image url="@images/bossImages/TzTok-Jad.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="18">
-                                       <image>
-                                          <Image url="@images/bossImages/Vet'ion.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="19">
-                                       <image>
-                                          <Image url="@images/bossImages/Wintertodt.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="21">
-                                       <image>
-                                          <Image url="@images/bossImages/Zulrah.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="14">
-                                       <image>
-                                          <Image url="@images/bossImages/Obor.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="15">
-                                       <image>
-                                          <Image url="@images/bossImages/Scorpia.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="16">
-                                       <image>
-                                          <Image url="@images/bossImages/The_Gauntlet.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="17">
-                                       <image>
-                                          <Image url="@images/bossImages/Theatre_Of_Blood.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="18">
-                                       <image>
-                                          <Image url="@images/bossImages/TzKal-Zuk.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="19">
-                                       <image>
-                                          <Image url="@images/bossImages/Venenatis.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="20">
-                                       <image>
-                                          <Image url="@images/bossImages/Vorkath.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="20">
-                                       <image>
-                                          <Image url="@images/bossImages/Zalcano.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label id="kill" fx:id="krilLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-                                    <Label id="kill" fx:id="kreeLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="11" />
-                                    <Label id="kill" fx:id="mimicLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="12" />
-                                    <Label id="kill" fx:id="oborLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-                                    <Label id="kill" fx:id="scorpiaLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-                                    <Label id="kill" fx:id="gauntletLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="16" />
-                                    <Label id="kill" fx:id="tobLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="17" />
-                                    <Label id="kill" fx:id="zukLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="18" />
-                                    <Label id="kill" fx:id="venenatisLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="19" />
-                                    <Label id="kill" fx:id="vorkathLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="20" />
-                                    <Label id="kill" fx:id="zalcanoLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="20" />
-                                    <Label id="kill" fx:id="sarachnisLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="13" />
-                                    <Label id="kill" fx:id="skotizoLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="14" />
-                                    <Label id="kill" fx:id="corruptedGauntletLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="15" />
-                                    <Label id="kill" fx:id="thermoSmokeLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="16" />
-                                    <Label id="kill" fx:id="jadLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="17" />
-                                    <Label id="kill" fx:id="vetionLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="18" />
-                                    <Label id="kill" fx:id="wintertodtLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="19" />
-                                    <Label id="kill" fx:id="zulrahLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="21" />
-                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
-                                       <image>
-                                          <Image url="@images/bossImages/Chaos_Elemental.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label id="kill" fx:id="chaosElementalLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <GridPane alignment="CENTER" layoutY="1.0" prefHeight="1188.0" prefWidth="332.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="1.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="NEVER" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label id="kill" fx:id="hydraLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" />
+                                          <Label id="kill" fx:id="callistoLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label id="kill" fx:id="barrowsLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label id="kill" alignment="CENTER" prefHeight="35.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="xericLabel" />
+                                          <Label id="kill" fx:id="chaosFanaticLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label id="kill" fx:id="corpLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <Label id="kill" fx:id="primeLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <Label id="kill" fx:id="supremeLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                          <Label id="kill" fx:id="generalGraardorLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                          <Label id="kill" fx:id="grotesqueGuardianLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                          <Label id="kill" fx:id="kalphiteQueenLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                          <Label id="kill" fx:id="sireLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" />
+                                          <Label id="kill" fx:id="bryophytaLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label id="kill" fx:id="cerberusLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label id="kill" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="xericChallengeLabel" />
+                                          <Label id="kill" fx:id="zilyanaLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label id="kill" fx:id="crazyArchaeologistLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                          <Label id="kill" fx:id="rexLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                          <Label id="kill" fx:id="derangedArchaeologistLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                          <Label id="kill" fx:id="giantMoleLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                          <Label id="kill" fx:id="hesporiLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                                          <Label id="kill" fx:id="kbdLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                                          <Label id="kill" fx:id="krakenLabel" alignment="CENTER" prefHeight="33.0" prefWidth="65.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="11">
+                                             <image>
+                                                <Image url="@images/bossImages/Kalphite_Queen.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@images/bossImages/Bryophyta.png" />
+                                             </image>
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@images/bossImages/Barrows_Chests.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                                             <image>
+                                                <Image url="@images/bossImages/Callisto.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+                                             <image>
+                                                <Image url="@images/bossImages/Chambers_of_Xeric.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+                                             <image>
+                                                <Image url="@images/bossImages/Chaos_Fanatic.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
+                                             <image>
+                                                <Image url="@images/bossImages/Corporeal_Beast.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
+                                             <image>
+                                                <Image url="@images/bossImages/Dagannoth_Prime.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="8">
+                                             <image>
+                                                <Image url="@images/bossImages/Dagannoth_Supreme.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9">
+                                             <image>
+                                                <Image url="@images/bossImages/General_Graardor.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="10">
+                                             <image>
+                                                <Image url="@images/bossImages/Grotesque_Guardians.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <image>
+                                                <Image url="@images/bossImages/Alchemical_Hydra.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/bossImages/Abyssal_Sire.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                             <image>
+                                                <Image url="@images/bossImages/Cerberus.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                             <image>
+                                                <Image url="@images/bossImages/Chambers_of_Xeric_Challenge.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                             <image>
+                                                <Image url="@images/bossImages/Commander_Zilyana.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                                             <image>
+                                                <Image url="@images/bossImages/Crazy_Archaeologist.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                                             <image>
+                                                <Image url="@images/bossImages/Dagannoth_Rex.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                                             <image>
+                                                <Image url="@images/bossImages/Deranged_archaeologist.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                                             <image>
+                                                <Image url="@images/bossImages/Giant_Mole.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                                             <image>
+                                                <Image url="@images/bossImages/Hespori.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="10">
+                                             <image>
+                                                <Image url="@images/bossImages/King_Black_Dragon.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="12">
+                                             <image>
+                                                <Image url="@images/bossImages/Kraken.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView id="skill" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="11">
+                                             <image>
+                                                <Image url="@images/bossImages/Kree'arra.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="13">
+                                             <image>
+                                                <Image url="@images/bossImages/K'ril_Tsutsaroth.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="12">
+                                             <image>
+                                                <Image url="@images/bossImages/Mimic.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="13">
+                                             <image>
+                                                <Image url="@images/bossImages/Sarachnis.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="14">
+                                             <image>
+                                                <Image url="@images/bossImages/Skotizo.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="15">
+                                             <image>
+                                                <Image url="@images/bossImages/The_Gauntlet_Corrupted.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="16">
+                                             <image>
+                                                <Image url="@images/bossImages/Thermonuclear_Smoke_Devil.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="17">
+                                             <image>
+                                                <Image url="@images/bossImages/TzTok-Jad.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="18">
+                                             <image>
+                                                <Image url="@images/bossImages/Vet'ion.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="19">
+                                             <image>
+                                                <Image url="@images/bossImages/Wintertodt.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="21">
+                                             <image>
+                                                <Image url="@images/bossImages/Zulrah.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="14">
+                                             <image>
+                                                <Image url="@images/bossImages/Obor.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="15">
+                                             <image>
+                                                <Image url="@images/bossImages/Scorpia.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="16">
+                                             <image>
+                                                <Image url="@images/bossImages/The_Gauntlet.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="17">
+                                             <image>
+                                                <Image url="@images/bossImages/Theatre_Of_Blood.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="18">
+                                             <image>
+                                                <Image url="@images/bossImages/TzKal-Zuk.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="19">
+                                             <image>
+                                                <Image url="@images/bossImages/Venenatis.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="20">
+                                             <image>
+                                                <Image url="@images/bossImages/Vorkath.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="20">
+                                             <image>
+                                                <Image url="@images/bossImages/Zalcano.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label id="kill" fx:id="krilLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                                          <Label id="kill" fx:id="kreeLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                                          <Label id="kill" fx:id="mimicLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                                          <Label id="kill" fx:id="oborLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                                          <Label id="kill" fx:id="scorpiaLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                                          <Label id="kill" fx:id="gauntletLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                                          <Label id="kill" fx:id="tobLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                                          <Label id="kill" fx:id="zukLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                                          <Label id="kill" fx:id="venenatisLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                                          <Label id="kill" fx:id="vorkathLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+                                          <Label id="kill" fx:id="zalcanoLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="20" />
+                                          <Label id="kill" fx:id="sarachnisLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+                                          <Label id="kill" fx:id="skotizoLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+                                          <Label id="kill" fx:id="corruptedGauntletLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="15" />
+                                          <Label id="kill" fx:id="thermoSmokeLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="16" />
+                                          <Label id="kill" fx:id="jadLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="17" />
+                                          <Label id="kill" fx:id="vetionLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="18" />
+                                          <Label id="kill" fx:id="wintertodtLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="19" />
+                                          <Label id="kill" fx:id="zulrahLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+                                          <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                                             <image>
+                                                <Image url="@images/bossImages/Chaos_Elemental.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label id="kill" fx:id="chaosElementalLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
                                  </children>
-                              </GridPane>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </ScrollPane>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </StackPane>
                </children>
-            </StackPane>
+            </GridPane>
          </center>
       </BorderPane>
    </children>

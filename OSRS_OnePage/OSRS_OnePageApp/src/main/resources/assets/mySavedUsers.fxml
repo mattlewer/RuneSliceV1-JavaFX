@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -19,7 +18,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.mySavedUsers">
    <children>
-      <BorderPane fx:id="borderpane" opacity="0.0" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <GridPane alignment="CENTER" centerShape="false" maxHeight="600.0" maxWidth="335.0" prefHeight="360.0" prefWidth="334.0" BorderPane.alignment="CENTER">
               <columnConstraints>
@@ -59,92 +58,61 @@
                                           <Label id="user" fx:id="userThree" text="Nerbes" visible="false" GridPane.rowIndex="2" />
                                           <Label id="user" fx:id="userFour" text="Gsus_Piece" visible="false" GridPane.rowIndex="3" />
                                           <Label id="user" fx:id="userFive" text="Wolgast1" visible="false" GridPane.rowIndex="4" />
-                                          <Button fx:id="searchOne" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <Button fx:id="searchTwo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <Button fx:id="searchThree" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <Button fx:id="searchFour" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <Button fx:id="searchFive" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <Button fx:id="searchTen" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="Search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
                                           <Label id="user" fx:id="userSix" text="Label" visible="false" GridPane.rowIndex="5" />
                                           <Label id="user" fx:id="userSeven" text="Label" visible="false" GridPane.rowIndex="6" />
                                           <Label id="user" fx:id="userEight" text="Label" visible="false" GridPane.rowIndex="7" />
                                           <Label id="user" fx:id="userNine" text="Label" visible="false" GridPane.rowIndex="8" />
                                           <Label id="user" fx:id="userTen" text="Label" visible="false" GridPane.rowIndex="9" />
-                                          <Button fx:id="searchSix" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          <JFXButton fx:id="searchOne" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1">
                                              <font>
                                                 <Font size="13.0" />
                                              </font>
-                                          </Button>
-                                          <Button fx:id="searchSeven" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" styleClass="search" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </JFXButton>
+                                          <JFXButton fx:id="searchTwo" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                              <font>
                                                 <Font size="13.0" />
                                              </font>
-                                          </Button>
-                                          <Button fx:id="searchEight" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </JFXButton>
+                                          <JFXButton fx:id="searchThree" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                              <font>
                                                 <Font size="13.0" />
                                              </font>
-                                          </Button>
-                                          <Button fx:id="searchNine" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </JFXButton>
+                                          <JFXButton fx:id="searchFour" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                              <font>
                                                 <Font size="13.0" />
                                              </font>
-                                          </Button>
-                                          <Label id="user" fx:id="userTen1" text="Label" visible="false" GridPane.rowIndex="10" />
+                                          </JFXButton>
+                                          <JFXButton fx:id="searchFive" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="searchSix" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="searchSeven" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="searchEight" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="searchNine" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="searchTen" alignment="CENTER" contentDisplay="CENTER" onAction="#getUserToSearch" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </JFXButton>
                                        </children>
                                     </GridPane>
                                  </children>
@@ -168,27 +136,24 @@
          <bottom>
             <VBox alignment="CENTER" prefHeight="156.0" prefWidth="334.0" BorderPane.alignment="BOTTOM_CENTER">
                <children>
-                  <ImageView id="search" fitHeight="46.0" fitWidth="46.0" onMouseClicked="#openCompareUsers" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="hov" fitHeight="46.0" fitWidth="46.0" onMouseClicked="#openCompareUsers" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/group.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="251.0" style="-fx-text-fill: #F02D3A;" text="compare saved users">
+                  <Label id="hov" alignment="CENTER" prefHeight="17.0" prefWidth="251.0" style="-fx-text-fill: #F02D3A;" text="compare saved users">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Label>
-                  <Button fx:id="search" alignment="CENTER" contentDisplay="CENTER" minHeight="34.0" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to search" textAlignment="CENTER">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                  <JFXButton fx:id="search" alignment="CENTER" contentDisplay="CENTER" minHeight="34.0" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to search" textAlignment="CENTER">
                      <font>
                         <Font size="13.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="30.0" top="40.0" />
                      </VBox.margin>
-                  </Button>
+                  </JFXButton>
                </children>
                <BorderPane.margin>
                   <Insets />

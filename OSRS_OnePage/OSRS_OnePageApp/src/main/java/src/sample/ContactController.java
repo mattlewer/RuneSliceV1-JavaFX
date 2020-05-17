@@ -5,6 +5,7 @@
  */
 package src.sample;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -53,9 +54,9 @@ public class ContactController extends pageOpener {
     @FXML private TextField emailField;
     @FXML private Label mssgPrompt;
     @FXML private TextArea mssgField;
-    @FXML private Button submit;
+    @FXML private JFXButton submit;
     @FXML private Label errorLabel;
-    @FXML public Button returnToHome;
+    @FXML public JFXButton returnToHome;
     
 //    static String readFile(String path, Charset encoding) throws IOException {
 //        byte[] encoded = Files.readAllBytes(Paths.get(path));
@@ -218,7 +219,6 @@ public class ContactController extends pageOpener {
         Parent root = (Parent)loader.load();
         saveUserPopup pop = loader.getController(); 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/assets/saveUserPopupStyle.css").toExternalForm());
         Stage window = new Stage();
         // Load pop-up as trasparent so it appears to float over the blurred scene, no toolbar
         window.initStyle(StageStyle.TRANSPARENT);

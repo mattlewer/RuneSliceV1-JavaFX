@@ -5,8 +5,8 @@
  */
 package src.sample;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
 /**
@@ -14,9 +14,9 @@ import javafx.scene.layout.BorderPane;
  * @author mlewe
  */
 public class CompareUserHome extends pageOpener{
-    @FXML private Button compareSkill;
-    @FXML private Button compareBoss;
-    @FXML private Button compareClueScroll;
+    @FXML private JFXButton compareSkill;
+    @FXML private JFXButton compareBoss;
+    @FXML private JFXButton compareClueScroll;
     @FXML public BorderPane borderpane;
-    @FXML public Button returnToSaved;
+    @FXML public JFXButton returnToSaved;
 }

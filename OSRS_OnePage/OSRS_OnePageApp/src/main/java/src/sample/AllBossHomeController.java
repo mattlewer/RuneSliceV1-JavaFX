@@ -5,6 +5,7 @@
  */
 package src.sample;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +17,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
@@ -41,7 +41,7 @@ public class AllBossHomeController extends pageOpener implements Initializable{
     @FXML public ImageView saved;
     @FXML public Label bosses;
     @FXML public Label skills;
-    @FXML public Button exit;
+    @FXML public JFXButton exit;
     
     //Boss kill number labels
     @FXML private Label hydraLabel;
@@ -375,6 +375,7 @@ public class AllBossHomeController extends pageOpener implements Initializable{
             pop.no.setVisible(true);
             pop.warning.setVisible(true);
             pop.warning.setStyle("-fx-font-size:11px;-fx-text-fill: #F02D3A;");
+            root.requestFocus();
             window.show();
             
             // Control what happens when the user clicks the yes button

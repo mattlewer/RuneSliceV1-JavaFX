@@ -1,6 +1,7 @@
     package src.sample;
 
 
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -15,7 +16,6 @@ import javafx.animation.PauseTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -62,7 +62,7 @@ public class allSkillHome extends pageOpener implements Initializable {
     @FXML public GridPane gridpane;
     @FXML public BorderPane borderpane;
     @FXML Label usernameLabel;
-    @FXML public Button exit;
+    @FXML public JFXButton exit;
 
 
     @Override
@@ -317,7 +317,6 @@ public class allSkillHome extends pageOpener implements Initializable {
         borderpane.setEffect(gaussianBlur);
         saveUserPopup pop = loader.getController(); 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/assets/saveUserPopupStyle.css").toExternalForm());
         Stage window = new Stage();
         // Load pop-up as trasparent so it appears to float over the blurred scene, no toolbar
         window.initStyle(StageStyle.TRANSPARENT);
@@ -358,6 +357,7 @@ public class allSkillHome extends pageOpener implements Initializable {
             pop.no.setVisible(true);
             pop.warning.setVisible(true);
             pop.warning.setStyle("-fx-font-size:11px;-fx-text-fill: #F02D3A;");
+            root.requestFocus();
             window.show();
             
             // Control what happens when the user clicks the yes button

@@ -70,7 +70,6 @@ public class Main extends Application {
         pt.setOnFinished(e->{
             try {
                 // Update saved users
-                splash.errorMssg.setText("updating saved users");
                 splash.errorMssg.setVisible(true);
                 lns.updateUsers();
                 ft.play();

@@ -5,42 +5,10 @@
     -fx-text-fill:  #95C623;
     -fx-font-size:16px;
 }
-#searchOne:hover, #searchOne:focus, #searchOne:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#searchTwo:hover, #searchTwo:focus, #searchTwo:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#searchThree:hover, #searchThree:focus, #searchThree:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#searchFour:hover, #searchFour:focus, #searchFour:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#searchFive:hover, #searchFive:focus, #searchFive:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#searchSix:hover, #searchSix:focus, #searchSix:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#searchSeven:hover, #searchSeven:focus, #searchSeven:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#searchEight:hover, #searchEight:focus, #searchEight:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#searchNine:hover, #searchNine:focus, #searchNine:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#searchTen:hover, #searchTen:focus, #searchTen:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
-#search:hover, #search:focus, #search:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
+
 
 .scroll-pane{
-    -fx-background-color: #273043;
+    -fx-background: #273043;
     -fx-effect: innershadow( gaussian, #273043, 30, 0, 0, -30 );
     -fx-background-insets: 0, 1;
     -fx-padding: 1;
@@ -48,7 +16,7 @@
 }
 
 .scroll-pane:focused{
-    -fx-background-color:  #273043;
+    -fx-background:  #273043;
     -fx-background-insets: 0, 1;
     -fx-padding: 1;
     
@@ -78,4 +46,7 @@
 	-fx-background-insets: 0, 0, 0;
 	-fx-background-radius: 0em;
 
+}
+#hov:hover, #hov:focus, #hov:active {
+    -fx-effect: dropshadow(three-pass-box,  grey, 19, 0, 0.5, 0);
 }

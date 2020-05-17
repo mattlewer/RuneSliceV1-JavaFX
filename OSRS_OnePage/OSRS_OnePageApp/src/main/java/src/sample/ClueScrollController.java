@@ -5,6 +5,7 @@
  */
 package src.sample;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,7 +14,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
@@ -37,7 +37,7 @@ public class ClueScrollController extends pageOpener{
     @FXML public GridPane gridpane;
     @FXML private Label usernameLabel;
     @FXML private ImageView saved;
-    @FXML public Button exit;
+    @FXML public JFXButton exit;
     @FXML private Label beginnerLabel;
     @FXML private Label easyLabel;
     @FXML private Label mediumLabel;
@@ -162,6 +162,7 @@ public class ClueScrollController extends pageOpener{
             pop.no.setVisible(true);
             pop.warning.setVisible(true);
             pop.warning.setStyle("-fx-font-size:11px;-fx-text-fill: #F02D3A;");
+            root.requestFocus();
             window.show();
             
             // Control what happens when the user clicks the yes button

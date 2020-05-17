@@ -1,5 +1,6 @@
 package src.sample;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,7 +12,6 @@ import java.io.IOException;
 import javafx.animation.FadeTransition;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
@@ -22,12 +22,19 @@ public class pageOpener {
 
     // When the user searches a username this function is called
     public void openAllSkills(ActionEvent event, String account) throws IOException {
-        
         // The text to user has entered
         String acc = account;
        
+        int isSavedAlready = 0;
+        User savedUser = null;
+        for(User u: LoadAndSave.users){
+            if(u.username.equals(acc)){
+                isSavedAlready = 1;
+                savedUser = u;
+            }
+        }
         // Make sure it is of valid length
-        if(acc.length() > 0) {
+        if(acc.length() > 0 && isSavedAlready == 0) {
             
             // Search and retreive the skills for that username
             // User is set as a static value in 'getSkills'
@@ -61,9 +68,13 @@ public class pageOpener {
             // Set the scene to the Stage / Window
             window.setScene(scene);
             // Refresh the page by closing and opening to stop focus on top element, dodgy hack but works well on mobile
+            root.requestFocus();
             window.hide();
             window.show();
             
+        }else if(isSavedAlready == 1){
+            getSkills.setUser(savedUser);
+            exitSkill(event);
         }
         else{
             // If we encounter an error, return to the home page and run the 'reRun' function to display error
@@ -172,6 +183,7 @@ public class pageOpener {
         });
         scene.getStylesheets().add(getClass().getResource("/assets/skillStyle.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -187,6 +199,7 @@ public class pageOpener {
         Scene scene = new Scene(root); 
         scene.getStylesheets().add(getClass().getResource("/assets/stylesheethome.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -210,6 +223,7 @@ public class pageOpener {
             });
         scene.getStylesheets().add(getClass().getResource("/assets/allBossHomeStyle.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -233,6 +247,7 @@ public class pageOpener {
             });
         scene.getStylesheets().add(getClass().getResource("/assets/userClueScrollStyle.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -258,6 +273,7 @@ public class pageOpener {
         });
         scene.getStylesheets().add(getClass().getResource("/assets/allSkillStyle.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -282,6 +298,7 @@ public class pageOpener {
         });
         scene.getStylesheets().add(getClass().getResource("/assets/allSkillStyle.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -307,6 +324,7 @@ public class pageOpener {
         });
         scene.getStylesheets().add(getClass().getResource("/assets/mySavedUsersStyle.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -327,8 +345,8 @@ public class pageOpener {
                 }
             }
         });
-        scene.getStylesheets().add(getClass().getResource("/assets/compareUserHomeStyle.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -339,7 +357,7 @@ public class pageOpener {
         Parent root = (Parent)loader.load();
         CompareUsersController sec = loader.getController();
         
-        String text = ((Button)event.getSource()).getText();
+        String text = ((JFXButton)event.getSource()).getText();
 
         if(text.equals("compare by skill")){
             CompareUsersController.skillOrBoss = 0;
@@ -365,6 +383,7 @@ public class pageOpener {
         });
         scene.getStylesheets().add(getClass().getResource("/assets/compareUserDataStyle.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -396,6 +415,7 @@ public class pageOpener {
         });
         scene.getStylesheets().add(getClass().getResource("/assets/infoPageStyle.css").toExternalForm());
         window.setScene(scene);
+        root.requestFocus();
         window.hide();
         window.show();
     }
@@ -418,8 +438,8 @@ public class pageOpener {
         });
         scene.getStylesheets().add(getClass().getResource("/assets/contactPageStyle.css").toExternalForm());
         window.setScene(scene);
-        window.hide();
         root.requestFocus();
+        window.hide();
         window.show();
     }
     
@@ -431,4 +451,6 @@ public class pageOpener {
         ft.setToValue(0);
         ft.play();
     }
+    
+   
 }

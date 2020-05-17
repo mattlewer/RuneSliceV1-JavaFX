@@ -29,6 +29,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.6'
     compile 'com.sun.mail:android-mail:1.6.2'
     compile 'com.sun.mail:android-activation:1.6.2'
+    compile 'com.jfoenix:jfoenix:8.0.8'
     
 }
 jfxmobile {

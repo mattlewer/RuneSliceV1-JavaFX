@@ -5,13 +5,13 @@
  */
 package src.sample;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import javafx.animation.Interpolator;
 import javafx.animation.PauseTransition;
 import javafx.animation.RotateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
@@ -32,31 +32,36 @@ public class mySavedUsers extends pageOpener {
     @FXML public ImageView icon;
     @FXML public Label loading;
     
+    // User Labels
     @FXML private Label userOne;
     @FXML private Label userTwo;
     @FXML private Label userThree;
     @FXML private Label userFour;
     @FXML private Label userFive;
-    @FXML private Button searchOne;
-    @FXML private Button searchTwo;
-    @FXML private Button searchThree;
-    @FXML private Button searchFour;
-    @FXML private Button searchFive;
-    @FXML private Button searchTen;
     @FXML private Label userSix; 
     @FXML private Label userSeven;
     @FXML private Label userEight;
     @FXML private Label userNine;
     @FXML private Label userTen;
-    @FXML private Button searchSix;
-    @FXML private Button searchSeven;
-    @FXML private Button searchEight;
-    @FXML private Button searchNine;
-    @FXML public Button search;
+    
+    // Search buttons
+    @FXML private JFXButton searchOne;
+    @FXML private JFXButton searchTwo;
+    @FXML private JFXButton searchThree;
+    @FXML private JFXButton searchFour;
+    @FXML private JFXButton searchFive;
+    @FXML private JFXButton searchTen;
+    @FXML private JFXButton searchSix;
+    @FXML private JFXButton searchSeven;
+    @FXML private JFXButton searchEight;
+    @FXML private JFXButton searchNine;
+    
+    // Return to seach user
+    @FXML public JFXButton search;
     public String name;
     
     public void myFunction(){
-        Button[] buttons = new Button[]{searchOne, searchTwo, searchThree, searchFour, searchFive, 
+        JFXButton[] buttons = new JFXButton[]{searchOne, searchTwo, searchThree, searchFour, searchFive, 
             searchSix, searchSeven, searchEight, searchNine, searchTen};
         
         Label[] labels = new Label[]{userOne, userTwo, userThree, userFour, userFive,
@@ -107,9 +112,6 @@ public class mySavedUsers extends pageOpener {
         PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
         LoadAndSave lns = new LoadAndSave();
         pause.setOnFinished(e ->{
-            try {
-                openAllSkills(event, name);
-            } catch (Exception err) {
                 try {
                     for(User u : lns.users){
                     if(u.getUsername().toString().equals(name)){
@@ -122,7 +124,7 @@ public class mySavedUsers extends pageOpener {
                 }catch(Exception eeee){
                     System.out.println("All went wrong");
                 }
-            }
+            
         });
         
         RotateTransition rt = new RotateTransition(Duration.millis(1500), icon);

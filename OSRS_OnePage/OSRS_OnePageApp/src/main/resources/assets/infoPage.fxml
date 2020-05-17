@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -51,19 +51,6 @@
                </children>
             </VBox>
          </top>
-         <bottom>
-            <Button id="btn" fx:id="returnToHome1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to home" textAlignment="CENTER" BorderPane.alignment="CENTER">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <BorderPane.margin>
-                  <Insets bottom="30.0" />
-               </BorderPane.margin>
-            </Button>
-         </bottom>
          <center>
             <GridPane maxHeight="600.0" maxWidth="335.0" prefHeight="600.0" prefWidth="345.0" BorderPane.alignment="CENTER">
               <columnConstraints>
@@ -168,6 +155,16 @@
                </BorderPane.margin>
             </GridPane>
          </center>
+         <bottom>
+            <JFXButton fx:id="returnToHome" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to home" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="30.0" />
+               </BorderPane.margin>
+            </JFXButton>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

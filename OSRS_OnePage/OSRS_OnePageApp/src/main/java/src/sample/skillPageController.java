@@ -5,6 +5,7 @@
  */
 package src.sample;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -12,7 +13,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -35,7 +35,7 @@ public class skillPageController extends pageOpener implements Initializable{
     @FXML public ProgressBar multipleOfTenBar;
     @FXML public Label next99Percent;
     @FXML public ProgressBar to99Bar;
-    @FXML public Button exit;
+    @FXML public JFXButton exit;
     @FXML public BorderPane borderpane;
    
 

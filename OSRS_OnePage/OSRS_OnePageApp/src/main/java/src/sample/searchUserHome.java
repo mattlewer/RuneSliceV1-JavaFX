@@ -1,5 +1,6 @@
 package src.sample;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -27,7 +27,7 @@ public class searchUserHome extends pageOpener {
 
 
     @FXML public ImageView logo;
-    @FXML public Button search;
+    @FXML public JFXButton search;
     @FXML public TextField username;
     @FXML public Label textUsername;
     @FXML public Label error;

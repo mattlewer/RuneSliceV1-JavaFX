@@ -7,9 +7,7 @@ and open the template in the editor.
     Created on : 13-May-2020, 00:42:28
     Author     : mlewe
 */
-.button:hover, .button:focus, .button:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
+
 #link:hover, #link:focus, #link:active {
     -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
 }

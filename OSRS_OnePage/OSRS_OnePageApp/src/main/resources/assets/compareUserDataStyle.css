@@ -18,9 +18,7 @@
     -fx-padding: 1;
     -fx-vbar-policy:always;
 }
-.button:hover, .button:focus, .button:active {
-    -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
-}
+
 
 .scroll-pane:focused{
     -fx-background-color:  #273043;
