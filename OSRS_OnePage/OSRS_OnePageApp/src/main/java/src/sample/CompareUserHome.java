@@ -16,6 +16,7 @@ import javafx.scene.layout.BorderPane;
 public class CompareUserHome extends pageOpener{
     @FXML private Button compareSkill;
     @FXML private Button compareBoss;
+    @FXML private Button compareClueScroll;
     @FXML public BorderPane borderpane;
     @FXML public Button returnToSaved;
 }

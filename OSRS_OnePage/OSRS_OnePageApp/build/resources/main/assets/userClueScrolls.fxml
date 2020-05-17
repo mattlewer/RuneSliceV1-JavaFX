@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="window" maxHeight="600.0" minHeight="-Infinity" minWidth="335.0" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.ClueScrollController">
+   <children>
+      <BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <GridPane alignment="TOP_CENTER" prefHeight="105.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints halignment="LEFT" maxWidth="106.66668701171875" minWidth="10.0" prefWidth="39.5" />
+                  <ColumnConstraints halignment="CENTER" maxWidth="239.0" minWidth="10.0" prefWidth="221.33331298828125" />
+                <ColumnConstraints halignment="CENTER" maxWidth="96.33331298828125" minWidth="10.0" prefWidth="39.5" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="51.666656494140625" minHeight="10.0" prefHeight="51.666656494140625" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="32.66667175292969" minHeight="10.0" prefHeight="25.333343505859375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="32.66667175292969" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="usernameLabel" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="51.0" prefWidth="305.0" style="-fx-text-fill: #95C623;" text="Label" textAlignment="CENTER" GridPane.columnSpan="3">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="154.0" prefWidth="305.0" style="-fx-text-fill: #F02D3A;" text="All found clue scrolls" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                  <ImageView fx:id="saved" fitHeight="32.0" fitWidth="41.0" onMouseClicked="#saveUser" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                     <image>
+                        <Image url="@images/star.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane alignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                    </rowConstraints>
+                     <children>
+                        <Label id="nav" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#viewAllBosses" prefHeight="17.0" prefWidth="91.0" style="-fx-text-fill: #F02D3A;" text="Bosses" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Label>
+                        <Label id="nav" alignment="CENTER" onMouseClicked="#exitSkillMouse" prefHeight="17.0" prefWidth="145.0" style="-fx-text-fill: #F02D3A;" text="Skills" textAlignment="CENTER" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Label>
+                        <Label id="nav" alignment="CENTER" prefHeight="17.0" prefWidth="145.0" style="-fx-text-fill: #95C623;" text="Clue Scrolls" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="20.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </top>
+         <bottom>
+            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="search new user" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="30.0" />
+               </BorderPane.margin>
+            </Button>
+         </bottom>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane fx:id="gridpane" alignment="CENTER" maxWidth="500.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="84.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/clueScroll_images/Clue_scroll_beginner.png" />
+                                 </image>
+                              </ImageView>
+                              <Label id="title" text="Beginner:">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></Label>
+                              <Label id="num" fx:id="beginnerLabel" text="Label" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                           <children>
+                              <ImageView fitHeight="84.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/clueScroll_images/Clue_scroll_medium.png" />
+                                 </image>
+                              </ImageView>
+                              <Label id="title" text="Easy:">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></Label>
+                              <Label id="num" fx:id="easyLabel" text="Label" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                           <children>
+                              <ImageView fitHeight="84.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/clueScroll_images/Clue_scroll_easy.png" />
+                                 </image>
+                              </ImageView>
+                              <Label id="title" text="Medium:">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></Label>
+                              <Label id="num" fx:id="mediumLabel" text="Label" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <ImageView fitHeight="84.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/clueScroll_images/Clue_scroll_hard.png" />
+                                 </image>
+                              </ImageView>
+                              <Label id="title" text="Hard:">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></Label>
+                              <Label id="num" fx:id="hardLabel" text="Label" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                           <children>
+                              <ImageView fitHeight="84.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/clueScroll_images/Clue_scroll_elite.png" />
+                                 </image>
+                              </ImageView>
+                              <Label id="title" text="Elite:">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></Label>
+                              <Label id="num" fx:id="eliteLabel" text="Label" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <ImageView fitHeight="84.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/clueScroll_images/Clue_scroll_master.png" />
+                                 </image>
+                              </ImageView>
+                              <Label id="title" text="Master:">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></Label>
+                              <Label id="num" fx:id="masterLabel" text="Label" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="30.0" top="20.0" />
+                     </StackPane.margin>
+                  </GridPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

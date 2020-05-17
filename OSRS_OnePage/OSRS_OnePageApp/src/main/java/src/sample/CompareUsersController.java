@@ -210,7 +210,64 @@ public class CompareUsersController extends pageOpener {
         
     }
     
-    
+    public void myClueFunction(){
+        levelKills.setText("Clue Scrolls");
+        title.setText("Compare Scrolls Achieved");
+        reorderedList = LoadAndSave.getUsers();
+        String clues[] = {"Beginner", "Easy","Medium","Hard", "Elite", "Master" };
+        
+        for(String s : clues){
+            combo.getItems().add(s); 
+        }
+        combo.setValue("Beginner");
+        
+        // Create array of buttons, as create on page load will set without null pointer
+        Label rankLabels[]={rankOne, rankTwo, rankThree, rankFour, rankFive, rankSix, rankSeven, rankEight, rankNine, rankTen};
+        Label userLabels[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
+        Label xpLabels[] = {xpOne, xpTwo, xpThree, xpFour, xpFive, xpSix, xpSeven, xpEight, xpNine, xpTen};
+        ImageView image[] = {firstPlace, secondPlace, thirdPlace, fourthPlace, fifthPlace, sixthPlace, seventhPlace, eighthPlace, ninthPlace, tenthPlace};
+        
+        rankLabelss = rankLabels;
+        images = image;
+        userLabelss = xpLabels;
+        xpLabelss = xpLabels;
+        
+        Collections.sort(reorderedList, new Comparator<User>() {
+            @Override public int compare(User p1, User p2) {
+               int p1Scrolls;
+               int p2Scrolls;
+               try{
+                   p1Scrolls = Integer.parseInt(p1.beginnerScrolls());
+               }catch(NullPointerException e){
+                   p1Scrolls = 0;
+               }
+               try{
+                   p2Scrolls = Integer.parseInt(p2.beginnerScrolls()); 
+               }catch(NullPointerException e){
+                   p2Scrolls = 0;
+               }                
+                return (int) (p2Scrolls - p1Scrolls); // Descending
+            }
+        });    
+        
+        // Set saved users to fields in order  
+        int i = 0;
+        for(User u3 : reorderedList){
+            String scrollsObtained;
+            try{
+                scrollsObtained = String.valueOf(u3.beginnerScrolls());
+            }catch(NullPointerException e1){
+                scrollsObtained = "0";
+            }
+            userLabels[i].setText(u3.username);
+            xpLabels[i].setText(scrollsObtained);
+            userLabels[i].setVisible(true);
+            xpLabels[i].setVisible(true);
+            image[i].setVisible(true);
+            rankLabels[i].setVisible(true);
+            i++;
+        }   
+    }
     
     
     
@@ -255,7 +312,7 @@ public class CompareUsersController extends pageOpener {
                 rankLabelss[i].setVisible(true);
                 i++;
             }   
-        }else{
+        }else if(skillOrBoss == 1){
             // Fade the StackPane containing the infomation out and back in again whilst change taking place
             refreshFade(stackpane);
             // Get value from ComboBox, this will be the boss we are comparing
@@ -292,6 +349,49 @@ public class CompareUsersController extends pageOpener {
                 String User = String.valueOf(u3.getUsername());
                 userLabels2[i].setText(User);
                 xpLabelss[i].setText(level);
+                userLabels2[i].setVisible(true);
+                xpLabelss[i].setVisible(true);
+                images[i].setVisible(true);
+                rankLabelss[i].setVisible(true);
+                i++;     
+            }
+        }else{
+            // Fade the StackPane containing the infomation out and back in again whilst change taking place
+            refreshFade(stackpane);
+            // Get value from ComboBox, this will be the scroll we are comparing
+            String compScroll = combo.getValue().toString();
+            
+            // Order saved users by selected boss
+            Collections.sort(reorderedList, new Comparator<User>() {
+               @Override public int compare(User p1, User p2) {
+               int p1Kills;
+               int p2Kills;
+                try{
+                   p1Kills = p1.clues.get(compScroll).getNumberOfScrollsCompleted();
+                }catch(NullPointerException e){
+                    p1Kills = 0;
+                }
+                try{
+                   p2Kills = p2.clues.get(compScroll).getNumberOfScrollsCompleted();
+                }catch(NullPointerException e){
+                    p2Kills = 0;
+                }
+                    return (int) (p2Kills - p1Kills); // Descending
+                }
+            });  
+                        // Set saved users to fields in order  
+            int i = 0;
+            for(User u3 : reorderedList){
+                Label userLabels2[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
+                String numberOfScrolls;
+                try{
+                    numberOfScrolls = String.valueOf(u3.getClues().get(compScroll).getNumberOfScrollsCompleted());
+                }catch(NullPointerException e1){
+                    numberOfScrolls = "0";
+                }
+                String User = String.valueOf(u3.getUsername());
+                userLabels2[i].setText(User);
+                xpLabelss[i].setText(numberOfScrolls);
                 userLabels2[i].setVisible(true);
                 xpLabelss[i].setVisible(true);
                 images[i].setVisible(true);

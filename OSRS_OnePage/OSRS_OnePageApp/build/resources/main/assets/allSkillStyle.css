@@ -7,7 +7,7 @@
 #exit {
     -fx-effect: none;
 }
-#exit:hover, #exit:focus, #exit:active {
+#exit:pressed {
     -fx-effect: dropshadow(three-pass-box,  grey, 19, 0, 0.5, 0);
 }
 

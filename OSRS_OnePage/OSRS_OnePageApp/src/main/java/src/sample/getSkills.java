@@ -605,8 +605,76 @@ public class getSkills {
             zulrahKills = "0";
         }
         return zulrahKills;
-    } 
+    }
     
+    // Functions to retreive clue scroll data
+    
+    // Beginner Scrolls
+    public String beginnerScrolls(){
+        String beginnerScrollCount;
+        try{
+            beginnerScrollCount = String.valueOf(user.clues.get("Beginner").getNumberOfScrollsCompleted());
+        }catch(NullPointerException e){
+            beginnerScrollCount = "0";
+        }
+        return beginnerScrollCount;
+    }
+    
+    // Beginner Scrolls
+    public String easyScrolls(){
+        String easyScrollCount;
+        try{
+            easyScrollCount = String.valueOf(user.clues.get("Easy").getNumberOfScrollsCompleted());
+        }catch(NullPointerException e){
+            easyScrollCount = "0";
+        }
+        return easyScrollCount;
+    }
+    
+    // Medium Scrolls
+    public String mediumScrolls(){
+        String mediumScrollCount;
+        try{
+            mediumScrollCount = String.valueOf(user.clues.get("Medium").getNumberOfScrollsCompleted());
+        }catch(NullPointerException e){
+            mediumScrollCount = "0";
+        }
+        return mediumScrollCount;
+    }
+    
+    // Hard Scrolls
+    public String hardScrolls(){
+        String hardScrollCount;
+        try{
+            hardScrollCount = String.valueOf(user.clues.get("Hard").getNumberOfScrollsCompleted());
+        }catch(NullPointerException e){
+            hardScrollCount = "0";
+        }
+        return hardScrollCount;
+    }
+    
+    // Elite Scrolls
+    public String eliteScrolls(){
+        String eliteScrollCount;
+        try{
+            eliteScrollCount = String.valueOf(user.clues.get("Elite").getNumberOfScrollsCompleted());
+        }catch(NullPointerException e){
+            eliteScrollCount = "0";
+        }
+        return eliteScrollCount;
+    }
+    
+    
+    // Elite Scrolls
+    public String masterScrolls(){
+        String masterScrollCount;
+        try{
+            masterScrollCount = String.valueOf(user.clues.get("Master").getNumberOfScrollsCompleted());
+        }catch(NullPointerException e){
+            masterScrollCount = "0";
+        }
+        return masterScrollCount;
+    }
     
     // Retrieve the user
     public static User getUser() {

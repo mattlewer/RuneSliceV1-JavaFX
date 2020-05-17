@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-May-2020, 22:55:33
+    Author     : mlewe
+*/
+
+#nav:pressed{
+    -fx-effect: dropshadow(three-pass-box, white, 19, 0, 0.5, 0);
+}
+#num{
+    -fx-text-fill:  #95C623;
+}
+
+#exit {
+    -fx-effect: none;
+}
+#exit:pressed {
+    -fx-effect: dropshadow(three-pass-box,  grey, 19, 0, 0.5, 0);
+}
+#title{
+     -fx-text-fill:#F02D3A;
+}

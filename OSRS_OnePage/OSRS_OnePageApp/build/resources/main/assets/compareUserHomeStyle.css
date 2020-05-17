@@ -8,7 +8,10 @@ and open the template in the editor.
     Author     : mlewe
 */
 
-#btn:hover, #btn:active{
+#btn{
+    -fx-font-size:11px;
+}
+#btn:hover, #btn:active, #btn:focus{
     -fx-effect:none;
     -fx-font-size:11px;
 }

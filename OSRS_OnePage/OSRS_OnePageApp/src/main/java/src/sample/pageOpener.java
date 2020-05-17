@@ -191,7 +191,7 @@ public class pageOpener {
         window.show();
     }
     
-    // Exit all Skills and return to the home page
+    // View all boss kills for a user
     public void viewAllBosses(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/allBossHome.fxml"));
         Parent root = (Parent) loader.load();
@@ -213,6 +213,30 @@ public class pageOpener {
         window.hide();
         window.show();
     }
+    
+    // Show all clue scrolls
+    public void viewAllClues(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/userClueScrolls.fxml"));
+        Parent root = (Parent) loader.load();
+        ClueScrollController sec = loader.getController();
+        sec.myFunction();
+        fade(sec.gridpane);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root); 
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+                @Override
+                public void handle(KeyEvent t) {
+                    if(t.getCode()==KeyCode.ESCAPE){
+                        sec.exit.fire();
+                    }
+                }
+            });
+        scene.getStylesheets().add(getClass().getResource("/assets/userClueScrollStyle.css").toExternalForm());
+        window.setScene(scene);
+        window.hide();
+        window.show();
+    }
+    
     
         // Exit each individual skill page back to 'All Skills'
     public void exitSkill(ActionEvent event) throws IOException {
@@ -320,9 +344,12 @@ public class pageOpener {
         if(text.equals("compare by skill")){
             CompareUsersController.skillOrBoss = 0;
             sec.mySkillFunction();
-        }else{
+        }else if (text.equals("compare by boss kills")){
             CompareUsersController.skillOrBoss = 1;
             sec.myBossFunction();
+        }else{
+            CompareUsersController.skillOrBoss = 3;
+            sec.myClueFunction();
         }
         fade(sec.borderpane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

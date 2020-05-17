@@ -19,12 +19,14 @@ public class User extends getSkills {
     public String username;
     public HashMap<String, Skill> skills;
     public HashMap<String, Boss> bossKills;
+    public HashMap<String, ClueScroll> clues;
     public Boolean isSaved = false;
 
-    public User(String username, HashMap<String, Skill> skills, HashMap<String, Boss> bossKills, Boolean isSaved){
+    public User(String username, HashMap<String, Skill> skills, HashMap<String, Boss> bossKills, HashMap<String, ClueScroll> clues, Boolean isSaved){
         this.username = username;
         this.skills = skills;
         this.bossKills = bossKills;
+        this.clues = clues;
         this.isSaved = isSaved;
     }
     
@@ -53,8 +55,14 @@ public class User extends getSkills {
     public void setBossKills(HashMap<String, Boss> bossKills) {
         this.bossKills = bossKills;
     }
-    
-    
+
+    public HashMap<String, ClueScroll> getClues() {
+        return clues;
+    }
+
+    public void setClues(HashMap<String, ClueScroll> clues) {
+        this.clues = clues;
+    }
 
     public Boolean getIsSaved() {
         return isSaved;

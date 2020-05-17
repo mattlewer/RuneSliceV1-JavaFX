@@ -61,8 +61,8 @@ public class HiscoresLookup {
         extractSkills();
         extractBossKills();
         // Build our User and return
-        User newuser = new User(username, mySkills, myBossKills, false);
-                return newuser;
+        User newuser = new User(username, mySkills, myBossKills, clues, false);
+        return newuser;
     }
 
     
@@ -174,7 +174,14 @@ public class HiscoresLookup {
         bosses.add("Wintertodt");
         bosses.add("Zalcano");
         bosses.add("Zulrah");
-                
+        
+        // Clue scrolls whilst not bosses use same layout, get at same time
+        bosses.add("Clue Scrolls \\(beginner\\)");
+        bosses.add("Clue Scrolls \\(easy\\)");
+        bosses.add("Clue Scrolls \\(medium\\)");
+        bosses.add("Clue Scrolls \\(hard\\)");
+        bosses.add("Clue Scrolls \\(elite\\)");
+        bosses.add("Clue Scrolls \\(master\\)");
         for(String i : bosses){
             extractBossKills(i);
         }
@@ -185,7 +192,7 @@ public class HiscoresLookup {
 
     public HashMap<String, Skill> mySkills = new HashMap<>();
     public HashMap<String, Boss> myBossKills = new HashMap<>();
-
+    public HashMap<String, ClueScroll> clues = new HashMap<>();
     
     
     // Extract Skills
@@ -239,9 +246,29 @@ public class HiscoresLookup {
 			statistic = new BossStatistic(rank, score);
                         int bossRank = statistic.getRank();
                         int bossKills = statistic.getAmount();
-                                        
-                        Boss boss = new Boss(bossRank, bossKills);
-                        myBossKills.put(name, boss);
+                        
+                        if(name.contains("Clue Scrolls")){
+                            if(name.contains("beginner")){
+                                name = "Beginner";
+                            }else if(name.contains("easy")){
+                                name = "Easy";
+                            }else if(name.contains("medium")){
+                                name = "Medium";
+                            }else if(name.contains("hard")){
+                                name = "Hard";
+                            }else if(name.contains("elite")){
+                                name = "Elite";
+                            }else if(name.contains("master")){
+                                name = "Master";
+                            }
+                            // bossRank -> Clue Rank, bossKills -> number of clues
+                            ClueScroll clue = new ClueScroll(bossRank, bossKills);
+                            clues.put(name, clue);
+                        }else{
+                            Boss boss = new Boss(bossRank, bossKills);
+                            myBossKills.put(name, boss);
+                        }
+                        
                        
                      
 		}

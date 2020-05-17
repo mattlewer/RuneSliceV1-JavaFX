@@ -44,6 +44,7 @@
                     <columnConstraints>
                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -58,6 +59,7 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Label>
+                        <Label id="nav" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#viewAllClues" prefHeight="17.0" prefWidth="87.0" style="-fx-text-fill: #F02D3A;" text="Clue Scrolls" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
