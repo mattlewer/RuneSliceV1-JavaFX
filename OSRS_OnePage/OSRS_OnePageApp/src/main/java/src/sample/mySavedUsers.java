@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
+import static javafx.util.Duration.millis;
 
 /**
  *
@@ -109,7 +110,7 @@ public class mySavedUsers extends pageOpener {
         
         loading.setVisible(true);
         loading.setText("Loading...");
-        PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
+        PauseTransition pause = new PauseTransition(millis(200));
         LoadAndSave lns = new LoadAndSave();
         pause.setOnFinished(e ->{
                 try {

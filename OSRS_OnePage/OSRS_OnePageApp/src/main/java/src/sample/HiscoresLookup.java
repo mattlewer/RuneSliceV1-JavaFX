@@ -54,14 +54,18 @@ public class HiscoresLookup {
     }
     
 
-   
-    
     public User boot(String username) throws IOException {
+//        String url = "https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + username;
+//        String html = Jsoup.connect(url).get().html();
+//        Document doc = Jsoup.parse(html);
+//        System.out.println(doc.html());
+
         webpage = downloadHiscoresWebpage(username);
         extractSkills();
         extractBossKills();
         // Build our User and return
         User newuser = new User(username, mySkills, myBossKills, clues, false);
+
         return newuser;
     }
 
@@ -196,14 +200,11 @@ public class HiscoresLookup {
     
     
     // Extract Skills
-    private  HashMap<String, Skill> extractSkill(String name) throws NumberFormatException {
-
-        SkillStatistic statistic = null;
+    private  void extractSkill(String name) throws NumberFormatException {
 
         int rank;
         int level;
         long experience;
-
 
         Pattern p = Pattern.compile(String.format(SKILL_STATISTIC_MATCH, name));
         Matcher m = p.matcher(webpage);
@@ -214,24 +215,13 @@ public class HiscoresLookup {
             level      = Integer.parseInt(m.group(3).replaceAll(",", ""));
             experience = Long.parseLong(m.group(4).replaceAll(",", ""));
 
-
-            statistic = new SkillStatistic(rank, level, experience);
-            int myRank = statistic.getRank();
-            int myLevel = statistic.getAmount();
-            Long xp = statistic.getExperience();
-
-
-            Skill skill = new Skill(myRank, myLevel, xp);
+            Skill skill = new Skill(rank, level, experience);
             mySkills.put(name, skill);
         }
-
-        return mySkills;
     }
 
     // Extract Boss Kills
-    private HashMap<String, Boss> extractBossKills(String name) throws NumberFormatException {
-
-		BossStatistic statistic = null;
+    private void extractBossKills(String name) throws NumberFormatException {
 
 		int rank;
 		int score;
@@ -243,10 +233,7 @@ public class HiscoresLookup {
 			rank = Integer.parseInt(m.group(2).replaceAll(",", ""));
 			score = Integer.parseInt(m.group(3).replaceAll(",", ""));
 
-			statistic = new BossStatistic(rank, score);
-                        int bossRank = statistic.getRank();
-                        int bossKills = statistic.getAmount();
-                        
+                        // Set the name of Clue Scrolls so we dont have to change it later
                         if(name.contains("Clue Scrolls")){
                             if(name.contains("beginner")){
                                 name = "Beginner";
@@ -262,96 +249,14 @@ public class HiscoresLookup {
                                 name = "Master";
                             }
                             // bossRank -> Clue Rank, bossKills -> number of clues
-                            ClueScroll clue = new ClueScroll(bossRank, bossKills);
+                            ClueScroll clue = new ClueScroll(rank, score);
                             clues.put(name, clue);
                         }else{
-                            Boss boss = new Boss(bossRank, bossKills);
+                            Boss boss = new Boss(rank, score);
                             myBossKills.put(name, boss);
                         }
-                        
-                       
-                     
-		}
-                
-		return myBossKills;
+		}  	
 	}
 
 
-    // Builds our Skill Statistic
-    public static class SkillStatistic implements Statistic {
-
-        private final int rank;
-        private final int level;
-        private final long experience;
-
-        public SkillStatistic(int rank, int level, long experience) {
-            super();
-            this.rank = rank;
-            this.level = level;
-            this.experience = experience;
-
-
-        }
-        @Override
-        public String toString() {
-            String result = String.format("{ \"rank\": %s, \"level\": %s, \"experience\": %s }", rank, level, experience);
-            return result;
-        }
-
-
-        @Override
-        public int getRank() {
-            return rank;
-        }
-
-        @Override
-        public int getAmount() {
-            return level;
-        }
-
-        public long getExperience() {
-            return experience;
-        }
-
-    }
-
-    // Builds our Boss Statistics
-    public static class BossStatistic implements Statistic {
-		
-	private final int rank;
-	private final int score;
-		
-	public BossStatistic(int rank, int score) {
-		super();
-		this.rank = rank;
-		this.score = score;
-	}
-		
-	@Override
-	public String toString() {
-		return String.format("{ \"rank\": %s, \"score\": %s }", rank, score);
-	}
-		
-	@Override
-	public int getRank() {
-		return rank;
-	}
-		
-	@Override
-	public int getAmount() {
-		return score;
-	}
-		
-    }
-    
-    
-
-    public static interface Statistic {
-
-        int getRank();
-
-        int getAmount();
-    }
-    
-    
 }

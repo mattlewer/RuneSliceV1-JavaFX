@@ -3,7 +3,10 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -11,57 +14,80 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancpane" maxHeight="492.0" maxWidth="330.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="330.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.saveUserPopup">
+<AnchorPane fx:id="ancpane" maxHeight="600.0" maxWidth="335.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.saveUserPopup">
    <children>
-      <StackPane fx:id="pane" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <VBox fx:id="vbox" alignment="CENTER" prefHeight="80.0" prefWidth="232.0" StackPane.alignment="CENTER">
+      <BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <StackPane fx:id="pane" prefHeight="460.0" prefWidth="323.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="text" alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="232.0" style="-fx-text-fill: #95C623;" text="User Saved!">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Label>
-                  <GridPane prefHeight="97.0" prefWidth="232.0">
-                    <columnConstraints>
-                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints maxHeight="44.33331298828125" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="60.333343505859375" minHeight="8.333343505859375" prefHeight="20.333343505859375" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="48.666656494140625" minHeight="10.0" prefHeight="36.666656494140625" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="80.0" prefWidth="232.0" StackPane.alignment="CENTER">
                      <children>
-                        <Label fx:id="warning" alignment="CENTER" prefHeight="48.0" prefWidth="234.0" style="-fx-text-fill: #F02D3A;" text="WARNING:&#10;Removing a user will remove all tracking data.&#10;" textAlignment="CENTER" visible="false" GridPane.columnSpan="2" GridPane.rowSpan="2">
+                        <Label fx:id="text" alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="232.0" style="-fx-text-fill: #95C623;" text="User Saved!">
                            <font>
-                              <Font size="15.0" />
+                              <Font size="18.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
                         </Label>
-                        <JFXButton fx:id="yes" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="Yes" visible="false" GridPane.rowIndex="2">
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton fx:id="no" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="No" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets right="30.0" />
-                           </GridPane.margin>
-                        </JFXButton>
+                        <GridPane prefHeight="97.0" prefWidth="232.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="44.33331298828125" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="60.333343505859375" minHeight="8.333343505859375" prefHeight="20.333343505859375" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="48.666656494140625" minHeight="10.0" prefHeight="36.666656494140625" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="warning" alignment="CENTER" prefHeight="48.0" prefWidth="234.0" style="-fx-text-fill: #F02D3A;" text="WARNING:&#10;Removing a user will remove all tracking data.&#10;" textAlignment="CENTER" visible="false" GridPane.columnSpan="2" GridPane.rowSpan="2">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="yes" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="Yes" visible="false" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="30.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="no" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="No" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets right="30.0" />
+                                 </GridPane.margin>
+                              </JFXButton>
+                           </children>
+                        </GridPane>
                      </children>
-                  </GridPane>
+                     <StackPane.margin>
+                        <Insets top="20.0" />
+                     </StackPane.margin>
+                  </VBox>
                </children>
-            </VBox>
-         </children>
-      </StackPane>
+            </StackPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="backLogo" fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/clipart-food-watermelon-4-transparent.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/clipart-food-watermelon-4-transparent.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
    </children>
 </AnchorPane>

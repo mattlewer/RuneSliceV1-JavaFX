@@ -334,7 +334,6 @@ public class AllBossHomeController extends pageOpener implements Initializable{
         borderpane.setEffect(gaussianBlur);
         saveUserPopup pop = loader.getController(); 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/assets/saveUserPopupStyle.css").toExternalForm());
         Stage window = new Stage();
         // Load pop-up as trasparent so it appears to float over the blurred scene, no toolbar
         window.initStyle(StageStyle.TRANSPARENT);
@@ -347,7 +346,7 @@ public class AllBossHomeController extends pageOpener implements Initializable{
         // display the 'success' version of the pop-up and fade out
         // Add to JSON
         if(getSkills.user.isSaved == false && lnS.users.size() < 10){
-            fadeOut(pop.pane);
+            fadeOut(pop.borderpane);
             window.show();
             getSkills.user.setIsSaved(true);
             PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
@@ -381,7 +380,7 @@ public class AllBossHomeController extends pageOpener implements Initializable{
             // Control what happens when the user clicks the yes button
             // Will remove from JSON when completed
             pop.yes.setOnAction(e1 ->{
-                fadeOut(pop.pane);
+                fadeOut(pop.borderpane);
                 PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
                 pause.setOnFinished(e ->{
                     GaussianBlur endGaus = new GaussianBlur();       
@@ -404,7 +403,7 @@ public class AllBossHomeController extends pageOpener implements Initializable{
             // Control what happens when the user clicks the no button
             // Closes the pop-up, no changes made
             pop.no.setOnAction(e->{
-                fadeOut(pop.pane);
+                fadeOut(pop.borderpane);
                 PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
                 pause.setOnFinished(ei ->{
                     GaussianBlur endGaus = new GaussianBlur();       

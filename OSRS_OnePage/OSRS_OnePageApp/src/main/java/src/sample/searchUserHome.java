@@ -15,15 +15,23 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.Animation;
-import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
+import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
+import javafx.fxml.Initializable;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import static javafx.util.Duration.millis;
 
 
-public class searchUserHome extends pageOpener {
+public class searchUserHome extends pageOpener implements Initializable{
 
 
     @FXML public ImageView logo;
@@ -44,35 +52,57 @@ public class searchUserHome extends pageOpener {
     }
 
 
-    public void openStage(ActionEvent event){
-        LoadAndSave lns = new LoadAndSave();
-        rotate(logo);
-        username.setDisable(true);
-        textUsername.setText("Loading...");
-        search.setDisable(true);
-        String user = username.getText();
-        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+    public void openStage(ActionEvent event) throws IOException{
+        borderpane.requestFocus();
+        GaussianBlur gaussianBlur = new GaussianBlur();       
+        gaussianBlur.setRadius(20.5); 
+        borderpane.setEffect(gaussianBlur);
         
-        pause.setOnFinished(e ->{
-            try {
+        RotateTransition rt = new RotateTransition(Duration.millis(700), logo);
+        rt.setByAngle(360);
+        rt.setCycleCount(1);
+        rt.setInterpolator(Interpolator.LINEAR);
+        
+        ScaleTransition st = new ScaleTransition(Duration.millis(700), logo);
+        st.setByX(0.6f);
+        st.setByY(0.6f);
+        st.setCycleCount(1);
+        st.setAutoReverse(false);
+        st.play();
+        
+        ParallelTransition parat = new ParallelTransition(rt,st);
+        
+     
+        String user = username.getText();
+        
+        
+        PauseTransition pt = new PauseTransition(millis(200));
+        pt.setOnFinished(e->{
+            try{
+                logo.setX(0.6f);
+                logo.setY(0.6f);
                 openAllSkills(event, user);
-            } catch (Exception err) {
-                try {
-                    for(User u : lns.users){
-                    if(u.getUsername().toString().equals(user)){
-                        getSkills.user = u;
-                        exitSkill(event);
-                    }else{
-                        System.out.println(err);
-                        reRun(event);
-                    }
-                }
-                }catch(Exception eeee){
-                    System.out.println("All went wrong");
-                }
-            } 
+            }catch(Exception e1){
+                System.out.println(e1);
+            }
         });
-        pause.play();
+
+        
+        //On finish of rotate
+        parat.setOnFinished(e1->{
+            logo.setVisible(false);
+            try {
+                popUpLoading();
+                pt.play();
+            } catch (IOException ex) {
+                Logger.getLogger(searchUserHome.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        parat.play();
+        
+
+        
+
     }
 
     
@@ -90,26 +120,14 @@ public class searchUserHome extends pageOpener {
     }
     
    
-    
-    public void rotate(ImageView imageView){
-        RotateTransition rt = new RotateTransition(Duration.millis(1000), imageView);
-        rt.setByAngle(360);
-        rt.setCycleCount(Animation.INDEFINITE);
-        rt.setInterpolator(Interpolator.LINEAR);
-        fade(imageView);
-        rt.play();
-        
+    public void pulse(){
+        ScaleTransition st = new ScaleTransition(Duration.millis(500), logo);
+        st.setByX(0.05f);
+        st.setByY(0.05f);
+        st.setCycleCount(Animation.INDEFINITE);
+        st.setAutoReverse(true);
+        st.play();
     }
-    
-    public void fade(ImageView node){
-        FadeTransition ft = new FadeTransition(Duration.millis(1000));
-        ft.setNode(node);
-        ft.setFromValue(1);
-        ft.setToValue(0);
-        ft.play();
-    }
-
-
 
     public void removeFocus(){
         username.setFocusTraversable(false);
@@ -122,6 +140,12 @@ public class searchUserHome extends pageOpener {
     
     public void focusOff(MouseEvent event){
         borderpane.requestFocus();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        pulse();
+        
     }
     
 }

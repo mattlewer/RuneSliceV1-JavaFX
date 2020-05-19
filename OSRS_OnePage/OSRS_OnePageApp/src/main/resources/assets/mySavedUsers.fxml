@@ -141,7 +141,7 @@
                         <Image url="@images/group.png" />
                      </image>
                   </ImageView>
-                  <Label id="hov" alignment="CENTER" prefHeight="17.0" prefWidth="251.0" style="-fx-text-fill: #F02D3A;" text="compare saved users">
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="251.0" style="-fx-text-fill: #F02D3A;" text="compare saved users">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>

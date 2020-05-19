@@ -44,12 +44,12 @@
                               </ImageView>
                               <Label fx:id="progress" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="314.0" style="-fx-text-fill: #F02D3A;" text="Loading..." textAlignment="CENTER" GridPane.rowIndex="2">
                                  <font>
-                                    <Font size="21.0" />
+                                    <Font size="30.0" />
                                  </font>
                               </Label>
                               <Label fx:id="errorMssg" alignment="CENTER" contentDisplay="CENTER" prefHeight="89.0" prefWidth="314.0" style="-fx-text-fill: #F02D3A;" text="Updating saved user data&#10;this may take up to 2 minutes..." textAlignment="CENTER" GridPane.rowIndex="4">
                                  <font>
-                                    <Font size="11.0" />
+                                    <Font size="13.0" />
                                  </font></Label>
                               <ImageView fx:id="errorImage" fitHeight="63.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="3">
                                  <image>

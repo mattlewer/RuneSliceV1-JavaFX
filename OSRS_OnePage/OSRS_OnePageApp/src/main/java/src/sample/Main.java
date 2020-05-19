@@ -105,7 +105,8 @@ public class Main extends Application {
     
     // Open Homepage
     public void newstage() throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("/assets/searchUserHome.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/searchUserHome.fxml"));
+        Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/assets/stylesheethome.css").toExternalForm());
         Stage window = new Stage();

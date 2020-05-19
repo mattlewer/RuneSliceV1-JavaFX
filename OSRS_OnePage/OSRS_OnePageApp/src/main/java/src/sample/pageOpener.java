@@ -10,12 +10,18 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.animation.FadeTransition;
+import javafx.animation.PauseTransition;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
+import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import static javafx.util.Duration.seconds;
 
 public class pageOpener {
 
@@ -24,9 +30,13 @@ public class pageOpener {
     public void openAllSkills(ActionEvent event, String account) throws IOException {
         // The text to user has entered
         String acc = account;
-       
+        
+        // int to check if the user is saved or not, set when searching saved users
+        // if not in saved users, search the new user
         int isSavedAlready = 0;
         User savedUser = null;
+        
+        // If the user is already saved, set the savedUser variable to the saved user
         for(User u: LoadAndSave.users){
             if(u.username.equals(acc)){
                 isSavedAlready = 1;
@@ -39,7 +49,12 @@ public class pageOpener {
             // Search and retreive the skills for that username
             // User is set as a static value in 'getSkills'
             getSkills getMySkills = new getSkills();
-            getMySkills.searchAndRetrieveSkills(acc);
+            try{
+                getMySkills.searchAndRetrieveSkills(acc);
+            }catch(Exception eer){
+                searchUserHome sc = new searchUserHome();
+                sc.reRun(event);
+            }
             //Load FXML
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/allSkillHome.fxml"));
             Parent root = (Parent) loader.load();
@@ -71,8 +86,9 @@ public class pageOpener {
             root.requestFocus();
             window.hide();
             window.show();
-            
+
         }else if(isSavedAlready == 1){
+            // if the user is already saved set the current user to saved user and show allSkillsPage
             getSkills.setUser(savedUser);
             exitSkill(event);
         }
@@ -82,7 +98,6 @@ public class pageOpener {
             sc.reRun(event);
 
         }
-
     }
 
     
@@ -451,6 +466,33 @@ public class pageOpener {
         ft.setToValue(0);
         ft.play();
     }
+    
+    public void popUpLoading() throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/popUpSaveUser.fxml"));
+        Parent root = (Parent)loader.load();
+        // Blur the backgrund to bring focus to pop-up
+        saveUserPopup pop = loader.getController(); 
+        GaussianBlur gaussianBlur = new GaussianBlur();       
+        gaussianBlur.setRadius(20.5); 
+        pop.backLogo.setEffect(gaussianBlur);
+        Scene scene = new Scene(root);
+        Stage window = new Stage();
+        // Load pop-up as trasparent so it appears to float over the blurred scene, no toolbar
+        window.initStyle(StageStyle.TRANSPARENT);
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setScene(scene);
+        scene.setFill(Color.TRANSPARENT);
+        pop.text.setText("loading");
+        pop.text.setStyle("-fx-font-weight:bold; -fx-text-fill:#F02D3A; -fx-font-size:40px;");
+        window.show();
+        PauseTransition pt = new PauseTransition(seconds(25));
+        pt.setOnFinished(e->{
+           window.close(); 
+        });
+        pt.play();
+        
+    }
+    
     
    
 }

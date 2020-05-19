@@ -112,16 +112,16 @@ public class ClueScrollController extends pageOpener{
     // New pop-up window when saving / un-saving a user
     public void openPopupNewSave(MouseEvent event) throws IOException{
 // SETTING UP PAGE //
-        LoadAndSave lnS = new LoadAndSave();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/popUpSaveUser.fxml"));
-        Parent root = (Parent)loader.load();
         // Blur the backgrund to bring focus to pop-up
         GaussianBlur gaussianBlur = new GaussianBlur();       
         gaussianBlur.setRadius(10.5); 
         borderpane.setEffect(gaussianBlur);
+        LoadAndSave lnS = new LoadAndSave();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/popUpSaveUser.fxml"));
+        Parent root = (Parent)loader.load();
+
         saveUserPopup pop = loader.getController(); 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/assets/saveUserPopupStyle.css").toExternalForm());
         Stage window = new Stage();
         // Load pop-up as trasparent so it appears to float over the blurred scene, no toolbar
         window.initStyle(StageStyle.TRANSPARENT);
@@ -134,7 +134,7 @@ public class ClueScrollController extends pageOpener{
         // display the 'success' version of the pop-up and fade out
         // Add to JSON
         if(getSkills.user.isSaved == false && lnS.users.size() < 10){
-            fadeOut(pop.pane);
+            fadeOut(pop.borderpane);
             window.show();
             getSkills.user.setIsSaved(true);
             PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
@@ -168,7 +168,7 @@ public class ClueScrollController extends pageOpener{
             // Control what happens when the user clicks the yes button
             // Will remove from JSON when completed
             pop.yes.setOnAction(e1 ->{
-                fadeOut(pop.pane);
+                fadeOut(pop.borderpane);
                 PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
                 pause.setOnFinished(e ->{
                     GaussianBlur endGaus = new GaussianBlur();       
@@ -191,7 +191,7 @@ public class ClueScrollController extends pageOpener{
             // Control what happens when the user clicks the no button
             // Closes the pop-up, no changes made
             pop.no.setOnAction(e->{
-                fadeOut(pop.pane);
+                fadeOut(pop.borderpane);
                 PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
                 pause.setOnFinished(ei ->{
                     GaussianBlur endGaus = new GaussianBlur();       
