@@ -36,12 +36,18 @@
                               <RowConstraints maxHeight="255.3333282470703" minHeight="0.0" prefHeight="5.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <VBox prefHeight="47.0" prefWidth="247.0" />
-                              <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-                                 <image>
-                                    <Image url="@images/clipart-food-watermelon-4-transparent.png" />
-                                 </image>
-                              </ImageView>
+                              <VBox prefHeight="47.0" prefWidth="247.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="73.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/clipart-food-watermelon-4-transparent.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children></VBox>
                               <Label fx:id="progress" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="314.0" style="-fx-text-fill: #F02D3A;" text="Loading..." textAlignment="CENTER" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="30.0" />

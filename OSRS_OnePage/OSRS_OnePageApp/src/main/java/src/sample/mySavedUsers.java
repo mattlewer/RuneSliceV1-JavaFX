@@ -138,10 +138,7 @@ public class mySavedUsers extends pageOpener {
         rt.play();
         
     }
-    
-    public void openUser(ActionEvent event, String name) throws IOException{
-        openAllSkills(event, name);
-    }
+
     
     
     public void openCompareUsers(MouseEvent event) throws IOException{

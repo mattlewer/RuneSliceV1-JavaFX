@@ -24,6 +24,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
+import javafx.concurrent.Task;
 import javafx.fxml.Initializable;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.ImageView;
@@ -69,7 +70,6 @@ public class searchUserHome extends pageOpener implements Initializable{
         st.setCycleCount(1);
         st.setAutoReverse(false);
         st.play();
-        
         ParallelTransition parat = new ParallelTransition(rt,st);
         
      
@@ -79,9 +79,46 @@ public class searchUserHome extends pageOpener implements Initializable{
         PauseTransition pt = new PauseTransition(millis(200));
         pt.setOnFinished(e->{
             try{
-                logo.setX(0.6f);
-                logo.setY(0.6f);
-                openAllSkills(event, user);
+                Task<User> mytask = new Task(){  
+                    @Override
+                    protected User call() {
+                        HiscoresLookup hsl = new HiscoresLookup();
+                        User searchedUser = null;
+                        try {
+                            System.out.println("booting user");
+                            searchedUser = hsl.boot(user);
+                        } catch (IOException ex) {
+                            System.out.println("What");
+                            Logger.getLogger(searchUserHome.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        return searchedUser;
+                        
+                    }
+                };
+                saveUserPopup pop = new saveUserPopup();
+                mytask.setOnSucceeded(e1->{
+                    getSkills.setUser(mytask.getValue());
+                    try {
+                        exitSkill(event);
+                    } catch (Exception ex) {
+                        try {
+                            reRun(event);
+                        } catch (IOException ex1) {
+                            Logger.getLogger(searchUserHome.class.getName()).log(Level.SEVERE, null, ex1);
+                        }
+                        Logger.getLogger(searchUserHome.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                });
+                mytask.setOnFailed(e2->{
+                    try {
+                        System.out.println(e2.getSource());
+                        reRun(event);
+                    } catch (IOException ex) {
+                        Logger.getLogger(searchUserHome.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                });
+                new Thread(mytask).start();
+
             }catch(Exception e1){
                 System.out.println(e1);
             }
@@ -121,9 +158,9 @@ public class searchUserHome extends pageOpener implements Initializable{
     
    
     public void pulse(){
-        ScaleTransition st = new ScaleTransition(Duration.millis(500), logo);
-        st.setByX(0.05f);
-        st.setByY(0.05f);
+        ScaleTransition st = new ScaleTransition(Duration.millis(700), logo);
+        st.setByX(0.04f);
+        st.setByY(0.04f);
         st.setCycleCount(Animation.INDEFINITE);
         st.setAutoReverse(true);
         st.play();

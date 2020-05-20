@@ -9,8 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
+import javafx.animation.ScaleTransition;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.effect.GaussianBlur;
@@ -23,84 +25,7 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import static javafx.util.Duration.seconds;
 
-public class pageOpener {
-
-
-    // When the user searches a username this function is called
-    public void openAllSkills(ActionEvent event, String account) throws IOException {
-        // The text to user has entered
-        String acc = account;
-        
-        // int to check if the user is saved or not, set when searching saved users
-        // if not in saved users, search the new user
-        int isSavedAlready = 0;
-        User savedUser = null;
-        
-        // If the user is already saved, set the savedUser variable to the saved user
-        for(User u: LoadAndSave.users){
-            if(u.username.equals(acc)){
-                isSavedAlready = 1;
-                savedUser = u;
-            }
-        }
-        // Make sure it is of valid length
-        if(acc.length() > 0 && isSavedAlready == 0) {
-            
-            // Search and retreive the skills for that username
-            // User is set as a static value in 'getSkills'
-            getSkills getMySkills = new getSkills();
-            try{
-                getMySkills.searchAndRetrieveSkills(acc);
-            }catch(Exception eer){
-                searchUserHome sc = new searchUserHome();
-                sc.reRun(event);
-            }
-            //Load FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/allSkillHome.fxml"));
-            Parent root = (Parent) loader.load();
-            // Call 'myFunction' within 'AllSkillHome' to prepare the page
-            allSkillHome allSkill = loader.getController();
-            allSkill.myFunction();
-            // Fade in the page
-            fade(allSkill.gridpane);
-            // Get the Stage of the source of click and set as the new Stage / Window
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();  
-            // Set FXML as root
-            Scene scene = new Scene(root);
-            // If the user presses the 'back' button on their mobile
-            // fire the exit button on the page we are opening, which links
-            // back to searchNewUser
-            scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
-                @Override
-                public void handle(KeyEvent t) {
-                    if(t.getCode()==KeyCode.ESCAPE){
-                        allSkill.exit.fire();
-                    }
-                }
-            });
-            // Set CSS
-            scene.getStylesheets().add(getClass().getResource("/assets/allSkillStyle.css").toExternalForm());
-            // Set the scene to the Stage / Window
-            window.setScene(scene);
-            // Refresh the page by closing and opening to stop focus on top element, dodgy hack but works well on mobile
-            root.requestFocus();
-            window.hide();
-            window.show();
-
-        }else if(isSavedAlready == 1){
-            // if the user is already saved set the current user to saved user and show allSkillsPage
-            getSkills.setUser(savedUser);
-            exitSkill(event);
-        }
-        else{
-            // If we encounter an error, return to the home page and run the 'reRun' function to display error
-            searchUserHome sc = new searchUserHome();
-            sc.reRun(event);
-
-        }
-    }
-
-    
+public class pageOpener {    
     
     // Open chosen skill page through image or level on 'All Skill' home
     public void openPage(MouseEvent event, String whichPage) throws IOException {
@@ -344,6 +269,7 @@ public class pageOpener {
         window.show();
     }
     
+    // Open compare users homepage
     public void compareUsersHome(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/compareUserHome.fxml"));
         Parent root = (Parent)loader.load();
@@ -366,7 +292,7 @@ public class pageOpener {
         window.show();
     }
     
-    // Open page to compare users
+    // Open page to compare users skills
     public void compareUsers(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/compareUsersData.fxml"));
         Parent root = (Parent)loader.load();
@@ -467,6 +393,15 @@ public class pageOpener {
         ft.play();
     }
     
+    public void pulse(Node node){
+        ScaleTransition st = new ScaleTransition(Duration.millis(700), node);
+        st.setByX(-0.05f);
+        st.setByY(-0.05f);
+        st.setCycleCount(Animation.INDEFINITE);
+        st.setAutoReverse(true);
+        st.play();
+    }
+    
     public void popUpLoading() throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/popUpSaveUser.fxml"));
         Parent root = (Parent)loader.load();
@@ -475,6 +410,8 @@ public class pageOpener {
         GaussianBlur gaussianBlur = new GaussianBlur();       
         gaussianBlur.setRadius(20.5); 
         pop.backLogo.setEffect(gaussianBlur);
+        pulse(pop.backLogo);
+        
         Scene scene = new Scene(root);
         Stage window = new Stage();
         // Load pop-up as trasparent so it appears to float over the blurred scene, no toolbar
@@ -485,7 +422,7 @@ public class pageOpener {
         pop.text.setText("loading");
         pop.text.setStyle("-fx-font-weight:bold; -fx-text-fill:#F02D3A; -fx-font-size:40px;");
         window.show();
-        PauseTransition pt = new PauseTransition(seconds(25));
+        PauseTransition pt = new PauseTransition(seconds(45));
         pt.setOnFinished(e->{
            window.close(); 
         });

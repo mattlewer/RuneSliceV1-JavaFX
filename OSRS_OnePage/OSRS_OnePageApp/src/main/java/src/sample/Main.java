@@ -4,15 +4,24 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.Animation;
+import static javafx.animation.Animation.INDEFINITE;
 import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
 import javafx.animation.PauseTransition;
+import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -27,14 +36,20 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         // Get rid of API restriction
         doHorribleHack();
-        // Load our saved users from JSON if any exist  
+        // Import class so we can call methods to update / load saved users within a task 
         LoadAndSave lns = new LoadAndSave();
-        lns.loadUsers();
         
-        // Loads the FXML and gets the controller
+        // Loads the FXML and gets the controller, sets some effects
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/splashScreen.fxml"));
         Parent root = (Parent)loader.load();
         SplashScreenController splash = loader.getController();
+        pulse(splash.logo);
+//        RotateTransition rt = new RotateTransition(Duration.millis(2000), splash.logo);
+//        rt.setByAngle(360);
+//        rt.setCycleCount(INDEFINITE);
+//        rt.setInterpolator(Interpolator.LINEAR);
+//        rt.play();
+        splash.errorMssg.setVisible(true);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         
@@ -48,7 +63,6 @@ public class Main extends Application {
         
         // Pause to show splash screen
         primaryStage.show();
-        PauseTransition pt = new PauseTransition(millis(200));
         
         // Fade for removing splash screen
         FadeTransition ft = new FadeTransition(Duration.millis(2000));
@@ -56,7 +70,6 @@ public class Main extends Application {
         ft.setFromValue(1);
         ft.setToValue(0);
         ft.setOnFinished(e1->{
-           
             try {
                 newstage();
                 primaryStage.close();
@@ -65,34 +78,42 @@ public class Main extends Application {
             }
         });
         
-   
-        // On pause finish...
-        pt.setOnFinished(e->{
-            try {
-                // Update saved users
-                splash.errorMssg.setVisible(true);
-                lns.updateUsers();
+        // Task for updating saved users
+        Task<ArrayList<User>> mytask = new Task(){  
+                    @Override
+                    protected ArrayList<User> call() throws Exception {
+                        lns.loadUsers();
+                        ArrayList<User> updatedUsers = new ArrayList<User>();
+                        updatedUsers = lns.updateUsers();
+                         
+                        return updatedUsers;
+                    }  
+        };
+        mytask.setOnFailed(e1->{
+            String lastedit = getLastModified();
+            splash.errorImage.setVisible(true);
+            splash.dateModLabel.setVisible(true);
+            splash.tip.setVisible(false);
+            splash.progress.setText("ERROR:");
+            splash.errorMssg.setText("No Connection Found \n\nSaved users will not be updated!");
+            splash.dateModLabel.setText("Using historical data from: \n" + lastedit);
+            PauseTransition ps = new PauseTransition(millis(5000));
+            ps.setOnFinished(e3->{
                 ft.play();
-            } catch (Exception ex) {
-                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                 String lastedit = getLastModified();
-                 splash.errorMssg.setVisible(true);
-                 splash.errorImage.setVisible(true);
-                 splash.dateModLabel.setVisible(true);
-                 splash.tip.setVisible(false);
-                 splash.progress.setText("ERROR:");
-                 splash.errorMssg.setText("No Connection Found \n\nSaved users will not be updated!");
-                 splash.dateModLabel.setText("Using historical data from: \n" + lastedit);
-                 PauseTransition ps = new PauseTransition(millis(5000));
-                 ps.setOnFinished(Ee->{
-                     ft.play();
-                 });
-                 ps.play();
-                 
-            }
-            
+            });
+            ps.play();
         });
-        pt.play();
+        mytask.setOnSucceeded(e2->{
+            lns.setUsers(mytask.getValue());
+            ft.play();
+        });
+        
+        
+        
+        new Thread(mytask).start();
+    
+
+        
     }
     
     public String getLastModified(){
@@ -153,7 +174,18 @@ public class Main extends Application {
         ex.printStackTrace();
     }
     }
-
+    
+    
+    
+    public void pulse(Node node){
+        ScaleTransition st = new ScaleTransition(Duration.millis(700), node);
+        st.setByX(0.05f);
+        st.setByY(0.05f);
+        st.setCycleCount(Animation.INDEFINITE);
+        st.setAutoReverse(true);
+        st.play();
+    }
+    
 
     public static void main(String[] args) {
         launch(args);

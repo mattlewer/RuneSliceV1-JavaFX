@@ -85,7 +85,7 @@ public class LoadAndSave {
     
     
     // Function to update stats of current saved users
-    public void updateUsers() throws IOException{
+    public ArrayList<User> updateUsers() throws IOException{
         HiscoresLookup hsl = new HiscoresLookup();
         for(User user : users){
             user = hsl.boot(user.username);
@@ -96,6 +96,8 @@ public class LoadAndSave {
         // Write the updated ArrayList to JSON
         gson.toJson(users, fileWriter);
         fileWriter.close();
+        // return the updated list of users to be set as our users
+        return users;
     }
 
     

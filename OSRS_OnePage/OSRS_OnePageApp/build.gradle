@@ -33,6 +33,8 @@ dependencies {
     compile 'org.jsoup:jsoup:1.13.1'
     
 }
+
+
 jfxmobile {
     downConfig {
         version = '3.8.6'

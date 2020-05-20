@@ -80,7 +80,7 @@
                         <Image url="@images/clipart-food-watermelon-4-transparent.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/clipart-food-watermelon-4-transparent.png" />
                      </image>
