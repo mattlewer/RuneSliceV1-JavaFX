@@ -29,7 +29,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.StageStyle;
 import static javafx.util.Duration.millis;
+import static javafx.util.Duration.seconds;
 
 
 public class searchUserHome extends pageOpener implements Initializable{
@@ -54,15 +58,16 @@ public class searchUserHome extends pageOpener implements Initializable{
 
 
     public void openStage(ActionEvent event) throws IOException{
+        // Style homepage for popup
         borderpane.requestFocus();
         GaussianBlur gaussianBlur = new GaussianBlur();       
         gaussianBlur.setRadius(20.5); 
         borderpane.setEffect(gaussianBlur);
         
-        RotateTransition rt = new RotateTransition(Duration.millis(700), logo);
-        rt.setByAngle(360);
-        rt.setCycleCount(1);
-        rt.setInterpolator(Interpolator.LINEAR);
+//        RotateTransition rt = new RotateTransition(Duration.millis(700), logo);
+//        rt.setByAngle(360);
+//        rt.setCycleCount(1);
+//        rt.setInterpolator(Interpolator.LINEAR);
         
         ScaleTransition st = new ScaleTransition(Duration.millis(700), logo);
         st.setByX(0.6f);
@@ -70,8 +75,29 @@ public class searchUserHome extends pageOpener implements Initializable{
         st.setCycleCount(1);
         st.setAutoReverse(false);
         st.play();
-        ParallelTransition parat = new ParallelTransition(rt,st);
+        ParallelTransition parat = new ParallelTransition(st);
         
+        
+        // Open popup
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/popUpSaveUser.fxml"));
+        Parent root = (Parent)loader.load();
+        // Blur the back logo, blur and pulse it, gives effect of glow behind front image as loading icon
+        saveUserPopup pop = loader.getController(); 
+        GaussianBlur gauss = new GaussianBlur();       
+        gauss.setRadius(20.5); 
+        pop.backLogo.setEffect(gauss);
+        pulse(pop.backLogo);
+        
+        Scene scene = new Scene(root);
+        Stage window = new Stage();
+        // Load pop-up as trasparent so it appears to float over the blurred scene, no toolbar
+        window.initStyle(StageStyle.TRANSPARENT);
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setScene(scene);
+        scene.setFill(Color.TRANSPARENT);
+        pop.text.setText("loading");
+        pop.text.setStyle("-fx-font-weight:bold; -fx-text-fill:#F02D3A; -fx-font-size:40px;");
+        window.show();
      
         String user = username.getText();
         
@@ -95,8 +121,8 @@ public class searchUserHome extends pageOpener implements Initializable{
                         
                     }
                 };
-                saveUserPopup pop = new saveUserPopup();
                 mytask.setOnSucceeded(e1->{
+                    window.close();
                     getSkills.setUser(mytask.getValue());
                     try {
                         exitSkill(event);
@@ -110,6 +136,7 @@ public class searchUserHome extends pageOpener implements Initializable{
                     }
                 });
                 mytask.setOnFailed(e2->{
+                    window.close();
                     try {
                         System.out.println(e2.getSource());
                         reRun(event);
@@ -128,12 +155,8 @@ public class searchUserHome extends pageOpener implements Initializable{
         //On finish of rotate
         parat.setOnFinished(e1->{
             logo.setVisible(false);
-            try {
-                popUpLoading();
+     
                 pt.play();
-            } catch (IOException ex) {
-                Logger.getLogger(searchUserHome.class.getName()).log(Level.SEVERE, null, ex);
-            }
         });
         parat.play();
         
