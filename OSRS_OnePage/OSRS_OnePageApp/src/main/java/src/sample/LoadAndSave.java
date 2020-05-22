@@ -99,6 +99,17 @@ public class LoadAndSave {
         // return the updated list of users to be set as our users
         return users;
     }
+    
+    public void removeAllUsers() throws IOException{
+        users.clear();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        File usersFile = new File(ROOT_DIR, "users.json");
+        FileWriter fileWriter = new FileWriter(usersFile);
+        // Write the updated ArrayList to JSON
+        gson.toJson(users, fileWriter);
+        fileWriter.close();
+        
+    }
 
     
     

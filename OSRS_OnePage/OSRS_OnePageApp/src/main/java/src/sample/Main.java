@@ -8,11 +8,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.Animation;
-import static javafx.animation.Animation.INDEFINITE;
 import javafx.animation.FadeTransition;
-import javafx.animation.Interpolator;
 import javafx.animation.PauseTransition;
-import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.application.Application;
 import javafx.concurrent.Task;
@@ -21,7 +18,6 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -44,11 +40,6 @@ public class Main extends Application {
         Parent root = (Parent)loader.load();
         SplashScreenController splash = loader.getController();
         pulse(splash.logo);
-//        RotateTransition rt = new RotateTransition(Duration.millis(2000), splash.logo);
-//        rt.setByAngle(360);
-//        rt.setCycleCount(INDEFINITE);
-//        rt.setInterpolator(Interpolator.LINEAR);
-//        rt.play();
         splash.errorMssg.setVisible(true);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
@@ -89,6 +80,7 @@ public class Main extends Application {
                         return updatedUsers;
                     }  
         };
+        // If the task fails prompt the user with an error
         mytask.setOnFailed(e1->{
             String lastedit = getLastModified();
             splash.errorImage.setVisible(true);
@@ -103,6 +95,7 @@ public class Main extends Application {
             });
             ps.play();
         });
+        // If it completes, set the users and play the fade transition
         mytask.setOnSucceeded(e2->{
             lns.setUsers(mytask.getValue());
             ft.play();

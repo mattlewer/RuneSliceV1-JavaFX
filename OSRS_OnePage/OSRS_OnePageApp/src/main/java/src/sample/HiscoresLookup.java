@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 public class HiscoresLookup {
 
@@ -20,7 +22,11 @@ public class HiscoresLookup {
     private static final String SKILL_STATISTIC_MATCH;
     private static final String ACHIEVEMENT_STATISTIC_MATCH;
 
-
+    
+    public HashMap<String, Skill> mySkills = new HashMap<>();
+    public HashMap<String, Boss> myBossKills = new HashMap<>();
+    public HashMap<String, ClueScroll> clues = new HashMap<>();
+    
     
 
     static {
@@ -53,20 +59,215 @@ public class HiscoresLookup {
 		}
     }
     
-
+    
+    
+    
+    
+    public static int hi = 0;
+    
     public User boot(String username) throws IOException {
-//        String url = "https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + username;
-//        String html = Jsoup.connect(url).get().html();
-//        Document doc = Jsoup.parse(html);
-//        System.out.println(doc.html());
-
-        webpage = downloadHiscoresWebpage(username);
-        extractSkills();
-        extractBossKills();
+        try{
+            apiCollector(username);
+        }catch(Exception e){
+            webpage = downloadHiscoresWebpage(username);
+            extractSkills();
+            extractBossKills();
+        }
+        
         // Build our User and return
         User newuser = new User(username, mySkills, myBossKills, clues, false);
-
+        System.out.println(username + " : Completed");
         return newuser;
+    }
+    
+    
+    public static String ourStats[] = {
+    
+
+        "Overall", // 0
+        "Attack", // 1
+        "Defence", // 2
+        "Strength", // 3
+        "Hitpoints", // 4
+        "Ranged", // 5
+        "Prayer", // 6
+        "Magic", // 7
+        "Cooking", // 8
+        "Woodcutting", // 9
+        "Fletching", // 10
+        "Fishing", // 11
+        "Firemaking", // 12
+        "Crafting", // 13 
+        "Smithing", // 14
+        "Mining", // 15
+        "Herblore", // 16
+        "Agility", // 17
+        "Thieving", // 18
+        "Slayer", // 19
+        "Farming", // 20
+        "Runecraft", // 21
+        "Hunter", // 22
+        "Construction", // 23
+        "", // 24
+        "", // 25
+        "", // 26
+        "Beginner", // 27
+        "Easy", // 28
+        "Medium", // 29
+        "Hard", // 30
+        "Elite", // 31
+        "Master", // 32
+        "", // 33
+        "Abyssal Sire", // 34
+        "Alchemical Hydra", // 35
+        "Barrows Chests", // 36
+        "Bryophyta", // 37
+        "Callisto", // 38
+        "Cerberus", // 39
+        "Chambers of Xeric", // 40
+        "Chaos Elemental", // 41
+        "Chaos Fanatic", // 42
+        "Commander Zilyana", // 43
+        "Corporeal Beast", // 44
+        "Crazy Archaeologist", // 45
+        "Dagannoth Prime", // 46
+        "Dagannoth Rex", // 47
+        "Dagannoth Supreme", // 48
+        "Deranged Archaeologist", // 49
+        "General Graardor", // 50
+        "Giant Mole", // 51
+        "Grotesque Guardians", // 52
+        "Hespori", // 53
+        "Kalphite Queen", // 54
+        "King Black Dragon", // 55
+        "Kraken", // 56
+        "Kree'Arra", // 57
+        "K'ril Tsutsaroth", // 58
+        "Mimic", // 59
+        "Nightmare", // 60
+        "Obor", // 61
+        "Sarachnis", // 62
+        "Scorpia", // 63
+        "Skotizo", // 64
+        "The Gauntlet", // 65
+        "The Corrupted Gauntlet", // 66
+        "Theatre of Blood", // 67
+        "Thermonuclear Smoke Devil", // 68
+        "TzKal-Zuk", // 69
+        "TzTok-Jad", // 70
+        "Venenatis", // 71
+        "Vet'ion", // 72
+        "Vorkath", // 73
+        "Wintertodt", // 74
+        "Zalcano", // 75
+        "Zulrah" // 76
+    
+    };
+    
+    public void apiCollector(String username) throws IOException{
+        String url = "https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + username;
+        String html = Jsoup.connect(url).get().html();
+        Document doc = Jsoup.parse(html);
+        String text = doc.body().text(); 
+        text = text.replace(' ', '\n');
+        String skills[] = text.split("\\r?\\n");
+        
+        int skillCount = 0;
+        while(skillCount < 24){
+            String skillName = ourStats[skillCount];
+            String values[] = skills[skillCount].split(",");
+            // Stats
+            int rank;
+            int level;
+            long xp;
+                   
+            // Check Rank
+            if(Integer.parseInt(values[0]) == -1){
+                rank = 0;
+            }else{
+                rank = Integer.parseInt(values[0]);
+            }
+            
+            // Check Level
+            if(Integer.parseInt(values[1]) == -1){
+                level = 1;
+            }else{
+                level = Integer.parseInt(values[1]);
+            }
+            System.out.println(level);
+            
+            // Check XP
+            if(Integer.parseInt(values[2]) == -1){
+                xp = 0;
+            }else{
+                xp = Integer.parseInt(values[2]);
+            }
+            
+            // Set as new skill
+            Skill skill = new Skill(rank, level, xp);
+            mySkills.put(skillName, skill);
+            skillCount++;
+        }
+        
+        
+        // Get Clue Scrolls
+        int scrollCount = 27;
+        while(scrollCount < 33){
+            String scrollName = ourStats[scrollCount];
+            String values[] = skills[scrollCount].split(",");
+            // Stats
+            int rank;
+            int cluesFound;
+            
+            // Check rank values
+            if(Integer.parseInt(values[0]) == -1){
+                rank = 0;
+            }else{
+                rank = Integer.parseInt(values[0]);
+            }
+            
+            // Check clues found valye
+            if(Integer.parseInt(values[1]) == -1){
+                cluesFound = 0;
+            }else{
+                cluesFound = Integer.parseInt(values[1]);
+            }
+            
+            // Set as new scroll
+            ClueScroll clue = new ClueScroll(rank, cluesFound);
+            clues.put(scrollName, clue);
+            scrollCount++;
+        }
+        
+        // Get Bosses
+        int bossCount = 34;
+        while(bossCount < 77){
+            String bossName = ourStats[bossCount];
+            String values[] = skills[bossCount].split(",");
+            // Stats
+            int rank;  
+            int kills;
+            
+            // Check rank
+            if(Integer.parseInt(values[0]) == -1){
+                rank = 0;
+            }else{
+                rank = Integer.parseInt(values[0]);
+            }
+            
+            // Check kills
+            if(Integer.parseInt(values[1]) == -1){
+                kills = 0;
+            }else{
+                kills = Integer.parseInt(values[1]);
+            }
+            
+            // Add boss to users boss list
+            Boss boss = new Boss(rank, kills);
+            myBossKills.put(bossName, boss);
+            bossCount++;
+        }
+
     }
 
     
@@ -194,10 +395,6 @@ public class HiscoresLookup {
 
 
 
-    public HashMap<String, Skill> mySkills = new HashMap<>();
-    public HashMap<String, Boss> myBossKills = new HashMap<>();
-    public HashMap<String, ClueScroll> clues = new HashMap<>();
-    
     
     // Extract Skills
     private  void extractSkill(String name) throws NumberFormatException {

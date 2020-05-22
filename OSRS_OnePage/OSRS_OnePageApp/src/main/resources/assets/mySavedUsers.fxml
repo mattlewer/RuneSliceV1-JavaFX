@@ -153,6 +153,9 @@
                      <VBox.margin>
                         <Insets bottom="30.0" top="40.0" />
                      </VBox.margin>
+                     <padding>
+                        <Insets bottom="2.0" />
+                     </padding>
                   </JFXButton>
                </children>
                <BorderPane.margin>

@@ -78,6 +78,9 @@
                <BorderPane.margin>
                   <Insets bottom="30.0" top="20.0" />
                </BorderPane.margin>
+               <padding>
+                  <Insets bottom="2.0" />
+               </padding>
             </JFXButton>
          </bottom>
          <center>

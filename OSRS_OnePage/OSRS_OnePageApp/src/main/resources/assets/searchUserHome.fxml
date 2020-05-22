@@ -95,6 +95,9 @@
                                        <font>
                                           <Font size="13.0" />
                                        </font>
+                                       <padding>
+                                          <Insets bottom="2.0" />
+                                       </padding>
                                     </JFXButton>
                                  </children>
                               </GridPane>
@@ -106,18 +109,36 @@
             </StackPane>
          </center>
          <top>
-            <VBox alignment="TOP_RIGHT" maxWidth="335.0" prefHeight="35.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+            <GridPane alignment="CENTER" maxWidth="380.0" prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <ImageView id="info" fitHeight="70.0" fitWidth="30.0" onMouseClicked="#openContact" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="info" fitHeight="70.0" fitWidth="30.0" onMouseClicked="#openContact" opacity="0.35" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                      <image>
-                        <Image url="@images/info.png" />
+                        <Image url="@images/326659-64.png" />
                      </image>
+                     <GridPane.margin>
+                        <Insets right="20.0" top="20.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView id="info" fx:id="settings" fitHeight="41.0" fitWidth="40.0" onMouseClicked="#openSettings" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/cog.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </GridPane.margin>
                   </ImageView>
                </children>
                <BorderPane.margin>
-                  <Insets right="20.0" top="20.0" />
+                  <Insets top="5.0" />
                </BorderPane.margin>
-            </VBox>
+            </GridPane>
          </top>
       </BorderPane>
    </children>

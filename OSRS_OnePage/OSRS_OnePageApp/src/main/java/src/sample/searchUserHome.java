@@ -20,9 +20,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.Animation;
-import javafx.animation.Interpolator;
 import javafx.animation.ParallelTransition;
-import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.concurrent.Task;
 import javafx.fxml.Initializable;
@@ -33,7 +31,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import static javafx.util.Duration.millis;
-import static javafx.util.Duration.seconds;
 
 
 public class searchUserHome extends pageOpener implements Initializable{
@@ -63,20 +60,9 @@ public class searchUserHome extends pageOpener implements Initializable{
         GaussianBlur gaussianBlur = new GaussianBlur();       
         gaussianBlur.setRadius(20.5); 
         borderpane.setEffect(gaussianBlur);
-        
-//        RotateTransition rt = new RotateTransition(Duration.millis(700), logo);
-//        rt.setByAngle(360);
-//        rt.setCycleCount(1);
-//        rt.setInterpolator(Interpolator.LINEAR);
-        
-        ScaleTransition st = new ScaleTransition(Duration.millis(700), logo);
-        st.setByX(0.6f);
-        st.setByY(0.6f);
-        st.setCycleCount(1);
-        st.setAutoReverse(false);
-        st.play();
-        ParallelTransition parat = new ParallelTransition(st);
-        
+        logo.setVisible(false);
+     
+
         
         // Open popup
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/popUpSaveUser.fxml"));
@@ -96,13 +82,13 @@ public class searchUserHome extends pageOpener implements Initializable{
         window.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
         pop.text.setText("loading");
-        pop.text.setStyle("-fx-font-weight:bold; -fx-text-fill:#F02D3A; -fx-font-size:40px;");
+        pop.text.setStyle("-fx-font-weight:bold; -fx-text-fill:#F02D3A; -fx-font-size:34px;");
         window.show();
      
         String user = username.getText();
         
         
-        PauseTransition pt = new PauseTransition(millis(200));
+        PauseTransition pt = new PauseTransition(millis(100));
         pt.setOnFinished(e->{
             try{
                 Task<User> mytask = new Task(){  
@@ -111,10 +97,8 @@ public class searchUserHome extends pageOpener implements Initializable{
                         HiscoresLookup hsl = new HiscoresLookup();
                         User searchedUser = null;
                         try {
-                            System.out.println("booting user");
                             searchedUser = hsl.boot(user);
                         } catch (IOException ex) {
-                            System.out.println("What");
                             Logger.getLogger(searchUserHome.class.getName()).log(Level.SEVERE, null, ex);
                         }
                         return searchedUser;
@@ -150,19 +134,7 @@ public class searchUserHome extends pageOpener implements Initializable{
                 System.out.println(e1);
             }
         });
-
-        
-        //On finish of rotate
-        parat.setOnFinished(e1->{
-            logo.setVisible(false);
-     
-                pt.play();
-        });
-        parat.play();
-        
-
-        
-
+        pt.play();
     }
 
     

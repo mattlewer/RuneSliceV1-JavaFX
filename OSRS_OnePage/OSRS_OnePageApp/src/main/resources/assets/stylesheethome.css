@@ -1,5 +1,6 @@
-#info:hover, #info:focus, #info:active {
+#info:pressed {
     -fx-effect: dropshadow(three-pass-box, grey, 19, 0, 0.5, 0);
+    -fx-opacity:1;
 }
 
 #username{

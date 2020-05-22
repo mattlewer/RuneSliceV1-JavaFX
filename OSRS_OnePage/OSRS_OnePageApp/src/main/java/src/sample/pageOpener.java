@@ -383,6 +383,28 @@ public class pageOpener {
         window.hide();
         window.show();
     }
+       
+       public void openSettings(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/settings.fxml"));
+        Parent root = (Parent)loader.load();
+        SettingsController sec = loader.getController();
+        fade(sec.borderpane);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.returnToHome, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
+                }
+            }
+        });
+        window.setScene(scene);
+        root.requestFocus();
+        window.hide();
+        window.show();
+       }
     
     
     public void fadeOut(Node node){

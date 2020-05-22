@@ -38,16 +38,28 @@
                            <font>
                               <Font size="13.0" />
                            </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="2.0" />
+                           </padding>
                         </JFXButton>
                         <JFXButton fx:id="compareBoss" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#compareUsers" prefHeight="35.0" prefWidth="285.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 11px;" text="compare by boss kills" textAlignment="CENTER" GridPane.rowIndex="2">
                            <font>
                               <Font size="13.0" />
                            </font>
+                           <padding>
+                              <Insets bottom="2.0" />
+                           </padding>
                         </JFXButton>
                         <JFXButton fx:id="compareClueScroll" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#compareUsers" prefHeight="35.0" prefWidth="285.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 11px;" text="compare by clue scrolls" textAlignment="CENTER" GridPane.rowIndex="3">
                            <font>
                               <Font size="13.0" />
                            </font>
+                           <padding>
+                              <Insets bottom="2.0" />
+                           </padding>
                         </JFXButton>
                      </children>
                   </GridPane>
@@ -73,6 +85,9 @@
                <BorderPane.margin>
                   <Insets bottom="30.0" top="5.0" />
                </BorderPane.margin>
+               <padding>
+                  <Insets bottom="2.0" />
+               </padding>
             </JFXButton>
          </bottom>
       </BorderPane>
