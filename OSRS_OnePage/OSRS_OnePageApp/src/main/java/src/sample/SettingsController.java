@@ -5,12 +5,15 @@
  */
 package src.sample;
 
+import com.jfoenix.controls.JFXCheckBox;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -30,6 +33,8 @@ public class SettingsController extends pageOpener{
     public BorderPane borderpane;
     public Button removeUser;
     public Button returnToHome;
+    
+   
     
     public void removeUsers() throws IOException{
         // Open popup

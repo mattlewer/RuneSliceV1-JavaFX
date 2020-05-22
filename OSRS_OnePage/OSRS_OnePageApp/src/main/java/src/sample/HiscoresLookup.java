@@ -111,56 +111,57 @@ public class HiscoresLookup {
         "", // 24
         "", // 25
         "", // 26
-        "Beginner", // 27
-        "Easy", // 28
-        "Medium", // 29
-        "Hard", // 30
-        "Elite", // 31
-        "Master", // 32
-        "", // 33
-        "Abyssal Sire", // 34
-        "Alchemical Hydra", // 35
-        "Barrows Chests", // 36
-        "Bryophyta", // 37
-        "Callisto", // 38
-        "Cerberus", // 39
-        "Chambers of Xeric", // 40
-        "Chaos Elemental", // 41
-        "Chaos Fanatic", // 42
-        "Commander Zilyana", // 43
-        "Corporeal Beast", // 44
-        "Crazy Archaeologist", // 45
-        "Dagannoth Prime", // 46
-        "Dagannoth Rex", // 47
-        "Dagannoth Supreme", // 48
-        "Deranged Archaeologist", // 49
-        "General Graardor", // 50
-        "Giant Mole", // 51
-        "Grotesque Guardians", // 52
-        "Hespori", // 53
-        "Kalphite Queen", // 54
-        "King Black Dragon", // 55
-        "Kraken", // 56
-        "Kree'Arra", // 57
-        "K'ril Tsutsaroth", // 58
-        "Mimic", // 59
-        "Nightmare", // 60
-        "Obor", // 61
-        "Sarachnis", // 62
-        "Scorpia", // 63
-        "Skotizo", // 64
-        "The Gauntlet", // 65
-        "The Corrupted Gauntlet", // 66
-        "Theatre of Blood", // 67
-        "Thermonuclear Smoke Devil", // 68
-        "TzKal-Zuk", // 69
-        "TzTok-Jad", // 70
-        "Venenatis", // 71
-        "Vet'ion", // 72
-        "Vorkath", // 73
-        "Wintertodt", // 74
-        "Zalcano", // 75
-        "Zulrah" // 76
+        "", // 27
+        "Beginner", // 28
+        "Easy", // 29
+        "Medium", // 30
+        "Hard",  // 31
+        "Elite",  // 32
+        "Master",  // 33
+        "",  // 34
+        "Abyssal Sire",  // 35
+        "Alchemical Hydra", // 36
+        "Barrows Chests",  // 37
+        "Bryophyta", // 38
+        "Callisto",  // 39
+        "Cerberus", // 40
+        "Chambers of Xeric", 
+        "Chaos Elemental",
+        "Chaos Fanatic", 
+        "Commander Zilyana", 
+        "Corporeal Beast",
+        "Crazy Archaeologist", 
+        "Dagannoth Prime", 
+        "Dagannoth Rex", 
+        "Dagannoth Supreme", 
+        "Deranged Archaeologist", 
+        "General Graardor", 
+        "Giant Mole", 
+        "Grotesque Guardians", 
+        "Hespori", 
+        "Kalphite Queen", 
+        "King Black Dragon", 
+        "Kraken", 
+        "Kree'Arra", 
+        "K'ril Tsutsaroth", 
+        "Mimic", 
+        "Nightmare", 
+        "Obor", 
+        "Sarachnis", 
+        "Scorpia",
+        "Skotizo", 
+        "The Gauntlet", 
+        "The Corrupted Gauntlet",
+        "Theatre of Blood", 
+        "Thermonuclear Smoke Devil", 
+        "TzKal-Zuk", 
+        "TzTok-Jad", 
+        "Venenatis",
+        "Vet'ion", 
+        "Vorkath", 
+        "Wintertodt",
+        "Zalcano", 
+        "Zulrah" 
     
     };
     
@@ -211,7 +212,7 @@ public class HiscoresLookup {
         
         
         // Get Clue Scrolls
-        int scrollCount = 27;
+        int scrollCount = 28;
         while(scrollCount < 33){
             String scrollName = ourStats[scrollCount];
             String values[] = skills[scrollCount].split(",");
@@ -240,8 +241,8 @@ public class HiscoresLookup {
         }
         
         // Get Bosses
-        int bossCount = 34;
-        while(bossCount < 77){
+        int bossCount = 35;
+        while(bossCount < ourStats.length +1){
             String bossName = ourStats[bossCount];
             String values[] = skills[bossCount].split(",");
             // Stats

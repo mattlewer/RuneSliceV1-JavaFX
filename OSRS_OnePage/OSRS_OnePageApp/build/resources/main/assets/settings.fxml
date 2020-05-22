@@ -30,7 +30,7 @@
                   </Label>
                   <HBox alignment="TOP_CENTER" prefHeight="28.0" prefWidth="334.0">
                      <children>
-                        <Label id="page" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #95C623;" text="personal settings" textAlignment="CENTER" wrapText="true">
+                        <Label id="page" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #95C623;" text="personal settings" textAlignment="CENTER" visible="false" wrapText="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -57,13 +57,13 @@
                     <rowConstraints>
                         <RowConstraints maxHeight="85.33331298828125" minHeight="0.0" prefHeight="44.66667175292969" vgrow="SOMETIMES" />
                       <RowConstraints maxHeight="180.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="219.0" minHeight="9.33331298828125" prefHeight="18.333343505859375" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="183.99996948242188" minHeight="10.0" prefHeight="109.66665649414062" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="219.0" minHeight="9.33331298828125" prefHeight="57.333343505859375" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="183.99996948242188" minHeight="10.0" prefHeight="77.66665649414062" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="183.99996948242188" minHeight="10.0" prefHeight="92.66665649414062" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <JFXCheckBox alignment="CENTER" checkedColor="#f02d3a" prefHeight="26.0" prefWidth="274.0" selected="true" text="update users when app starts" textAlignment="CENTER" textFill="#f02d3a" unCheckedColor="#f02d3a" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                        <JFXButton fx:id="removeUser" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#removeUsers" prefHeight="34.0" prefWidth="208.0" ripplerFill="#273042" style="-fx-background-color: #F02D3A; -fx-text-fill: #273043; -fx-font-weight: bold; -fx-font-size: 13px;" text="REMOVE ALL SAVED USERS" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                        <JFXCheckBox fx:id="updateOnStart" alignment="CENTER" checkedColor="#f02d3a" prefHeight="26.0" prefWidth="274.0" selected="true" text="update users when app starts" textAlignment="CENTER" textFill="#f02d3a" unCheckedColor="#f02d3a" visible="false" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                        <JFXButton fx:id="removeUser" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#removeUsers" prefHeight="34.0" prefWidth="208.0" ripplerFill="#273042" style="-fx-background-color: #F02D3A; -fx-text-fill: #273043; -fx-font-weight: bold; -fx-font-size: 13px;" text="REMOVE ALL SAVED USERS" GridPane.columnSpan="2" GridPane.rowIndex="2">
                            <font>
                               <Font size="13.0" />
                            </font>
