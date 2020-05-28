@@ -92,7 +92,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <StackPane fx:id="stackpane" prefHeight="150.0" prefWidth="200.0">
+                  <StackPane fx:id="stackpane" opacity="0.0" prefHeight="150.0" prefWidth="200.0">
                      <children>
                         <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" vbarPolicy="NEVER">
                            <content>

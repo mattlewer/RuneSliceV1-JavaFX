@@ -55,6 +55,7 @@ public class Main extends Application {
         // Pause to show splash screen
         primaryStage.show();
         
+        
         // Fade for removing splash screen
         FadeTransition ft = new FadeTransition(Duration.millis(2000));
         ft.setNode(splash.hbox);
@@ -80,6 +81,7 @@ public class Main extends Application {
                         return updatedUsers;
                     }  
         };
+          
         // If the task fails prompt the user with an error
         mytask.setOnFailed(e1->{
             String lastedit = getLastModified();
@@ -100,15 +102,16 @@ public class Main extends Application {
             lns.setUsers(mytask.getValue());
             ft.play();
         });
-        
-        
-        
-        new Thread(mytask).start();
-    
 
-        
+        // Start new thread with our task
+        Thread thread = new Thread(mytask);
+        thread.setDaemon(true);
+        thread.start();
+
     }
     
+    
+    // Get the last date the users were updated
     public String getLastModified(){
         File usersFile = new File(ROOT_DIR, "users.json");
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy HH:mm:ss");
@@ -136,6 +139,7 @@ public class Main extends Application {
         // Ensure no element is focused upon loading
         root.requestFocus();
         window.show();
+
     }
     
     public static void doHorribleHack() {

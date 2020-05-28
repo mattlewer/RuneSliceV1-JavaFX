@@ -70,7 +70,7 @@
                                     </HBox>
                                     <ImageView fx:id="logo" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                                        <image>
-                                          <Image url="@images/clipart-food-watermelon-4-transparent.png" />
+                                          <Image url="@images/RuneSlice_Logo_PNG2.png" />
                                        </image>
                                        <GridPane.margin>
                                           <Insets />
@@ -118,7 +118,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView id="info" fitHeight="70.0" fitWidth="30.0" onMouseClicked="#openContact" opacity="0.35" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                  <ImageView id="info" fitHeight="70.0" fitWidth="30.0" onMouseClicked="#openAbout" opacity="0.35" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                      <image>
                         <Image url="@images/326659-64.png" />
                      </image>
@@ -141,5 +141,40 @@
             </GridPane>
          </top>
       </BorderPane>
+      <AnchorPane fx:id="loadingPane" prefHeight="600.0" prefWidth="335.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <StackPane prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <GridPane prefHeight="600.0" prefWidth="335.0" StackPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="193.00001525878906" minHeight="10.0" prefHeight="193.00001525878906" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="336.6666564941406" minHeight="10.0" prefHeight="141.33334350585938" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="336.6666564941406" minHeight="10.0" prefHeight="59.333343505859375" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="366.6666564941406" minHeight="10.0" prefHeight="213.66665649414062" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fx:id="loadingImage" fitHeight="163.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/RuneSlice_Logo_PNG2.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets top="30.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="87.0" prefWidth="185.0" style="-fx-text-fill: #F02D3A;" text="loading..." GridPane.rowIndex="1">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="bePatient" alignment="CENTER" prefHeight="58.0" prefWidth="335.0" style="-fx-text-fill: #F02D3A;" text="please be patient&#10;gathering stats / building user" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -40,9 +40,9 @@
                                  <children>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="73.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="logo" fitHeight="159.0" fitWidth="183.0" layoutX="73.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@images/clipart-food-watermelon-4-transparent.png" />
+                                                <Image url="@images/RuneSlice_Logo_PNG2.png" />
                                              </image>
                                           </ImageView>
                                        </children>

@@ -33,16 +33,33 @@
                   </Label>
                   <HBox alignment="TOP_CENTER" prefHeight="28.0" prefWidth="334.0">
                      <children>
-                        <Label id="page" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #F02D3A;" text="contact" textAlignment="CENTER" wrapText="true">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
-                        <Label id="page" alignment="CENTER" onMouseClicked="#openInfo" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #95C623;" text=" how-to" textAlignment="CENTER" wrapText="true">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
+                        <GridPane prefHeight="41.0" prefWidth="334.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openInfo" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #95C623;" text=" how-to" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #F02D3A;" text="contact" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openAbout" prefHeight="17.0" prefWidth="103.0" style="-fx-text-fill: #F02D3A;" text="about" textAlignment="CENTER" wrapText="true">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </GridPane>
                      </children>
                      <VBox.margin>
                         <Insets />
@@ -62,7 +79,7 @@
                <children>
                   <StackPane prefHeight="150.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane fx:id="scrollPane" cacheShape="false" centerShape="false" hbarPolicy="NEVER" opacity="0.0" prefHeight="413.0" prefWidth="291.0" scaleShape="false" style="-fx-background: #273043; -fx-border-color: #273043;" vbarPolicy="NEVER">
+                        <ScrollPane fx:id="scrollPane" cacheShape="false" centerShape="false" hbarPolicy="NEVER" prefHeight="413.0" prefWidth="291.0" scaleShape="false" style="-fx-background: #273043; -fx-border-color: #273043;" vbarPolicy="NEVER">
                            <content>
                               <AnchorPane id="anc" minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="328.0">
                                  <children>

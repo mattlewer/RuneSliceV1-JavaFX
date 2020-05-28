@@ -69,6 +69,7 @@ public class HiscoresLookup {
         try{
             apiCollector(username);
         }catch(Exception e){
+            System.out.println(e);
             webpage = downloadHiscoresWebpage(username);
             extractSkills();
             extractBossKills();
@@ -125,43 +126,45 @@ public class HiscoresLookup {
         "Bryophyta", // 38
         "Callisto",  // 39
         "Cerberus", // 40
-        "Chambers of Xeric", 
-        "Chaos Elemental",
-        "Chaos Fanatic", 
-        "Commander Zilyana", 
-        "Corporeal Beast",
-        "Crazy Archaeologist", 
-        "Dagannoth Prime", 
-        "Dagannoth Rex", 
-        "Dagannoth Supreme", 
-        "Deranged Archaeologist", 
-        "General Graardor", 
-        "Giant Mole", 
-        "Grotesque Guardians", 
-        "Hespori", 
-        "Kalphite Queen", 
-        "King Black Dragon", 
-        "Kraken", 
-        "Kree'Arra", 
-        "K'ril Tsutsaroth", 
-        "Mimic", 
-        "Nightmare", 
-        "Obor", 
-        "Sarachnis", 
-        "Scorpia",
-        "Skotizo", 
-        "The Gauntlet", 
-        "The Corrupted Gauntlet",
-        "Theatre of Blood", 
-        "Thermonuclear Smoke Devil", 
-        "TzKal-Zuk", 
-        "TzTok-Jad", 
-        "Venenatis",
-        "Vet'ion", 
-        "Vorkath", 
-        "Wintertodt",
-        "Zalcano", 
-        "Zulrah" 
+        "Chambers of Xeric", // 41
+        "Chambers of Xeric: Challenge Mode",
+        "Chaos Elemental", // 42
+        "Chaos Fanatic",  // 43
+        "Commander Zilyana", // 44
+        "Corporeal Beast", // 45
+        "Crazy Archaeologist",  // 46
+        "Dagannoth Prime",  // 47
+        "Dagannoth Rex",  // 48
+        "Dagannoth Supreme", // 49
+        "Deranged Archaeologist",  // 50
+        "General Graardor", // 51
+        "Giant Mole", // 52
+        "Grotesque Guardians", // 53 
+        "Hespori",  // 54
+        "Kalphite Queen", // 55 
+        "King Black Dragon",  // 56
+        "Kraken",  // 57
+        "Kree'Arra",  // 58
+        "K'ril Tsutsaroth", // 59 
+        "Mimic", // 60
+        "The Nightmare",
+        "Obor", // 62
+        "Scorpia", // 64
+        "Sarachnis",  // 63
+ 
+        "Skotizo",  // 65
+        "The Gauntlet",  // 66
+        "The Corrupted Gauntlet", // 67
+        "Theatre of Blood",  // 68
+        "Thermonuclear Smoke Devil", // 69 
+        "TzKal-Zuk", // 70
+        "TzTok-Jad",  // 71
+        "Venenatis", // 72
+        "Vet'ion",  // 73
+        "Vorkath",  // 74
+        "Wintertodt", // 75
+        "Zalcano", // 76 
+        "Zulrah"  // 78
     
     };
     
@@ -172,7 +175,6 @@ public class HiscoresLookup {
         String text = doc.body().text(); 
         text = text.replace(' ', '\n');
         String skills[] = text.split("\\r?\\n");
-        
         int skillCount = 0;
         while(skillCount < 24){
             String skillName = ourStats[skillCount];
@@ -195,7 +197,6 @@ public class HiscoresLookup {
             }else{
                 level = Integer.parseInt(values[1]);
             }
-            System.out.println(level);
             
             // Check XP
             if(Integer.parseInt(values[2]) == -1){
@@ -242,7 +243,8 @@ public class HiscoresLookup {
         
         // Get Bosses
         int bossCount = 35;
-        while(bossCount < ourStats.length +1){
+        while(bossCount < 79){
+            
             String bossName = ourStats[bossCount];
             String values[] = skills[bossCount].split(",");
             // Stats
@@ -263,9 +265,14 @@ public class HiscoresLookup {
                 kills = Integer.parseInt(values[1]);
             }
             
-            // Add boss to users boss list
-            Boss boss = new Boss(rank, kills);
-            myBossKills.put(bossName, boss);
+            // If the user has no kills do nothing
+            if(kills == 0 && rank == 0){
+
+            }else{
+                // add boss to users boss list if the user has kills
+                Boss boss = new Boss(rank, kills);
+                myBossKills.put(bossName, boss);
+            }
             bossCount++;
         }
 

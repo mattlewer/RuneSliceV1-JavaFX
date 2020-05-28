@@ -154,13 +154,14 @@ public class pageOpener {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root); 
         scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
-                @Override
-                public void handle(KeyEvent t) {
-                    if(t.getCode()==KeyCode.ESCAPE){
-                        sec.exit.fire();
-                    }
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.exit, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
                 }
-            });
+            }
+        });
         scene.getStylesheets().add(getClass().getResource("/assets/allBossHomeStyle.css").toExternalForm());
         window.setScene(scene);
         root.requestFocus();
@@ -178,13 +179,14 @@ public class pageOpener {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root); 
         scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
-                @Override
-                public void handle(KeyEvent t) {
-                    if(t.getCode()==KeyCode.ESCAPE){
-                        sec.exit.fire();
-                    }
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.exit, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
                 }
-            });
+            }
+        });
         scene.getStylesheets().add(getClass().getResource("/assets/userClueScrollStyle.css").toExternalForm());
         window.setScene(scene);
         root.requestFocus();
@@ -406,7 +408,29 @@ public class pageOpener {
         window.show();
        }
     
-    
+       
+       public void openAbout(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/aboutPage.fxml"));
+        Parent root = (Parent)loader.load();
+        AboutPageController sec = loader.getController();
+        fade(sec.gridpane);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()==KeyCode.ESCAPE){
+                    Event.fireEvent(sec.returnToHome, new MouseEvent(MouseEvent.MOUSE_CLICKED,
+                            0,0,0,0, MouseButton.PRIMARY,1, true, true, true, true, true, true, true, true, true, true, null));
+                }
+            }
+        });
+        window.setScene(scene);
+        root.requestFocus();
+        window.hide();
+        window.show();
+       }
+       
     public void fadeOut(Node node){
         FadeTransition ft = new FadeTransition(Duration.millis(1500));
         ft.setNode(node);

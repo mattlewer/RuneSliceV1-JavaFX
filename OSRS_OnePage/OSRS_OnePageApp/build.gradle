@@ -45,6 +45,12 @@ jfxmobile {
         manifest = 'src/android/AndroidManifest.xml'
         compileSdkVersion = 29
         buildToolsVersion = "29.0.3"
+        signingConfig {
+            storeFile file('my-release-key.keystore')
+            storePassword 'drumandbass1'
+            keyAlias 'alias_name'
+            keyPassword 'drumandbass1'
+        }
         
     }
     ios {

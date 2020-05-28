@@ -81,14 +81,14 @@
          <top>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fx:id="backLogo" fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="backLogo" fitHeight="156.0" fitWidth="185.0" layoutX="84.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/clipart-food-watermelon-4-transparent.png" />
+                        <Image url="@images/RuneSlice_Logo_PNG2.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="logo" fitHeight="156.0" fitWidth="185.0" layoutX="84.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/clipart-food-watermelon-4-transparent.png" />
+                        <Image url="@images/RuneSlice_Logo_PNG2.png" />
                      </image>
                   </ImageView>
                </children>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.AboutPageController">
+   <children>
+      <BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox alignment="CENTER" prefHeight="107.0" prefWidth="334.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="57.0" prefWidth="334.0" style="-fx-text-fill: #F02D3A;" text="Info" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="TOP_CENTER" prefHeight="28.0" prefWidth="334.0">
+                     <children>
+                        <GridPane prefHeight="41.0" prefWidth="334.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openInfo" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #F02D3A;" text=" how-to" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #F02D3A;" text="contact" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openAbout" prefHeight="17.0" prefWidth="103.0" style="-fx-text-fill: #95C623;" text="about" textAlignment="CENTER" wrapText="true">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <GridPane fx:id="gridpane" alignment="CENTER" maxHeight="600.0" maxWidth="335.0" prefHeight="600.0" prefWidth="345.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="189.33334350585938" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="328.6666564941406" minHeight="10.0" prefHeight="198.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="328.6666564941406" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="328.6666564941406" minHeight="10.0" prefHeight="68.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="328.6666564941406" minHeight="0.0" prefHeight="27.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="328.6666564941406" minHeight="10.0" prefHeight="48.999969482421875" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <BorderPane.margin>
+                  <Insets bottom="30.0" top="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <Label alignment="TOP_CENTER" prefHeight="188.0" prefWidth="334.0" style="-fx-text-fill: #95C623;" text="RuneSlice was made as a personal project for my portfolio and so myself and friends could compare our skills and boss kills with ease.&#10;&#10;RuneSlice is free and will never be monetised&#10;&#10;I hope you enjoy!&#10;&#10;" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Label>
+                  <Label prefHeight="77.0" prefWidth="334.0" style="-fx-text-fill: #95C623;" text="All image assets with the exception of the RuneSlice logo are copywrited by Jagex Ltd and licensed for use here on terms of fair use." textAlignment="CENTER" wrapText="true" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" prefHeight="31.0" prefWidth="334.0" style="-fx-text-fill: #F02D3A;" text="©" textAlignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="57.0" prefWidth="334.0" style="-fx-text-fill: #F02D3A;" text="About">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="339.0" style="-fx-text-fill: #F02D3A;" text="https://oldschool.runescape.com/" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+         </center>
+         <bottom>
+            <JFXButton fx:id="returnToHome" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#searchNewUser" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to home" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="30.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="2.0" />
+               </padding>
+            </JFXButton>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

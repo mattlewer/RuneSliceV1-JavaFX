@@ -8,7 +8,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -28,16 +31,33 @@
                   </Label>
                   <HBox alignment="TOP_CENTER" prefHeight="28.0" prefWidth="334.0">
                      <children>
-                        <Label id="page" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #95C623;" text="contact" textAlignment="CENTER" wrapText="true">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
-                        <Label id="page" alignment="CENTER" onMouseClicked="#openInfo" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #F02D3A;" text=" how-to" textAlignment="CENTER" wrapText="true">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
+                        <GridPane prefHeight="41.0" prefWidth="334.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openInfo" prefHeight="17.0" prefWidth="172.0" style="-fx-text-fill: #F02D3A;" text=" how-to" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #95C623;" text="contact" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label id="page" alignment="CENTER" onMouseClicked="#openAbout" prefHeight="17.0" prefWidth="103.0" style="-fx-text-fill: #F02D3A;" text="about" textAlignment="CENTER" wrapText="true">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </GridPane>
                      </children>
                   </HBox>
                </children>
