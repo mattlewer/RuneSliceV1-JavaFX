@@ -36,7 +36,10 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="154.0" prefWidth="305.0" style="-fx-text-fill: #F02D3A;" text="All found clue scrolls" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                  <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="154.0" prefWidth="305.0" style="-fx-text-fill: #F02D3A;" text="All found clue scrolls" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                   <ImageView fx:id="saved" fitHeight="32.0" fitWidth="41.0" onMouseClicked="#saveUser" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                      <image>
                         <Image url="@images/star.png" />
@@ -56,15 +59,24 @@
                         <Label id="nav" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#viewAllBosses" prefHeight="17.0" prefWidth="91.0" style="-fx-text-fill: #F02D3A;" text="Bosses" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <cursor>
                               <Cursor fx:constant="HAND" />
-                           </cursor></Label>
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
                         <Label id="nav" alignment="CENTER" onMouseClicked="#exitSkillMouse" prefHeight="17.0" prefWidth="145.0" style="-fx-text-fill: #F02D3A;" text="Skills" textAlignment="CENTER" GridPane.rowIndex="1">
                            <cursor>
                               <Cursor fx:constant="HAND" />
-                           </cursor></Label>
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
                         <Label id="nav" alignment="CENTER" prefHeight="17.0" prefWidth="145.0" style="-fx-text-fill: #95C623;" text="Clue Scrolls" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
                         </Label>
                      </children>
                   </GridPane>

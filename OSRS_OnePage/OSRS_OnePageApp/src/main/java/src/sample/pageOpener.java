@@ -299,7 +299,7 @@ public class pageOpener {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/compareUsersData.fxml"));
         Parent root = (Parent)loader.load();
         CompareUsersController sec = loader.getController();
-        
+        sec.mySkillFunction();
         String text = ((JFXButton)event.getSource()).getText();
 
         if(text.equals("compare by skill")){

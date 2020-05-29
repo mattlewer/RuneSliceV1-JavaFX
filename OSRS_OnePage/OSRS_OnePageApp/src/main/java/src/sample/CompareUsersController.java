@@ -5,17 +5,17 @@
  */
 package src.sample;
 
+import com.jfoenix.controls.JFXButton;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import javafx.animation.FadeTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
@@ -30,10 +30,15 @@ public class CompareUsersController extends pageOpener {
     
     
     @FXML public BorderPane borderpane;
-    @FXML public ComboBox combo;
+    @FXML public JFXButton compareBy;
     @FXML public StackPane stackpane;
     @FXML public Label title;
     @FXML public Label levelKills;
+    @FXML public Button returnToSaved;
+    @FXML public BorderPane skillChoice;
+    @FXML public BorderPane bossChoice;
+    @FXML public BorderPane clueChoice;
+    
     
     // Ranks Labels
     @FXML private Label rankOne;
@@ -82,7 +87,7 @@ public class CompareUsersController extends pageOpener {
     @FXML private ImageView eighthPlace;
     @FXML private ImageView ninthPlace;
     @FXML private ImageView tenthPlace;
-    @FXML public Button returnToSaved;
+    
       
     private Label[] rankLabelss;
     private Label[] userLabelss;
@@ -94,20 +99,9 @@ public class CompareUsersController extends pageOpener {
     
     // Setup Page For Skills
     public void mySkillFunction(){
-        
+       
         reorderedList = LoadAndSave.getUsers();
-      // Setup Skills to search
-        String skills[] = {"Overall", "Agility", "Attack", "Construction", "Cooking", 
-         "Crafting", "Defence", "Farming", "Fishing", "Fletching", "Herblore",
-         "Hitpoints", "Hunter", "Prayer", "Magic", "Mining", "Firemaking",  "Ranged", 
-         "Runecraft", "Slayer",  "Smithing",  "Strength",  "Thieving", "Woodcutting" };
-        // Add skills to drop down combo box
-        for(String s : skills){
-            combo.getItems().add(s); 
-        }
-        // Set intial value as comparing by overall 
-        combo.setValue("Overall");
-        
+   
         // Create array of buttons, as create on page load will set without null pointer
         Label rankLabels[]={rankOne, rankTwo, rankThree, rankFour, rankFive, rankSix, rankSeven, rankEight, rankNine, rankTen};
         Label userLabels[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
@@ -146,20 +140,7 @@ public class CompareUsersController extends pageOpener {
         levelKills.setText("Kills");
         title.setText("Compare Boss Kills");
         reorderedList = LoadAndSave.getUsers();
-        String bosses[] = {
-        "Abyssal Sire", "Alchemical Hydra","Barrows Chests","Bryophyta","Callisto","Cerberus",
-            "Chambers of Xeric","Chaos Elemental","Chaos Fanatic","Commander Zilyana","Corporeal Beast",
-            "Crazy Archaeologist","Dagannoth Prime","Dagannoth Rex","Dagannoth Supreme","Deranged Archaeologist",
-            "General Graardor","Giant Mole","Grotesque Guardians","Hespori","Kalphite Queen","King Black Dragon",
-            "Kraken","Kree'Arra","K'ril Tsutsaroth","Mimic","Nightmare","Obor","Sarachnis","Scorpia","Skotizo",
-            "The Gauntlet","The Corrupted Gauntlet","Theatre of Blood","Thermonuclear Smoke Devil","TzKal-Zuk","TzTok-Jad","Venenatis",
-            "Vet'ion","Vorkath","Wintertodt","Zalcano","Zulrah"};
-        
-        for(String s : bosses){
-            combo.getItems().add(s); 
-        }
-        combo.setValue("Abyssal Sire");
-        
+        compareBy.setText("Abyssal Sire");
         // Create array of buttons, as create on page load will set without null pointer
         Label rankLabels[]={rankOne, rankTwo, rankThree, rankFour, rankFive, rankSix, rankSeven, rankEight, rankNine, rankTen};
         Label userLabels[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
@@ -214,13 +195,7 @@ public class CompareUsersController extends pageOpener {
         levelKills.setText("Clue Scrolls");
         title.setText("Compare Scrolls Achieved");
         reorderedList = LoadAndSave.getUsers();
-        String clues[] = {"Beginner", "Easy","Medium","Hard", "Elite", "Master" };
-        
-        for(String s : clues){
-            combo.getItems().add(s); 
-        }
-        combo.setValue("Beginner");
-        
+        compareBy.setText("Beginner");
         // Create array of buttons, as create on page load will set without null pointer
         Label rankLabels[]={rankOne, rankTwo, rankThree, rankFour, rankFive, rankSix, rankSeven, rankEight, rankNine, rankTen};
         Label userLabels[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
@@ -273,17 +248,32 @@ public class CompareUsersController extends pageOpener {
     
     
     
+    public void openChoice(MouseEvent event){
+        
+        if(skillOrBoss == 0){
+            skillChoice.setVisible(true);
+            fadeIn(skillChoice);
+        }else if(skillOrBoss == 1){
+            bossChoice.setVisible(true);
+            fadeIn(bossChoice);
+        }else{
+            clueChoice.setVisible(true);
+            fadeIn(clueChoice);
+        }
+    }
     
     
     
     
-    // Function to switch ordering of users and replace data shown dependant on skill selected
-    public void chosenSkill(ActionEvent event){
+    public void reorderByChoice(MouseEvent event){
+        String compSkill = ((JFXButton)event.getSource()).getText();
+  
+        compareBy.setText(compSkill);
+        
         if(skillOrBoss == 0){
             // Fade the StackPane containing the infomation out and back in again whilst change taking place
             refreshFade(stackpane);
-            // Get value from ComboBox, this will be the skill we are comparing
-            String compSkill = combo.getValue().toString();
+
             // Order saved users by selected skill
             if(compSkill != "Overall"){
                 Collections.sort(reorderedList, new Comparator<User>() {
@@ -311,12 +301,14 @@ public class CompareUsersController extends pageOpener {
                 images[i].setVisible(true);
                 rankLabelss[i].setVisible(true);
                 i++;
+                
             }   
+            fadeOut(skillChoice);
+            skillChoice.setVisible(false);
+            borderpane.requestFocus();
         }else if(skillOrBoss == 1){
             // Fade the StackPane containing the infomation out and back in again whilst change taking place
             refreshFade(stackpane);
-            // Get value from ComboBox, this will be the boss we are comparing
-            String compSkill = combo.getValue().toString();
             // Order saved users by selected boss
             Collections.sort(reorderedList, new Comparator<User>() {
                @Override public int compare(User p1, User p2) {
@@ -355,24 +347,24 @@ public class CompareUsersController extends pageOpener {
                 rankLabelss[i].setVisible(true);
                 i++;     
             }
+            fadeOut(bossChoice);
+            bossChoice.setVisible(false);
+            borderpane.requestFocus();
         }else{
             // Fade the StackPane containing the infomation out and back in again whilst change taking place
             refreshFade(stackpane);
-            // Get value from ComboBox, this will be the scroll we are comparing
-            String compScroll = combo.getValue().toString();
-            
             // Order saved users by selected boss
             Collections.sort(reorderedList, new Comparator<User>() {
                @Override public int compare(User p1, User p2) {
                int p1Kills;
                int p2Kills;
                 try{
-                   p1Kills = p1.clues.get(compScroll).getNumberOfScrollsCompleted();
+                   p1Kills = p1.clues.get(compSkill).getNumberOfScrollsCompleted();
                 }catch(NullPointerException e){
                     p1Kills = 0;
                 }
                 try{
-                   p2Kills = p2.clues.get(compScroll).getNumberOfScrollsCompleted();
+                   p2Kills = p2.clues.get(compSkill).getNumberOfScrollsCompleted();
                 }catch(NullPointerException e){
                     p2Kills = 0;
                 }
@@ -385,7 +377,7 @@ public class CompareUsersController extends pageOpener {
                 Label userLabels2[] = {userOne, userTwo, userThree, userFour, userFive, userSix, userSeven, userEight, userNine, userTen};
                 String numberOfScrolls;
                 try{
-                    numberOfScrolls = String.valueOf(u3.getClues().get(compScroll).getNumberOfScrollsCompleted());
+                    numberOfScrolls = String.valueOf(u3.getClues().get(compSkill).getNumberOfScrollsCompleted());
                 }catch(NullPointerException e1){
                     numberOfScrolls = "0";
                 }
@@ -398,26 +390,20 @@ public class CompareUsersController extends pageOpener {
                 rankLabelss[i].setVisible(true);
                 i++;     
             }
+            fadeOut(clueChoice);
+            clueChoice.setVisible(false);
+            borderpane.requestFocus();
+            
         }
-        close = true;
-        combo.hide();
+        
     }
+        
         
     
     
     
-    
-    // Force Combo box to stay open
-   public boolean close = false;
-    public void opener(){
-        if(close == false){
-            combo.show();
-        }else{
-            combo.hide();
-            close = false;
-        }
-    }
-    // Function for visually resfreshing the user data
+
+    //Function for visually resfreshing the user data
     public void refreshFade(Node node){
         FadeTransition ft = new FadeTransition(Duration.millis(1500));
         ft.setNode(node);
@@ -425,6 +411,24 @@ public class CompareUsersController extends pageOpener {
         ft.setToValue(1);
         ft.setCycleCount(1);
         ft.setAutoReverse(true);
+        ft.play();
+    }
+    
+    public void fadeOut(Node node){
+        FadeTransition ft = new FadeTransition(Duration.millis(200));
+        ft.setNode(node);
+        ft.setFromValue(1);
+        ft.setToValue(0);
+        ft.setCycleCount(1);
+        ft.play();
+    }
+    
+    public void fadeIn(Node node){
+        FadeTransition ft = new FadeTransition(Duration.millis(200));
+        ft.setNode(node);
+        ft.setFromValue(0);
+        ft.setToValue(1);
+        ft.setCycleCount(1);
         ft.play();
     }
     

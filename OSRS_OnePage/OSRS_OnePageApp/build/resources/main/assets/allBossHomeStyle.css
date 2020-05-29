@@ -13,6 +13,7 @@ and open the template in the editor.
 }
 #kill{
     -fx-text-fill:  #95C623;
+    -fx-font-size:13px;
 }
 
 .scroll-pane{

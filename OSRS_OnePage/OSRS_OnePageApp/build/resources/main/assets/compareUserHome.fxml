@@ -29,10 +29,13 @@
                         <RowConstraints maxHeight="259.3333435058594" minHeight="10.0" prefHeight="123.33331298828125" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="48.0" prefWidth="308.0" style="-fx-text-fill: #95C623;" text="Compare your saved users by their skill xp or by boss kills!" textAlignment="CENTER" wrapText="true">
+                        <Label prefHeight="48.0" prefWidth="308.0" style="-fx-text-fill: #95C623;" text="Compare your saved users by their skill xp, boss kills or clue scrolls!" textAlignment="CENTER" wrapText="true">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
+                           <font>
+                              <Font size="12.0" />
+                           </font>
                         </Label>
                         <JFXButton fx:id="compareSkill" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#compareUsers" prefHeight="35.0" prefWidth="285.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 11px;" text="compare by skill" textAlignment="CENTER" GridPane.rowIndex="1">
                            <font>

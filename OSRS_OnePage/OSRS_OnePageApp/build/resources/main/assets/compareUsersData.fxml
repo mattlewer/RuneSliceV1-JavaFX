@@ -2,9 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,8 +19,74 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #273043; -fx-border-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.sample.CompareUsersController">
    <children>
       <BorderPane fx:id="borderpane" layoutX="1.0" layoutY="2.0" prefHeight="600.0" prefWidth="334.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+         <top>
+            <VBox alignment="TOP_CENTER" prefHeight="181.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane fx:id="gridpane" alignment="CENTER" maxHeight="600.0" maxWidth="335.0" prefHeight="176.0" prefWidth="332.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.3333740234375" minWidth="0.666656494140625" prefWidth="0.666656494140625" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="324.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="0.0" prefWidth="1.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="223.3333536783854" minHeight="0.0" prefHeight="96.66667175292969" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="467.8888854980469" minHeight="0.0" prefHeight="37.66667175292969" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="467.8888854980469" minHeight="10.0" prefHeight="42.33332824707031" valignment="CENTER" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="47.0" prefWidth="247.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label fx:id="title" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="325.0" style="-fx-text-fill: #F02D3A;" text="Compare Skills">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="69.0" style="-fx-text-fill: #F02D3A;" text="By:" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                        <GridPane prefHeight="0.0" prefWidth="325.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="104.33331298828125" minWidth="10.0" prefWidth="87.6666259765625" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="129.3333740234375" minWidth="10.0" prefWidth="129.3333740234375" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="60.0" style="-fx-text-fill: #95C623;" text="User" GridPane.columnIndex="1" />
+                              <Label fx:id="levelKills" alignment="BOTTOM_CENTER" prefHeight="43.0" prefWidth="103.0" style="-fx-text-fill: #95C623;" text="Level" textAlignment="CENTER" GridPane.columnIndex="2" />
+                              <Label alignment="BOTTOM_CENTER" prefHeight="43.0" prefWidth="68.0" style="-fx-text-fill: #95C623;" text="Position" />
+                           </children>
+                        </GridPane>
+                        <JFXButton fx:id="compareBy" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#openChoice" prefHeight="28.0" prefWidth="190.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="Overall" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="2.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <JFXButton fx:id="returnToSaved" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#compareUsersHome" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to compare" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="30.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="2.0" />
+               </padding>
+            </JFXButton>
+         </bottom>
          <center>
-            <GridPane fx:id="gridpane" alignment="CENTER" maxHeight="600.0" maxWidth="335.0" prefHeight="600.0" prefWidth="345.0" BorderPane.alignment="CENTER">
+            <GridPane fx:id="gridpane" alignment="CENTER" maxHeight="600.0" maxWidth="335.0" prefHeight="156.0" prefWidth="332.0" BorderPane.alignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.3333740234375" minWidth="0.666656494140625" prefWidth="0.666656494140625" />
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="324.0" />
@@ -149,69 +215,778 @@
                            </StackPane.margin>
                         </ScrollPane>
                      </children>
+                     <effect>
+                        <InnerShadow choke="0.73" color="#273042" height="61.35" radius="15.2475" width="1.64" />
+                     </effect>
                   </StackPane>
                </children>
             </GridPane>
          </center>
-         <top>
-            <VBox alignment="TOP_CENTER" prefHeight="177.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+      </BorderPane>
+      <BorderPane fx:id="skillChoice" layoutX="-1.0" layoutY="138.0" opacity="0.0" prefHeight="382.0" prefWidth="337.0" style="-fx-background-color: #273043;" visible="false" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="137.0">
+         <center>
+            <VBox alignment="CENTER" fillWidth="false" maxWidth="335.0" prefHeight="380.0" prefWidth="335.0" BorderPane.alignment="CENTER">
                <children>
-                  <GridPane fx:id="gridpane" alignment="CENTER" maxHeight="600.0" maxWidth="335.0" prefHeight="176.0" prefWidth="332.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.3333740234375" minWidth="0.666656494140625" prefWidth="0.666656494140625" />
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="324.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="0.0" prefWidth="1.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="223.3333536783854" minHeight="0.0" prefHeight="96.66667175292969" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="467.8888854980469" minHeight="0.0" prefHeight="37.66667175292969" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="467.8888854980469" minHeight="10.0" prefHeight="42.33332824707031" valignment="CENTER" vgrow="SOMETIMES" />
-                     </rowConstraints>
+                  <StackPane prefHeight="598.0" prefWidth="381.0" style="-fx-background-color: #273043;">
                      <children>
-                        <VBox alignment="CENTER" prefHeight="47.0" prefWidth="247.0" GridPane.columnIndex="1">
-                           <children>
-                              <Label fx:id="title" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="325.0" style="-fx-text-fill: #F02D3A;" text="Compare Skills">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <ComboBox id="comboBox" fx:id="combo" cacheShape="false" centerShape="false" focusTraversable="false" onAction="#chosenSkill" onHidden="#opener" prefHeight="26.0" prefWidth="183.0" promptText="Select skill..." scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="69.0" style="-fx-text-fill: #F02D3A;" text="By:" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                        <GridPane prefHeight="0.0" prefWidth="325.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <columnConstraints>
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="104.33331298828125" minWidth="10.0" prefWidth="87.6666259765625" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="129.3333740234375" minWidth="10.0" prefWidth="129.3333740234375" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <Label alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="60.0" style="-fx-text-fill: #95C623;" text="User" GridPane.columnIndex="1" />
-                              <Label fx:id="levelKills" alignment="BOTTOM_CENTER" prefHeight="43.0" prefWidth="103.0" style="-fx-text-fill: #95C623;" text="Level" textAlignment="CENTER" GridPane.columnIndex="2" />
-                              <Label alignment="BOTTOM_CENTER" prefHeight="43.0" prefWidth="68.0" style="-fx-text-fill: #95C623;" text="Position" />
-                           </children>
-                        </GridPane>
+                        <ScrollPane hbarPolicy="NEVER" hmax="0.0" maxWidth="335.0" prefHeight="598.0" prefWidth="326.0" style="-fx-background-color: #273043;" vbarPolicy="NEVER">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="987.0" prefWidth="335.0" style="-fx-background-color: #273043;">
+                                 <children>
+                                    <GridPane prefHeight="976.0" prefWidth="335.0" AnchorPane.bottomAnchor="-33.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="236.0" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="978.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1052.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Strength" textAlignment="CENTER" GridPane.rowIndex="22">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Agility" textAlignment="CENTER" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Attack" textAlignment="CENTER" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Construction" textAlignment="CENTER" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Cooking" textAlignment="CENTER" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043 #273043; -fx-text-fill: #F02D3A;" text="Crafting" textAlignment="CENTER" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Defence" textAlignment="CENTER" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Farming" textAlignment="CENTER" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Fishing" textAlignment="CENTER" GridPane.rowIndex="9">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Fletching" textAlignment="CENTER" GridPane.rowIndex="10">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Herblore" textAlignment="CENTER" GridPane.rowIndex="11">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Hitpoints" textAlignment="CENTER" GridPane.rowIndex="12">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Hunter" textAlignment="CENTER" GridPane.rowIndex="13">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Prayer" textAlignment="CENTER" GridPane.rowIndex="14">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Magic" textAlignment="CENTER" GridPane.rowIndex="15">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Mining" textAlignment="CENTER" GridPane.rowIndex="16">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Firemaking" textAlignment="CENTER" GridPane.rowIndex="17">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Ranged" textAlignment="CENTER" GridPane.rowIndex="18">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Runecraft" textAlignment="CENTER" GridPane.rowIndex="19">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Slayer" textAlignment="CENTER" GridPane.rowIndex="20">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Smithing" textAlignment="CENTER" GridPane.rowIndex="21">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Woodcutting" textAlignment="CENTER" GridPane.rowIndex="24">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Thieving" textAlignment="CENTER" GridPane.rowIndex="23">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Overall" textAlignment="CENTER" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
                      </children>
-                  </GridPane>
+                  </StackPane>
                </children>
             </VBox>
-         </top>
-         <bottom>
-            <JFXButton fx:id="returnToSaved" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#compareUsersHome" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #F02D3A; -fx-text-fill: white;" text="return to compare" textAlignment="CENTER" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <BorderPane.margin>
-                  <Insets bottom="30.0" />
-               </BorderPane.margin>
-               <padding>
-                  <Insets bottom="2.0" />
-               </padding>
-            </JFXButton>
-         </bottom>
+         </center>
+         <effect>
+            <InnerShadow choke="0.58" color="#273043" height="255.0" radius="63.25" width="0.0" />
+         </effect>
+      </BorderPane>
+      <BorderPane fx:id="bossChoice" layoutX="-2.0" layoutY="137.0" opacity="0.0" prefHeight="382.0" prefWidth="337.0" style="-fx-background-color: #273043;" visible="false" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="137.0">
+         <center>
+            <VBox alignment="CENTER" fillWidth="false" maxWidth="335.0" prefHeight="380.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane prefHeight="598.0" prefWidth="381.0" style="-fx-background-color: #273043;">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" hmax="0.0" maxWidth="335.0" prefHeight="598.0" prefWidth="326.0" style="-fx-background-color: #273043;" vbarPolicy="NEVER">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1795.0" prefWidth="335.0" style="-fx-background-color: #273043;">
+                                 <children>
+                                    <GridPane prefHeight="1807.0" prefWidth="335.0" AnchorPane.bottomAnchor="-12.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="236.0" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="978.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1052.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="1109.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Kalphite Queen" textAlignment="CENTER" GridPane.rowIndex="22">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Alchemical Hydra" textAlignment="CENTER" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Barrows Chests" textAlignment="CENTER" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Bryophyta" textAlignment="CENTER" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Callisto" textAlignment="CENTER" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043 #273043; -fx-text-fill: #F02D3A;" text="Cerberus" textAlignment="CENTER" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Chambers of Xeric" textAlignment="CENTER" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Chambers of Xeric: Challenge Mode" textAlignment="CENTER" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Chaos Elemental" textAlignment="CENTER" GridPane.rowIndex="9">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Chaos Fanatic" textAlignment="CENTER" GridPane.rowIndex="10">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Commander Zilyana" textAlignment="CENTER" GridPane.rowIndex="11">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Corporeal Beast" textAlignment="CENTER" GridPane.rowIndex="12">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Crazy Archaeologist" textAlignment="CENTER" GridPane.rowIndex="13">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Dagannoth Prime" textAlignment="CENTER" GridPane.rowIndex="14">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Dagannoth Rex" textAlignment="CENTER" GridPane.rowIndex="15">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Dagannoth Supreme" textAlignment="CENTER" GridPane.rowIndex="16">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Deranged Archaeologist" textAlignment="CENTER" GridPane.rowIndex="17">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="General Graardor" textAlignment="CENTER" GridPane.rowIndex="18">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Giant Mole" textAlignment="CENTER" GridPane.rowIndex="19">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Grotesque Guardians" textAlignment="CENTER" GridPane.rowIndex="20">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Hespori" textAlignment="CENTER" GridPane.rowIndex="21">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Kraken" textAlignment="CENTER" GridPane.rowIndex="24">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Kree'Arra" textAlignment="CENTER" GridPane.rowIndex="25">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="King Black Dragon" textAlignment="CENTER" GridPane.rowIndex="23">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Abyssal Sire" textAlignment="CENTER" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="K'ril Tsutsaroth" textAlignment="CENTER" GridPane.rowIndex="26">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Mimic" textAlignment="CENTER" GridPane.rowIndex="27">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="The Nightmare" textAlignment="CENTER" GridPane.rowIndex="28">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Obor" textAlignment="CENTER" GridPane.rowIndex="29">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Scorpia" textAlignment="CENTER" GridPane.rowIndex="30">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Sarachnis" textAlignment="CENTER" GridPane.rowIndex="31">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Skotizo" textAlignment="CENTER" GridPane.rowIndex="32">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="The Gauntlet" textAlignment="CENTER" GridPane.rowIndex="33">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="The Corrupted Gauntlet" textAlignment="CENTER" GridPane.rowIndex="34">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Theatre of Blood" textAlignment="CENTER" GridPane.rowIndex="35">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Thermonuclear Smoke Devil" textAlignment="CENTER" GridPane.rowIndex="36">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="TzKal-Zuk" textAlignment="CENTER" GridPane.rowIndex="37">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="TzTok-Jad" textAlignment="CENTER" GridPane.rowIndex="38">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Venenatis" textAlignment="CENTER" GridPane.rowIndex="39">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Vet'ion" textAlignment="CENTER" GridPane.rowIndex="40">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Vorkath" textAlignment="CENTER" GridPane.rowIndex="41">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Wintertodt" textAlignment="CENTER" GridPane.rowIndex="42">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Zalcano" textAlignment="CENTER" GridPane.rowIndex="43">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Zulrah" textAlignment="CENTER" GridPane.rowIndex="44">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </center>
+         <effect>
+            <InnerShadow choke="0.62" color="#273042" height="255.0" radius="63.25" width="0.0" />
+         </effect>
+      </BorderPane>
+      <BorderPane fx:id="clueChoice" layoutX="-1.0" layoutY="137.0" opacity="0.0" prefHeight="382.0" prefWidth="337.0" style="-fx-background-color: #273043;" visible="false" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="137.0">
+         <center>
+            <VBox alignment="CENTER" fillWidth="false" maxWidth="335.0" prefHeight="380.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane prefHeight="598.0" prefWidth="381.0" style="-fx-background-color: #273043;">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" hmax="0.0" maxWidth="335.0" prefHeight="598.0" prefWidth="326.0" style="-fx-background-color: #273043;" vbarPolicy="NEVER">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="477.0" prefWidth="335.0" style="-fx-background-color: #273043;">
+                                 <children>
+                                    <GridPane prefHeight="343.0" prefWidth="335.0" AnchorPane.bottomAnchor="134.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="236.0" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="482.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Easy" textAlignment="CENTER" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Medium" textAlignment="CENTER" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Hard" textAlignment="CENTER" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Elite" textAlignment="CENTER" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Beginner" textAlignment="CENTER" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                          <JFXButton alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#reorderByChoice" prefHeight="37.0" prefWidth="293.0" style="-fx-background-color: #273043; -fx-text-fill: #F02D3A;" text="Master" textAlignment="CENTER" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="2.0" />
+                                             </padding>
+                                          </JFXButton>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

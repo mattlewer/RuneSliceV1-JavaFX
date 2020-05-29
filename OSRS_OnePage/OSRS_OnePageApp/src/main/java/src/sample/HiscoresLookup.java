@@ -214,7 +214,7 @@ public class HiscoresLookup {
         
         // Get Clue Scrolls
         int scrollCount = 28;
-        while(scrollCount < 33){
+        while(scrollCount < 34){
             String scrollName = ourStats[scrollCount];
             String values[] = skills[scrollCount].split(",");
             // Stats
@@ -234,7 +234,7 @@ public class HiscoresLookup {
             }else{
                 cluesFound = Integer.parseInt(values[1]);
             }
-            
+            System.out.println(scrollName + " : " + cluesFound);
             // Set as new scroll
             ClueScroll clue = new ClueScroll(rank, cluesFound);
             clues.put(scrollName, clue);

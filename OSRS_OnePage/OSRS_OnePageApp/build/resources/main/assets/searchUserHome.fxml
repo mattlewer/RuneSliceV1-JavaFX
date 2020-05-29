@@ -45,7 +45,10 @@
                                     <RowConstraints maxHeight="255.3333282470703" minHeight="0.0" prefHeight="44.33331298828125" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
-                                    <TextField fx:id="username" onAction="#enterKey" onMouseClicked="#clearTextField" style="-fx-background-color: #41393E; -fx-text-box-border: #E55812;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="username" onAction="#enterKey" onMouseClicked="#clearTextField" style="-fx-background-color: #41393E; -fx-text-box-border: #E55812;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></TextField>
                                     <Label fx:id="textUsername" alignment="CENTER" prefHeight="30.0" prefWidth="345.0" style="-fx-text-fill: #F02D3A;" text="Username:" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="4">
                                        <font>
                                           <Font size="14.0" />

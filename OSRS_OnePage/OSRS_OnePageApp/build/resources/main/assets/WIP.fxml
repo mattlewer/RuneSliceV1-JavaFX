@@ -37,7 +37,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="levelLabel" alignment="CENTER" minWidth="101.0" style="-fx-text-fill: #95C623;" text="Label">
+                        <Label fx:id="levelLabel" alignment="CENTER" minWidth="101.0" prefHeight="30.0" prefWidth="129.0" style="-fx-text-fill: #95C623;" text="Label">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -51,7 +51,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" minWidth="101.0" prefHeight="30.0" prefWidth="101.0" style="-fx-text-fill: #95C623;" text="Label" fx:id="xpLabel">
+                        <Label alignment="CENTER" minWidth="101.0" prefHeight="30.0" prefWidth="129.0" style="-fx-text-fill: #95C623;" text="Label" fx:id="xpLabel">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -65,7 +65,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="rankLabel" alignment="CENTER" minWidth="101.0" prefHeight="30.0" prefWidth="104.0" style="-fx-text-fill: #95C623;" text="Label">
+                        <Label fx:id="rankLabel" alignment="CENTER" minWidth="129.0" prefHeight="30.0" prefWidth="129.0" style="-fx-text-fill: #95C623;" text="Label">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -84,7 +84,7 @@
                         </Label>
                         <HBox alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="330.0">
                            <children>
-                              <ProgressBar fx:id="nextLevelBar" prefWidth="217.0" progress="0.78" style="-fx-accent: #95C623;">
+                              <ProgressBar fx:id="nextLevelBar" prefHeight="13.0" prefWidth="217.0" progress="0.78" style="-fx-accent: #95C623;">
                                  <HBox.margin>
                                     <Insets bottom="5.0" />
                                  </HBox.margin></ProgressBar>

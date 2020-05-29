@@ -47,16 +47,25 @@
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
                               </Label>
                               <Label id="page" alignment="CENTER" onMouseClicked="#openContact" prefHeight="17.0" prefWidth="164.0" style="-fx-text-fill: #F02D3A;" text="contact" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
                               </Label>
                               <Label id="page" alignment="CENTER" onMouseClicked="#openAbout" prefHeight="17.0" prefWidth="103.0" style="-fx-text-fill: #F02D3A;" text="about" textAlignment="CENTER" wrapText="true">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
                               </Label>
                            </children>
                         </GridPane>
