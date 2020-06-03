@@ -25,6 +25,7 @@ import javafx.concurrent.Task;
 import javafx.fxml.Initializable;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import static javafx.util.Duration.millis;
@@ -45,6 +46,9 @@ public class searchUserHome extends pageOpener implements Initializable{
 
     public void enterKey(ActionEvent event) {
         username.setOnKeyReleased(e -> {
+            username.setVisible(false);
+            username.setVisible(true);
+            username.requestFocus();
                     if (e.getCode().equals(KeyCode.ENTER)) {
                         search.fire();
                     }

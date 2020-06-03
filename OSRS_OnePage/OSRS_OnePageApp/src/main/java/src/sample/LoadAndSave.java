@@ -87,15 +87,23 @@ public class LoadAndSave {
     // Function to update stats of current saved users
     public ArrayList<User> updateUsers() throws IOException{
         HiscoresLookup hsl = new HiscoresLookup();
-        for(User user : users){
-            user = hsl.boot(user.username);
+        ArrayList<User> tempUsers = new ArrayList<>();
+        int i = 0;
+        while(i < users.size()){
+            User updatedUser = hsl.boot(users.get(i).username);
+            updatedUser.setIsSaved(true);
+            tempUsers.add(updatedUser);
+            users.remove(i);
+            i++;
         }
+        users.addAll(tempUsers);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         File usersFile = new File(ROOT_DIR, "users.json");
         FileWriter fileWriter = new FileWriter(usersFile);
         // Write the updated ArrayList to JSON
         gson.toJson(users, fileWriter);
         fileWriter.close();
+        loadUsers();
         // return the updated list of users to be set as our users
         return users;
     }

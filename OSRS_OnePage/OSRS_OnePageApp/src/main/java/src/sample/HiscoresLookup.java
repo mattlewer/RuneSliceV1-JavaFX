@@ -77,7 +77,6 @@ public class HiscoresLookup {
         
         // Build our User and return
         User newuser = new User(username, mySkills, myBossKills, clues, false);
-        System.out.println(username + " : Completed");
         return newuser;
     }
     
@@ -234,7 +233,6 @@ public class HiscoresLookup {
             }else{
                 cluesFound = Integer.parseInt(values[1]);
             }
-            System.out.println(scrollName + " : " + cluesFound);
             // Set as new scroll
             ClueScroll clue = new ClueScroll(rank, cluesFound);
             clues.put(scrollName, clue);
