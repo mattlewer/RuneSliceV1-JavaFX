@@ -87,14 +87,17 @@ public class LoadAndSave {
     // Function to update stats of current saved users
     public ArrayList<User> updateUsers() throws IOException{
         HiscoresLookup hsl = new HiscoresLookup();
+        // Temp list of users to store updated values as we loop through
         ArrayList<User> tempUsers = new ArrayList<>();
         int i = 0;
+        // Loop through saved users
         while(i < users.size()){
+            System.out.println(users.size());
+            System.out.println(users.get(i).username);
             User updatedUser = hsl.boot(users.get(i).username);
             updatedUser.setIsSaved(true);
             tempUsers.add(updatedUser);
             users.remove(i);
-            i++;
         }
         users.addAll(tempUsers);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

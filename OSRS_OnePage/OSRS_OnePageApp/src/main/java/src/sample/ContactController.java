@@ -46,6 +46,9 @@ import javax.mail.internet.MimeMessage;
 public class ContactController extends pageOpener {
     
     @FXML public BorderPane borderpane;
+    @FXML public BorderPane nameBorderPane;
+    @FXML public BorderPane emailBorderPane;
+    @FXML public BorderPane mssgBorderPane;
     @FXML public VBox vbox;
     @FXML private Label header;
     @FXML private Label namePrompt;
@@ -57,6 +60,13 @@ public class ContactController extends pageOpener {
     @FXML private JFXButton submit;
     @FXML private Label errorLabel;
     @FXML public JFXButton returnToHome;
+    
+    @FXML private TextField popName;
+    @FXML private Button nameClose;
+    @FXML private TextField popEmail;
+    @FXML private Button emailClose;
+    @FXML private TextArea popMssg;
+    @FXML private Button mssgClose;
     
 //    static String readFile(String path, Charset encoding) throws IOException {
 //        byte[] encoded = Files.readAllBytes(Paths.get(path));
@@ -186,17 +196,55 @@ public class ContactController extends pageOpener {
     
     
     public void hidePlaceHolder(MouseEvent event){
+        GaussianBlur gaussianBlur = new GaussianBlur();
+        gaussianBlur.setRadius(63.0); 
+        borderpane.setEffect(gaussianBlur);  
         if(event.getSource() == nameField){
             nameField.setPromptText("");
+            nameBorderPane.setVisible(true);
+            popName.requestFocus();
+            
         }else if(event.getSource() == emailField){
             emailField.setPromptText("");
+            emailBorderPane.setVisible(true);
+            popEmail.requestFocus();
+            
         }else if(event.getSource() == mssgField){
             mssgField.setPromptText("");
+            mssgBorderPane.setVisible(true);
+            popMssg.requestFocus();
         }
-        
     }
     
     public void focusOff(MouseEvent event){
+        borderpane.requestFocus();
+    }
+    
+    public void close(MouseEvent event){
+        GaussianBlur gaussianBlur = new GaussianBlur();
+        gaussianBlur.setRadius(0.0);
+        borderpane.setEffect(gaussianBlur);
+        if(event.getSource() == nameClose){
+             nameField.setText(popName.getText());
+             nameBorderPane.setVisible(false);
+             if(!nameField.getText().isEmpty()){
+                 namePrompt.setStyle(completeStyle);
+             }
+             
+        }else if(event.getSource() == emailClose){
+            emailField.setText(popEmail.getText());
+            emailBorderPane.setVisible(false);
+            if(!emailField.getText().isEmpty()){
+                emailPrompt.setStyle(completeStyle);
+            }
+            
+        }else if(event.getSource() == mssgClose){
+            mssgField.setText(popMssg.getText());
+            mssgBorderPane.setVisible(false);
+            if(!mssgField.getText().isEmpty()){
+                mssgPrompt.setStyle(completeStyle);
+            }
+        }
         borderpane.requestFocus();
     }
     

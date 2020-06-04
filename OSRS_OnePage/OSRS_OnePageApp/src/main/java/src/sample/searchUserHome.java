@@ -25,7 +25,6 @@ import javafx.concurrent.Task;
 import javafx.fxml.Initializable;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import static javafx.util.Duration.millis;

@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -73,14 +74,14 @@
             </VBox>
          </top>
          <center>
-            <VBox fx:id="vbox" alignment="CENTER" maxWidth="274.0" onMouseClicked="#focusOff" opacity="0.0" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox fx:id="vbox" alignment="TOP_CENTER" maxWidth="274.0" onMouseClicked="#focusOff" opacity="0.0" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="header" alignment="CENTER" prefHeight="94.0" prefWidth="338.0" style="-fx-text-fill: #95C623;" text="Get in touch...">
+                  <Label fx:id="header" alignment="CENTER" prefHeight="42.0" prefWidth="274.0" style="-fx-text-fill: #95C623;" text="Get in touch...">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="namePrompt" alignment="BOTTOM_LEFT" prefHeight="34.0" prefWidth="283.0" style="-fx-text-fill: #95C623;" text="Name*">
+                  <Label fx:id="namePrompt" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="274.0" style="-fx-text-fill: #95C623;" text="Name*">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -89,7 +90,7 @@
                      </VBox.margin>
                   </Label>
                   <TextField id="field" fx:id="nameField" onKeyReleased="#checkStyle" onMouseClicked="#hidePlaceHolder" prefHeight="10.0" prefWidth="244.0" />
-                  <Label fx:id="emailPrompt" alignment="BOTTOM_LEFT" prefHeight="34.0" prefWidth="304.0" style="-fx-text-fill: #95C623;" text="Email*">
+                  <Label fx:id="emailPrompt" alignment="BOTTOM_LEFT" prefHeight="26.0" prefWidth="274.0" style="-fx-text-fill: #95C623;" text="Email*">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -98,7 +99,7 @@
                      </VBox.margin>
                   </Label>
                   <TextField id="field" fx:id="emailField" onKeyReleased="#checkStyle" onMouseClicked="#hidePlaceHolder" />
-                  <Label fx:id="mssgPrompt" alignment="BOTTOM_LEFT" prefHeight="34.0" prefWidth="302.0" style="-fx-text-fill: #95C623;" text="Message*">
+                  <Label fx:id="mssgPrompt" alignment="BOTTOM_LEFT" prefHeight="28.0" prefWidth="274.0" style="-fx-text-fill: #95C623;" text="Message*">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -106,8 +107,8 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Label>
-                  <TextArea id="field" fx:id="mssgField" onKeyReleased="#checkStyle" onMouseClicked="#hidePlaceHolder" prefHeight="92.0" prefWidth="244.0" wrapText="true" />
-                  <VBox alignment="TOP_CENTER" prefHeight="51.0" prefWidth="244.0">
+                  <TextArea id="field" fx:id="mssgField" maxHeight="46.0" onKeyReleased="#checkStyle" onMouseClicked="#hidePlaceHolder" prefHeight="38.0" prefWidth="274.0" wrapText="true" />
+                  <VBox alignment="CENTER" prefHeight="51.0" prefWidth="244.0">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
@@ -137,6 +138,97 @@
                </padding>
             </JFXButton>
          </bottom>
+         <effect>
+            <GaussianBlur radius="0.0" />
+         </effect>
+      </BorderPane>
+      <BorderPane fx:id="nameBorderPane" prefHeight="600.0" prefWidth="335.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+         <center>
+            <VBox alignment="CENTER" maxWidth="280.0" prefHeight="600.0" prefWidth="286.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="620.0" prefWidth="280.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="122.33332824707031" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="71.33334350585938" minHeight="0.0" prefHeight="28.666671752929688" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="194.66665649414062" minHeight="0.0" prefHeight="26.666656494140625" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="194.66665649414062" minHeight="10.0" prefHeight="46.333343505859375" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="418.0" minHeight="10.0" prefHeight="377.3333435058594" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField id="field" fx:id="popName" maxWidth="274.0" prefHeight="10.0" prefWidth="274.0" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="283.0" style="-fx-text-fill: #95C623;" text="Name*" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="nameClose" alignment="CENTER" contentDisplay="CENTER" maxHeight="25.0" maxWidth="114.0" minHeight="25.0" onMouseClicked="#close" prefHeight="25.0" prefWidth="114.0" ripplerFill="#b4ffa3" style="-fx-background-color: #95C623; -fx-text-fill: #273043; -fx-font-weight: bold; -fx-font-size: 11px;" text="submit" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="emailBorderPane" prefHeight="600.0" prefWidth="335.0" visible="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" maxWidth="280.0" prefHeight="600.0" prefWidth="286.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="620.0" prefWidth="280.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="122.33332824707031" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="71.33334350585938" minHeight="0.0" prefHeight="28.666671752929688" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="194.66665649414062" minHeight="0.0" prefHeight="26.666656494140625" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="194.66665649414062" minHeight="10.0" prefHeight="46.333343505859375" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="418.0" minHeight="10.0" prefHeight="377.3333435058594" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField id="field" fx:id="popEmail" maxWidth="274.0" prefHeight="10.0" prefWidth="274.0" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="283.0" style="-fx-text-fill: #95C623;" text="Email*" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="emailClose" alignment="CENTER" contentDisplay="CENTER" maxHeight="25.0" maxWidth="114.0" minHeight="25.0" onMouseClicked="#close" prefHeight="25.0" prefWidth="114.0" ripplerFill="#b4ffa3" style="-fx-background-color: #95C623; -fx-text-fill: #273043; -fx-font-weight: bold; -fx-font-size: 11px;" text="submit" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="mssgBorderPane" prefHeight="600.0" prefWidth="335.0" visible="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" maxWidth="280.0" prefHeight="600.0" prefWidth="286.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="620.0" prefWidth="280.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="122.33332824707031" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="71.33334350585938" minHeight="0.0" prefHeight="28.666671752929688" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="194.66665649414062" minHeight="0.0" prefHeight="107.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="194.66665649414062" minHeight="10.0" prefHeight="15.33331298828125" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="194.66665649414062" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="418.0" minHeight="10.0" prefHeight="303.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="283.0" style="-fx-text-fill: #95C623;" text="Message*" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <TextArea id="field" fx:id="popMssg" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="2" />
+                        <JFXButton fx:id="mssgClose" alignment="CENTER" contentDisplay="CENTER" maxHeight="25.0" maxWidth="114.0" minHeight="25.0" onMouseClicked="#close" prefHeight="25.0" prefWidth="114.0" ripplerFill="#b4ffa3" style="-fx-background-color: #95C623; -fx-text-fill: #273043; -fx-font-weight: bold; -fx-font-size: 11px;" text="submit" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
