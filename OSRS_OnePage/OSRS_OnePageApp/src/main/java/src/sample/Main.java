@@ -71,14 +71,14 @@ public class Main extends Application {
         });
         
         // Task for updating saved users
-        Task<ArrayList<User>> mytask = new Task(){  
+        Task<Void> mytask = new Task(){  
                     @Override
-                    protected ArrayList<User> call() throws Exception {
+                    protected Void call() throws Exception {
                         lns.loadUsers();
-                        ArrayList<User> updatedUsers = new ArrayList<User>();
-                        updatedUsers = lns.updateUsers();
+                        
+                        lns.updateUsers();
                          
-                        return updatedUsers;
+                        return null;
                     }  
         };
           
@@ -99,7 +99,6 @@ public class Main extends Application {
         });
         // If it completes, set the users and play the fade transition
         mytask.setOnSucceeded(e2->{
-            lns.setUsers(mytask.getValue());
             ft.play();
         });
 

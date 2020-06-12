@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="src.sample" android:versionCode="6" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="src.sample" android:versionCode="12" android:versionName="1.0">
         <supports-screens android:xlargeScreens="true"/>
         <uses-permission android:name="android.permission.INTERNET"/>
         <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
         <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="29"/>
-        <application android:label="RuneSlice" android:name="android.support.multidex.MultiDexApplication" android:inputType="textVisiblePassword" android:icon="@mipmap/runeslice" android:fadeScrollbars="false" android:debuggable="false">
-                <activity android:name="javafxports.android.FXActivity" android:label="RuneSlice" android:inputType="textVisiblePassword" android:configChanges="orientation|screenSize">
+        <application android:label="RuneSlice" android:name="android.support.multidex.MultiDexApplication" android:inputType="textNoSuggestions|textCapCharacters|textVisiblePassword" android:icon="@mipmap/runeslice" android:fadeScrollbars="false" android:debuggable="false">
+                <activity android:name="javafxports.android.FXActivity" android:label="RuneSlice" android:configChanges="orientation|screenSize" android:screenOrientation="portrait">
                         <meta-data android:name="main.class" android:value="src.sample.Main"/>
                         <meta-data android:name="debug.port" android:value="0"/>
                         <intent-filter>

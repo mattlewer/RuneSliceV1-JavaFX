@@ -198,10 +198,10 @@ public class HiscoresLookup {
             }
             
             // Check XP
-            if(Integer.parseInt(values[2]) == -1){
+            if(Long.parseLong(values[2]) == -1){
                 xp = 0;
             }else{
-                xp = Integer.parseInt(values[2]);
+                xp = Long.parseLong(values[2]);
             }
             
             // Set as new skill

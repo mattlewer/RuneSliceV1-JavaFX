@@ -1,5 +1,5 @@
--injars 'C:\Users\mlewe\Desktop\OSRS_HiScores\gitstuff\OSRS\OSRS_OnePage\OSRS_OnePageApp\build\javafxports\tmp\android\multi-dex\allclasses.jar'
--outjars 'C:\Users\mlewe\Desktop\OSRS_HiScores\gitstuff\OSRS\OSRS_OnePage\OSRS_OnePageApp\build\javafxports\tmp\android\multi-dex\componentClasses.jar'
+-injars 'C:\Users\mlewe\Desktop\Code\OSRS_HiScores\Project Code\OSRS\OSRS_OnePage\OSRS_OnePageApp\build\javafxports\tmp\android\multi-dex\allclasses.jar'
+-outjars 'C:\Users\mlewe\Desktop\Code\OSRS_HiScores\Project Code\OSRS\OSRS_OnePage\OSRS_OnePageApp\build\javafxports\tmp\android\multi-dex\componentClasses.jar'
 
 -libraryjars 'C:\Users\mlewe\Desktop\android_etc\build-tools\29.0.3\lib\shrinkedAndroid.jar'
 
@@ -9,7 +9,7 @@
 -dontpreverify
 -dontnote
 -dontwarn
--printconfiguration 'C:\Users\mlewe\Desktop\OSRS_HiScores\gitstuff\OSRS\OSRS_OnePage\OSRS_OnePageApp\build\javafxports\tmp\android\multi-dex\components.flags'
+-printconfiguration 'C:\Users\mlewe\Desktop\Code\OSRS_HiScores\Project Code\OSRS\OSRS_OnePage\OSRS_OnePageApp\build\javafxports\tmp\android\multi-dex\components.flags'
 
 
 -keep class android.support.multidex.MultiDexApplication {

@@ -85,30 +85,25 @@ public class LoadAndSave {
     
     
     // Function to update stats of current saved users
-    public ArrayList<User> updateUsers() throws IOException{
-        HiscoresLookup hsl = new HiscoresLookup();
+    public void updateUsers() throws IOException{
+        
         // Temp list of users to store updated values as we loop through
-        ArrayList<User> tempUsers = new ArrayList<>();
-        int i = 0;
-        // Loop through saved users
+        ArrayList<String> tempUsernames = new ArrayList<>();
+        int i = 0 ;
         while(i < users.size()){
-            System.out.println(users.size());
-            System.out.println(users.get(i).username);
-            User updatedUser = hsl.boot(users.get(i).username);
-            updatedUser.setIsSaved(true);
-            tempUsers.add(updatedUser);
-            users.remove(i);
+            tempUsernames.add(users.get(i).username);
+            i++;
         }
-        users.addAll(tempUsers);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        File usersFile = new File(ROOT_DIR, "users.json");
-        FileWriter fileWriter = new FileWriter(usersFile);
-        // Write the updated ArrayList to JSON
-        gson.toJson(users, fileWriter);
-        fileWriter.close();
-        loadUsers();
-        // return the updated list of users to be set as our users
-        return users;
+        users.clear();
+        
+        for(String u : tempUsernames){
+            HiscoresLookup hsl = new HiscoresLookup();
+            User searchedUser = hsl.boot(u);
+            searchedUser.setIsSaved(true);
+            getSkills.setUser(searchedUser);
+            saveUser();
+        }
+        
     }
     
     public void removeAllUsers() throws IOException{
