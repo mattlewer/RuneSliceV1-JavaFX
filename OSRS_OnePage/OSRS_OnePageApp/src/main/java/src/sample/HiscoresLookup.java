@@ -148,9 +148,8 @@ public class HiscoresLookup {
         "Mimic", // 60
         "The Nightmare",
         "Obor", // 62
-        "Scorpia", // 64
         "Sarachnis",  // 63
- 
+        "Scorpia", // 64
         "Skotizo",  // 65
         "The Gauntlet",  // 66
         "The Corrupted Gauntlet", // 67

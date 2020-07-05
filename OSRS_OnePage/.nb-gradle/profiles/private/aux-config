@@ -5,13 +5,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/C:/Users/mlewe/Desktop/Code/OSRS_HiScores/Project%20Code/OSRS/OSRS_OnePage/OSRS_OnePageApp/src/main/java/src/sample/LoadAndSave.java</file>
+        <file>file:/C:/Users/mlewe/Desktop/Code/OSRS_HiScores/Project%20Code/OSRS/OSRS_OnePage/OSRS_OnePageApp/src/main/java/src/sample/searchUserHome.java</file>
+        <file>file:/C:/Users/mlewe/Desktop/Code/OSRS_HiScores/Project%20Code/OSRS/OSRS_OnePage/OSRS_OnePageApp/src/main/java/src/sample/pageOpener.java</file>
+        <file>file:/C:/Users/mlewe/Desktop/Code/OSRS_HiScores/Project%20Code/OSRS/OSRS_OnePage/OSRS_OnePageApp/src/main/java/src/sample/Main.java</file>
       </group>
     </open-files>
+    <editor-bookmarks lastBookmarkId="0" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-      <group>
-        <file>file:/C:/Users/mlewe/Desktop/Code/OSRS_HiScores/Project%20Code/OSRS/OSRS_OnePage/OSRS_OnePageApp/src/main/java/src/sample/LoadAndSave.java</file>
-      </group>
+      <group/>
     </open-files>
   </auxiliary>
 </gradle-project-properties>

@@ -51,7 +51,7 @@ public class Main extends Application {
         primaryStage.setY(bounds.getMinY());
         primaryStage.setWidth(bounds.getWidth());
         primaryStage.setHeight(bounds.getHeight());
-        
+
         // Pause to show splash screen
         primaryStage.show();
         
@@ -134,7 +134,7 @@ public class Main extends Application {
         window.setY(bounds.getMinY());
         window.setWidth(bounds.getWidth());
         window.setHeight(bounds.getHeight());
-
+        
         // Ensure no element is focused upon loading
         root.requestFocus();
         window.show();
